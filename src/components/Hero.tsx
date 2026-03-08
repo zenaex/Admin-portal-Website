@@ -28,7 +28,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-primary-black" id="hero">
+    <section className="relative flex min-h-screen flex-col overflow-hidden bg-primary-black" id="hero">
       {/* ── Background hero image ── */}
       <div className="pointer-events-none absolute inset-0">
         {/* dark-to-transparent gradient on top half */}
@@ -41,7 +41,7 @@ export function Hero() {
       </div>
 
       {/* ── Content ── */}
-      <div className="relative z-20 mx-auto flex max-w-[1220px] flex-col items-center px-6 pt-[160px] md:pt-[220px] lg:px-0 lg:pt-[280px]">
+      <div className="relative z-20 mx-auto flex w-full max-w-[1220px] flex-1 flex-col items-center px-6 pt-[160px] md:pt-[220px] lg:px-0 lg:pt-[280px]">
         {/* Headline */}
         <h1 className="text-center text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] font-bold italic text-white min-h-[2.1em]">
           Your Money,
@@ -104,7 +104,7 @@ export function Hero() {
         </div>
 
         {/* ── Phone + Floating Cards area ── */}
-        <div className="relative mt-14 w-full max-w-5xl pb-8 md:mt-16">
+        <div className="relative mt-auto w-full max-w-5xl pt-14 md:pt-16">
           {/* Coin flow decoration (behind phones) */}
           <img
             src={coinFlow}
