@@ -41,15 +41,14 @@ export function Hero() {
       </div>
 
       {/* ── Content ── */}
-      <div className="relative z-20 mx-auto flex w-full max-w-[1220px] flex-1 flex-col items-center px-6 pt-[160px] md:pt-[220px] lg:px-0 lg:pt-[280px]">
+      <div className="bottom-[-100px] relative z-20 mx-auto flex w-full max-w-[1220px] flex-1 flex-col items-center px-6 pt-[160px] md:pt-[220px] lg:px-0 lg:pt-[280px]">
         {/* Headline */}
         <h1 className="text-center text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] font-bold italic text-white min-h-[2.1em]">
           Your Money,
           <br />
           <span
-            className={`inline-block transition-opacity duration-500 ease-in-out ${
-              fade ? 'opacity-100' : 'opacity-0'
-            }`}
+            className={`inline-block transition-opacity duration-500 ease-in-out ${fade ? 'opacity-100' : 'opacity-0'
+              }`}
           >
             {phrases[index]}
           </span>
@@ -79,24 +78,24 @@ export function Hero() {
               {/* Google Play */}
               <a
                 href="#"
-                className="flex items-center gap-3 rounded-xl border border-white/20 bg-primary-black px-6 py-3 transition-colors hover:border-primary-green"
+                className="flex items-center gap-4 rounded-xl border border-white/20 bg-primary-black px-8 py-3.5 transition-colors hover:border-primary-green min-w-[160px] justify-center"
               >
-                <img src={playStore} alt="" className="h-5 w-5" />
-                <div className="flex flex-col leading-tight">
-                  <span className="text-[9px] text-text-white/60">GET IT ON</span>
-                  <span className="text-xs font-semibold text-white">Google Play</span>
+                <img src={playStore} alt="" className="h-6 w-6" />
+                <div className="flex flex-col leading-snug">
+                  <span className="text-[10px] text-text-white/60 uppercase tracking-wider">GET IT ON</span>
+                  <span className="text-sm font-semibold text-white -mt-0.5">Google Play</span>
                 </div>
               </a>
 
               {/* App Store */}
               <a
                 href="#"
-                className="flex items-center gap-3 rounded-xl border border-white/20 bg-primary-black px-6 py-3 transition-colors hover:border-primary-green"
+                className="flex items-center gap-4 rounded-xl border border-white/20 bg-primary-black px-8 py-3.5 transition-colors hover:border-primary-green min-w-[160px] justify-center"
               >
-                <img src={appleSvg} alt="" className="h-5 w-5 brightness-0 invert" />
-                <div className="flex flex-col leading-tight">
-                  <span className="text-[9px] text-text-white/60">Download on the</span>
-                  <span className="text-xs font-semibold text-white">App Store</span>
+                <img src={appleSvg} alt="" className="h-6 w-6 brightness-0 invert" />
+                <div className="flex flex-col leading-snug">
+                  <span className="text-[10px] text-text-white/60">Download on the</span>
+                  <span className="text-sm font-semibold text-white -mt-0.5">App Store</span>
                 </div>
               </a>
             </div>
@@ -109,14 +108,14 @@ export function Hero() {
           <img
             src={coinFlow}
             alt=""
-            className="pointer-events-none absolute -top-[2%] left-1/2 z-0 w-[115%] max-w-none -translate-x-1/2 opacity-85"
+            className="pointer-events-none absolute -top-[15%] left-1/2 z-0 w-[115%] max-w-none -translate-x-1/2 opacity-85"
           />
 
           {/* Phone mockup */}
           <img
             src={phoneMockup}
             alt="Zenaex App — Sell Giftcard, Withdraw Funds, Trade Crypto"
-            className="relative z-10 mx-auto w-full max-w-[700px]"
+            className="left-40 relative z-10 mx-auto w-full max-w-[700px]"
           />
 
           {/* ── Floating Tooltip Cards ── */}
