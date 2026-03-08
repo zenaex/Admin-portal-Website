@@ -1,11 +1,13 @@
+import { Header } from './components/Header';
+import { Hero } from './components/Hero';
+
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-950">
-      <h1 className="text-4xl font-bold text-white">
-        Landing Page — Ready to Build 🚀
-      </h1>
+    <div className="min-h-screen bg-primary-black">
+      <Header />
+      <Hero />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
