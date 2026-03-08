@@ -10,27 +10,25 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50">
-      <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 md:px-16 lg:px-24">
+      <div className="mx-auto flex max-w-[1440px] items-center justify-between px-10 py-6 md:px-16 lg:px-20 xl:px-28">
         {/* Logo */}
         <a href="/" aria-label="Zenaex Home">
           <img src={logo} alt="Zenaex" className="h-5 w-auto" />
         </a>
 
-        {/* Desktop Nav */}
-        <nav className="hidden items-center gap-10 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
-              className="text-sm font-medium text-text-white transition-colors hover:text-primary-green"
-            >
-              {link}
-            </a>
-          ))}
-        </nav>
-
-        {/* Desktop CTA */}
-        <div className="hidden md:block">
+        {/* Desktop Nav + CTA (right-aligned together) */}
+        <div className="hidden items-center gap-12 md:flex">
+          <nav className="flex items-center gap-12">
+            {navLinks.map((link) => (
+              <a
+                key={link}
+                href={`#${link.toLowerCase()}`}
+                className="text-sm font-medium text-text-white transition-colors hover:text-primary-green"
+              >
+                {link}
+              </a>
+            ))}
+          </nav>
           <Button className="!px-6 !py-2.5 !text-sm">Get Started</Button>
         </div>
 
