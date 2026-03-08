@@ -24,7 +24,7 @@ export function Hero() {
       </div>
 
       {/* ── Content ── */}
-      <div className="relative z-20 mx-auto flex max-w-[1440px] flex-col items-center px-10 pt-40 md:px-16 md:pt-52 lg:px-20 lg:pt-60 xl:px-28">
+      <div className="relative z-20 mx-auto flex max-w-[1220px] flex-col items-center px-6 pt-40 md:pt-52 lg:px-0 lg:pt-60">
         {/* Headline */}
         <h1 className="text-center text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] font-bold italic text-white">
           Your Money,
