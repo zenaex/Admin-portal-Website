@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import heroImage from '../assets/heroimage.png';
 import phoneMockup from '../assets/Phone 01 Screen 1.png';
 import qrCode from '../assets/qr code.png';
@@ -10,6 +11,22 @@ import tooltipGiftcard from '../assets/Frame 2147227863.svg';
 import tooltipFundsSent from '../assets/Frame 2147227973.svg';
 
 export function Hero() {
+  const phrases = ['No borders', 'Moving free', 'Spend locally'];
+  const [index, setIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % phrases.length);
+        setFade(true);
+      }, 500);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative overflow-hidden bg-primary-black" id="hero">
       {/* ── Background hero image ── */}
@@ -24,12 +41,18 @@ export function Hero() {
       </div>
 
       {/* ── Content ── */}
-      <div className="relative z-20 mx-auto flex max-w-[1220px] flex-col items-center px-6 pt-40 md:pt-52 lg:px-0 lg:pt-60">
+      <div className="relative z-20 mx-auto flex max-w-[1220px] flex-col items-center px-6 pt-[160px] md:pt-[220px] lg:px-0 lg:pt-[280px]">
         {/* Headline */}
-        <h1 className="text-center text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] font-bold italic text-white">
+        <h1 className="text-center text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] font-bold italic text-white min-h-[2.1em]">
           Your Money,
           <br />
-          No borders
+          <span
+            className={`inline-block transition-opacity duration-500 ease-in-out ${
+              fade ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            {phrases[index]}
+          </span>
         </h1>
 
         {/* Subheading */}
