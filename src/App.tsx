@@ -7,6 +7,9 @@ import { CalculatorSection } from './components/CalculatorSection';
 import { GetStartedSection } from './components/GetStartedSection';
 import { SecuritySection } from './components/SecuritySection';
 import { TotalControlSection } from './components/TotalControlSection';
+import { FAQSection } from './components/FAQSection';
+import { NewsletterSection } from './components/NewsletterSection';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
       <GetStartedSection />
       <SecuritySection />
       <TotalControlSection />
+      <FAQSection />
+      <NewsletterSection />
+      <Footer />
     </div>
   );
 }

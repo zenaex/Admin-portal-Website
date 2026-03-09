@@ -38,13 +38,13 @@ export const TotalControlSection = () => {
 
   return (
     <section className="relative w-full bg-white py-24 md:py-32 overflow-hidden" id="control">
-      <div className="mx-auto max-w-[1240px] px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="mx-auto max-w-[1240px] px-6 lg:px-8 flex flex-col lg:flex-row gap-16 lg:gap-20 items-center lg:items-center">
         
-        {/* Left Column */}
-        <div className="flex flex-col items-start w-full max-w-xl">
+        {/* Left Column (Text & Tabs) */}
+        <div className="flex flex-col items-start w-full lg:w-[480px] shrink-0">
           
           {/* Tab Switcher */}
-          <div className="inline-flex rounded-full bg-[#f4f4f4] p-1 mb-10 relative">
+          <div className="inline-flex rounded-full bg-[#f4f4f4] p-[5px] mb-10 relative">
             {TABS.map((tab) => (
               <button
                 key={tab}
@@ -69,7 +69,7 @@ export const TotalControlSection = () => {
             {currentContent.title}
           </h2>
           
-          <p className="text-gray-500 text-[17px] leading-relaxed mb-10 max-w-[90%]">
+          <p className="text-gray-500 text-[17px] leading-relaxed mb-10">
             {currentContent.description}
           </p>
 
@@ -80,7 +80,8 @@ export const TotalControlSection = () => {
         </div>
 
         {/* Right Column (Image) */}
-        <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-[600px] flex items-center justify-end">
+        {/* Using flex-1 to take remaining space, and letting image dictate its natural aspect ratio */}
+        <div className="relative w-full flex-1 flex items-center justify-center lg:justify-end">
           <AnimatePresence mode="wait">
             <motion.img
               key={activeTab}
@@ -90,7 +91,7 @@ export const TotalControlSection = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="absolute right-0 top-0 w-full lg:w-[120%] h-full object-cover object-left rounded-3xl"
+              className="w-full h-auto max-h-[700px] object-contain object-center lg:object-right"
             />
           </AnimatePresence>
         </div>
