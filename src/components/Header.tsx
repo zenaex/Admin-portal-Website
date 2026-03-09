@@ -9,8 +9,8 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 pt-10 pl-10">
-      <div className="mx-auto flex h-[45px] max-w-[1220px] items-center justify-between px-6 lg:px-0">
+    <header className="fixed top-0 left-0 w-full z-50 pt-10">
+      <div className="mx-auto flex h-[45px] w-full max-w-[1440px] items-center justify-between px-8 md:px-12 lg:px-[110px]">
         {/* Logo */}
         <a href="/" aria-label="Zenaex Home">
           <img src={logo} alt="Zenaex" className="h-5 w-auto" />

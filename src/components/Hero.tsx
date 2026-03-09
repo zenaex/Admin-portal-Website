@@ -28,20 +28,20 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative flex min-h-screen flex-col overflow-hidden bg-primary-black" id="hero">
+    <section className="relative flex min-h-screen flex-col bg-primary-black pb-80" id="hero">
       {/* ── Background hero image ── */}
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0 h-full">
         {/* dark-to-transparent gradient on top half */}
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-primary-black via-primary-black/80 to-transparent" />
         <img
           src={heroImage}
           alt=""
-          className="absolute bottom-0 left-0 h-[65%] w-full object-cover object-center"
+          className="absolute bottom-0 left-0 h-[75%] w-full object-cover object-center"
         />
       </div>
 
       {/* ── Content ── */}
-      <div className="bottom-[-100px] relative z-20 mx-auto flex w-full max-w-[1220px] flex-1 flex-col items-center px-6 pt-[160px] md:pt-[220px] lg:px-0 lg:pt-[280px]">
+      <div className="relative z-20 mx-auto flex w-full max-w-[1440px] flex-1 flex-col items-center px-8 pt-[160px] md:px-12 md:pt-[220px] lg:px-[110px] lg:pt-[280px]">
         {/* Headline */}
         <h1 className="text-center text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] font-bold italic text-white min-h-[2.1em]">
           Your Money,
@@ -61,41 +61,49 @@ export function Hero() {
         </p>
 
         {/* Download CTA Card */}
-        <div className="mt-10 flex items-center gap-5 rounded-2xl border border-white/10 bg-white/5 px-6 py-4 backdrop-blur-sm md:mt-12">
+        <div className="mt-10 flex items-center gap-5 rounded-2xl border border-gray-200 bg-white px-8 py-4 shadow-sm md:mt-12">
           {/* QR Code */}
           <img
             src={qrCode}
             alt="QR code to download Zenaex"
-            className="hidden h-16 w-16 rounded-md sm:block"
+            className="hidden h-16 w-16 rounded-lg sm:block"
           />
 
-          <div className="flex flex-col gap-2">
-            <span className="text-xs font-medium text-text-white/60 sm:text-sm">
+          <div className="flex flex-col gap-2.5">
+            <span className="text-sm font-semibold text-primary-black sm:text-base">
               Scan to Download Zenaex App
             </span>
 
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-4">
               {/* Google Play */}
               <a
                 href="#"
-                className="flex items-center gap-4 rounded-xl border border-white/20 bg-primary-black px-8 py-3.5 transition-colors hover:border-primary-green min-w-[160px] justify-center"
+                className="flex items-center justify-center gap-3 rounded-full bg-primary-black px-6 py-5 transition-opacity hover:opacity-90 min-w-[180px]"
               >
                 <img src={playStore} alt="" className="h-6 w-6" />
-                <div className="flex flex-col leading-snug">
-                  <span className="text-[10px] text-text-white/60 uppercase tracking-wider">GET IT ON</span>
-                  <span className="text-sm font-semibold text-white -mt-0.5">Google Play</span>
+                <div className="mt-2 flex flex-col items-start justify-center">
+                  <span className="mb-0.5 text-[10px] uppercase leading-none tracking-wide text-white/70 whitespace-nowrap">
+                    GET IT ON
+                  </span>
+                  <span className="text-sm font-semibold leading-none text-white whitespace-nowrap">
+                    Google Play
+                  </span>
                 </div>
               </a>
 
               {/* App Store */}
               <a
                 href="#"
-                className="flex items-center gap-4 rounded-xl border border-white/20 bg-primary-black px-8 py-3.5 transition-colors hover:border-primary-green min-w-[160px] justify-center"
+                className="flex items-center justify-center gap-3 rounded-full bg-primary-black px-6 py-5 transition-opacity hover:opacity-90 min-w-[180px]"
               >
                 <img src={appleSvg} alt="" className="h-6 w-6 brightness-0 invert" />
-                <div className="flex flex-col leading-snug">
-                  <span className="text-[10px] text-text-white/60">Download on the</span>
-                  <span className="text-sm font-semibold text-white -mt-0.5">App Store</span>
+                <div className="mt-2 flex flex-col items-start justify-center">
+                  <span className="mb-0.5 text-[10px] leading-none text-white/70 whitespace-nowrap">
+                    Download on the
+                  </span>
+                  <span className="text-sm font-semibold leading-none text-white whitespace-nowrap">
+                    App Store
+                  </span>
                 </div>
               </a>
             </div>
@@ -115,7 +123,7 @@ export function Hero() {
           <img
             src={phoneMockup}
             alt="Zenaex App — Sell Giftcard, Withdraw Funds, Trade Crypto"
-            className="left-40 relative z-10 mx-auto w-full max-w-[700px]"
+            className="left-40 relative z-10 mx-auto w-full max-w-[700px] top-40"
           />
 
           {/* ── Floating Tooltip Cards ── */}

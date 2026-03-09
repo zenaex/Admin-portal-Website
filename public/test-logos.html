@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Logo Test</title>
+  <style>
+    body { font-family: sans-serif; background: #ddd; display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; }
+    .logo-card { background: white; padding: 10px; border-radius: 8px; text-align: center; }
+    img { max-height: 90px; }
+  </style>
+</head>
+<body>
+  <script>
+    const logos = [
+      '2147228075', '2147228074', '2147228073', '2147228072', '2147228071',
+      '2147228070', '2147228069', '2147228068', '2147228067', '2147228066',
+      '2147228065', '2147228064', '2147228061'
+    ];
+    logos.forEach(id => {
+      document.write(`
+        <div class="logo-card">
+          <p>Frame ${id}.svg</p>
+          <img src="/src/assets/Frame ${id}.svg" />
+        </div>
+      `);
+    });
+  </script>
+</body>
+</html>
