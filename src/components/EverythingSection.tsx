@@ -37,9 +37,11 @@ export function EverythingSection() {
             From secure multi currency wallets to seamless bill payments, gift card trading, and global
             connectivity, Zena gives you full control over your assets and how you spend them in the real world.
           </p>
-          <Button className="p-20 text-sm">
-            Learn more about Zena
-          </Button>
+          <div className="mt-8 flex justify-center">
+            <Button className="!bg-primary-black !text-white px-6 py-3 text-sm hover:!bg-primary-black/90">
+              Learn more about Zena
+            </Button>
+          </div>
         </div>
 
         {/* ── Two cards ── */}

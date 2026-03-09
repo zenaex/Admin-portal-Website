@@ -3,6 +3,7 @@ import { Hero } from './components/Hero';
 import { FeaturedServices } from './components/FeaturedServices';
 import { FeaturesSection } from './components/FeaturesSection';
 import { EverythingSection } from './components/EverythingSection';
+import { CalculatorSection } from './components/CalculatorSection';
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <FeaturedServices />
       <FeaturesSection />
       {/* Spacer to separate sticky section from next section */}
-      <div className="relative z-20 h-[25vh] bg-[#f5f5f5]" />
+      <div className="relative z-20 h-[25vh] bg-[#F0F2F4]" />
       <EverythingSection />
+      <CalculatorSection />
     </div>
   );
 }

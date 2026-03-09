@@ -23,7 +23,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative flex min-h-screen flex-col overflow-hidden bg-primary-black pb-24" id="hero">
+    <section className="relative flex min-h-screen flex-col overflow-hidden bg-primary-black" id="hero">
       {/* ── Background hero image ── */}
       <div className="pointer-events-none absolute inset-0 h-full">
         {/* dark-to-transparent gradient on top half */}
@@ -36,7 +36,7 @@ export function Hero() {
       </div>
 
       {/* ── Content ── */}
-      <div className="relative z-20 mx-auto flex w-full max-w-[1440px] flex-1 flex-col items-center px-8 pt-[160px] md:px-12 md:pt-[220px] lg:px-[110px] lg:pt-[280px]">
+      <div className="relative z-20 mx-auto flex w-full max-w-[1440px] flex-1 flex-col items-center px-8 pt-18 md:px-12 md:pt-20 lg:px-[110px] lg:pt-24">
         {/* Headline */}
         <h1 className="text-center text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] font-bold italic text-white min-h-[2.1em]">
           Your Money,
@@ -106,11 +106,11 @@ export function Hero() {
         </div>
 
         {/* ── Combined Hero SVG (phones, coin flow, tooltip cards) ── */}
-        <div className="relative mt-14 w-full max-w-5xl pt-10 md:mt-16 md:pt-12">
+        <div className="relative -mt-2 w-full max-w-5xl pt-0 md:mt-2 md:pt-0">
           <img
             src={heroSvg}
             alt="Zenaex App — Sell Giftcard, Withdraw Funds, Trade Crypto"
-            className="relative z-10 mx-auto w-full"
+            className="relative z-10 mx-auto w-[88%] md:w-[84%] lg:w-[80%]"
           />
         </div>
       </div>

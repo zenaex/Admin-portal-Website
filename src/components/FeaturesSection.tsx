@@ -2,13 +2,20 @@ import appVideo from '../assets/Screen Recording 2026-03-01 at 01.21.19.mp4';
 import playStore from '../assets/Play store.svg';
 import appleSvg from '../assets/apple.svg';
 
+// Card icon sets (overlapping circular icons for each feature block)
+import cardIcons1 from '../assets/Frame copy.svg';
+import cardIcons2 from '../assets/Frame 214.svg';
+import cardIcons3 from '../assets/Frame 214722.svg';
+import cardIcons4 from '../assets/Frame.svg';
+import cardIcons5 from '../assets/Frame 2147227761.svg';
+
 interface FeatureBlock {
   label: string;
   headline: string;
   description: string;
   sideCard: {
     text: string;
-    colors: string[]; // tailwind bg-color classes for the dot icons
+    icon: string; // SVG icon set
   };
 }
 
@@ -20,7 +27,7 @@ const features: FeatureBlock[] = [
       'Get multi currency wallets for BTC, ETH, USDD, USDC, and more. Your funds are protected and always accessible.',
     sideCard: {
       text: 'Store and access your crypto instantly with built in protection.',
-      colors: ['bg-purple-500'],
+      icon: cardIcons1,
     },
   },
   {
@@ -30,7 +37,7 @@ const features: FeatureBlock[] = [
       'Sell supported gift cards for instant value. Purchase international eSIM plans without a physical SIM.',
     sideCard: {
       text: 'Convert gift cards and activate global data instantly.',
-      colors: ['bg-orange-500', 'bg-blue-400', 'bg-green-500', 'bg-purple-400'],
+      icon: cardIcons2,
     },
   },
   {
@@ -40,7 +47,7 @@ const features: FeatureBlock[] = [
       'Complete assisted OTC trades, and access listed assets with rapid execution and secure confirmation.',
     sideCard: {
       text: 'Execute OTC and assisted trades quickly with secure confirmation.',
-      colors: ['bg-orange-500', 'bg-gray-400', 'bg-blue-500'],
+      icon: cardIcons3,
     },
   },
   {
@@ -50,7 +57,7 @@ const features: FeatureBlock[] = [
       'Swap between USD and local currency seamlessly with transparent pricing and fast processing.',
     sideCard: {
       text: 'Send and receive funds across Africa with fast, reliable settlement.',
-      colors: ['bg-orange-500', 'bg-gray-400', 'bg-blue-500', 'bg-green-400'],
+      icon: cardIcons4,
     },
   },
   {
@@ -60,7 +67,7 @@ const features: FeatureBlock[] = [
       'Get up to 2% cashback on Betting, Electricity, Cable, Airtime and Data payments with rewards applied automatically.',
     sideCard: {
       text: 'Enjoy up to 2% cashback automatically when you pay your bills.',
-      colors: ['bg-orange-500', 'bg-green-500', 'bg-yellow-400', 'bg-blue-500', 'bg-purple-400'],
+      icon: cardIcons5,
     },
   },
 ];
@@ -104,21 +111,17 @@ export function FeaturesSection() {
                 className="h-auto w-full"
               />
             </div>
-            {/* Store icons below video */}
-            <div className="flex items-center gap-3">
-              <a
-                href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-black transition-opacity hover:opacity-80"
-              >
-                <img src={playStore} alt="Google Play" className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-black transition-opacity hover:opacity-80"
-              >
-                <img src={appleSvg} alt="App Store" className="h-5 w-5 brightness-0 invert" />
-              </a>
-            </div>
+            {/* Store icons — pill that expands on hover */}
+            <a
+              href="#"
+              className="group flex items-center gap-2 rounded-full bg-[#F0F2F4] px-4 py-3 transition-all duration-500 ease-in-out hover:bg-primary-black hover:px-6"
+            >
+              <img src={playStore} alt="Google Play" className="h-5 w-5" />
+              <img src={appleSvg} alt="App Store" className="h-5 w-5 transition-all duration-500 group-hover:brightness-0 group-hover:invert" />
+              <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-semibold text-white opacity-0 transition-all duration-500 ease-in-out group-hover:max-w-[150px] group-hover:opacity-100">
+                Download App
+              </span>
+            </a>
           </div>
         </div>
 
@@ -130,13 +133,8 @@ export function FeaturesSection() {
                 <p className="text-sm font-medium leading-snug text-primary-black">
                   {f.sideCard.text}
                 </p>
-                <div className="mt-4 flex items-center -space-x-1.5">
-                  {f.sideCard.colors.map((color, j) => (
-                    <span
-                      key={j}
-                      className={`inline-block h-7 w-7 rounded-full ${color} ring-2 ring-white`}
-                    />
-                  ))}
+                <div className="mt-4">
+                  <img src={f.sideCard.icon} alt="" className="h-8" />
                 </div>
               </div>
             </div>
