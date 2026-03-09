@@ -1,10 +1,10 @@
 import zenaexLogo from '../assets/shared/green_logo.svg';
-import qrCodeImg from '../assets/shared/qr code.png';
+import qrCodeImg from '../assets/shared/qr-code.svg';
 import playStoreIcon from '../assets/shared/Play store.svg';
 import appleIcon from '../assets/shared/apple.svg';
 
 // Socials
-import facebookIcon from '../assets/socials/uiw_facebook.svg';
+import facebookIcon from '../assets/socials/facebook.svg';
 import xIcon from '../assets/socials/streamline-logos_x-twitter-logo-block.svg';
 import instaIcon from '../assets/socials/ri_instagram-fill.svg';
 import youtubeIcon from '../assets/socials/mdi_youtube.svg';

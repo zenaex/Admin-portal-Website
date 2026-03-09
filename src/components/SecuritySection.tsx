@@ -1,5 +1,5 @@
 import group3Img from '../assets/security/Group 3.svg';
-import qrCodeImg from '../assets/shared/qr code.png';
+import qrCodeImg from '../assets/shared/qr-code.svg';
 import playStoreIcon from '../assets/shared/Play store.svg';
 import appleIcon from '../assets/shared/apple.svg';
 

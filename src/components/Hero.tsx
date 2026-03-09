@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import heroImage from '../assets/hero/heroimage.png';
+import heroImage from '../assets/hero/hero image.png';
 import heroSvg from '../assets/hero/hero.svg';
-import qrCode from '../assets/shared/qr code.png';
+import qrCode from '../assets/shared/qr-code.svg';
 import playStore from '../assets/shared/Play store.svg';
 import appleSvg from '../assets/shared/apple.svg';
 

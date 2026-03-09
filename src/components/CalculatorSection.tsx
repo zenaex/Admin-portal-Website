@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import cryptoPhoto from '../assets/00.png';
+import cryptoPhoto from '../assets/control/000.png';
 import giftcardPhoto from '../assets/22.png';
 import swapIcon from '../assets/23.svg';
 import bitcoinIcon from '../assets/83.svg';

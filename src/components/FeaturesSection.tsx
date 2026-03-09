@@ -3,7 +3,7 @@ import playStore from '../assets/shared/Play store.svg';
 import appleSvg from '../assets/shared/apple.svg';
 
 // Custom icons
-import cardIcons1 from '../assets/features/Frame copy.svg';
+import cardIcons1 from '../assets/features/Frame 2147227760.svg';
 import cardIcons2 from '../assets/features/Frame 214.svg';
 import cardIcons3 from '../assets/features/Frame 214722.svg';
 import cardIcons4 from '../assets/features/Frame.svg';
