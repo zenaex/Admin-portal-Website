@@ -4,6 +4,8 @@ import { FeaturedServices } from './components/FeaturedServices';
 import { FeaturesSection } from './components/FeaturesSection';
 import { EverythingSection } from './components/EverythingSection';
 import { CalculatorSection } from './components/CalculatorSection';
+import { GetStartedSection } from './components/GetStartedSection';
+import { SecuritySection } from './components/SecuritySection';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <div className="relative z-20 h-[25vh] bg-[#F0F2F4]" />
       <EverythingSection />
       <CalculatorSection />
+      <GetStartedSection />
+      <SecuritySection />
     </div>
   );
 }
