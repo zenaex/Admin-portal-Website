@@ -35,7 +35,7 @@ export function FeaturedServices() {
   return (
     <section className="bg-[#f5f5f5] py-12" id="featured-services">
       {/* Heading */}
-      <h2 className="mb-10 text-center text-sm font-semibold uppercase tracking-[0.25em] text-primary-black/60">
+      <h2 className="mb-10 text-center font-['Schibsted_Grotesk'] text-[18px] font-semibold leading-[1.2] tracking-normal uppercase text-primary-black">
         Featured Services
       </h2>
 

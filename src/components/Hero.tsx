@@ -23,7 +23,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative flex min-h-screen flex-col overflow-hidden bg-primary-black" id="hero">
+    <section className="relative flex min-h-screen flex-col overflow-hidden bg-primary-black pb-24" id="hero">
       {/* ── Background hero image ── */}
       <div className="pointer-events-none absolute inset-0 h-full">
         {/* dark-to-transparent gradient on top half */}
