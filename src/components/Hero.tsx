@@ -1,14 +1,9 @@
 import { useState, useEffect } from 'react';
 import heroImage from '../assets/heroimage.png';
-import phoneMockup from '../assets/Phone 01 Screen 1.png';
+import heroSvg from '../assets/hero.svg';
 import qrCode from '../assets/qr code.png';
 import playStore from '../assets/Play store.svg';
 import appleSvg from '../assets/apple.svg';
-import coinFlow from '../assets/Coin flow.svg';
-import tooltipBtc from '../assets/Frame 2147227863-1.svg';
-import tooltipWithdraw from '../assets/Frame 2147227863-2.svg';
-import tooltipGiftcard from '../assets/Frame 2147227863.svg';
-import tooltipFundsSent from '../assets/Frame 2147227973.svg';
 
 export function Hero() {
   const phrases = ['No borders', 'Moving free', 'Spend locally'];
@@ -28,7 +23,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative flex min-h-screen flex-col bg-primary-black pb-80" id="hero">
+    <section className="relative flex min-h-screen flex-col overflow-hidden bg-primary-black" id="hero">
       {/* ── Background hero image ── */}
       <div className="pointer-events-none absolute inset-0 h-full">
         {/* dark-to-transparent gradient on top half */}
@@ -61,31 +56,31 @@ export function Hero() {
         </p>
 
         {/* Download CTA Card */}
-        <div className="mt-10 flex items-center gap-5 rounded-2xl border border-gray-200 bg-white px-8 py-4 shadow-sm md:mt-12">
+        <div className="mt-10 flex items-center gap-5 rounded-2xl border border-gray-200 bg-white pl-3 pr-7 py-2.5 shadow-sm md:mt-12 md:pl-4 md:pr-8 md:py-3">
           {/* QR Code */}
           <img
             src={qrCode}
             alt="QR code to download Zenaex"
-            className="hidden h-16 w-16 rounded-lg sm:block"
+            className="hidden h-14 w-14 rounded-md sm:block"
           />
 
-          <div className="flex flex-col gap-2.5">
-            <span className="text-sm font-semibold text-primary-black sm:text-base">
+          <div className="flex flex-col gap-2">
+            <span className="text-lg leading-none font-medium text-primary-black">
               Scan to Download Zenaex App
             </span>
 
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex items-center gap-2">
               {/* Google Play */}
               <a
                 href="#"
-                className="flex items-center justify-center gap-3 rounded-full bg-primary-black px-6 py-5 transition-opacity hover:opacity-90 min-w-[180px]"
+                className="flex min-w-33 items-center justify-center gap-2 rounded-full bg-primary-black px-3 py-1.5 transition-opacity hover:opacity-90"
               >
-                <img src={playStore} alt="" className="h-6 w-6" />
-                <div className="mt-2 flex flex-col items-start justify-center">
-                  <span className="mb-0.5 text-[10px] uppercase leading-none tracking-wide text-white/70 whitespace-nowrap">
+                <img src={playStore} alt="" className="h-4 w-4" />
+                <div className="flex flex-col items-start justify-center">
+                  <span className="text-[8px] uppercase leading-none tracking-wide text-white/70 whitespace-nowrap">
                     GET IT ON
                   </span>
-                  <span className="text-sm font-semibold leading-none text-white whitespace-nowrap">
+                  <span className="text-xs font-semibold leading-none text-white whitespace-nowrap">
                     Google Play
                   </span>
                 </div>
@@ -94,14 +89,14 @@ export function Hero() {
               {/* App Store */}
               <a
                 href="#"
-                className="flex items-center justify-center gap-3 rounded-full bg-primary-black px-6 py-5 transition-opacity hover:opacity-90 min-w-[180px]"
+                className="flex min-w-33 items-center justify-center gap-2 rounded-full bg-primary-black px-3 py-1.5 transition-opacity hover:opacity-90"
               >
-                <img src={appleSvg} alt="" className="h-6 w-6 brightness-0 invert" />
-                <div className="mt-2 flex flex-col items-start justify-center">
-                  <span className="mb-0.5 text-[10px] leading-none text-white/70 whitespace-nowrap">
+                <img src={appleSvg} alt="" className="h-4 w-4 brightness-0 invert" />
+                <div className="flex flex-col items-start justify-center">
+                  <span className="text-[8px] leading-none text-white/70 whitespace-nowrap">
                     Download on the
                   </span>
-                  <span className="text-sm font-semibold leading-none text-white whitespace-nowrap">
+                  <span className="text-xs font-semibold leading-none text-white whitespace-nowrap">
                     App Store
                   </span>
                 </div>
@@ -110,50 +105,12 @@ export function Hero() {
           </div>
         </div>
 
-        {/* ── Phone + Floating Cards area ── */}
-        <div className="relative mt-auto w-full max-w-5xl pt-14 md:pt-16">
-          {/* Coin flow decoration (behind phones) */}
+        {/* ── Combined Hero SVG (phones, coin flow, tooltip cards) ── */}
+        <div className="relative mt-14 w-full max-w-5xl pt-10 md:mt-16 md:pt-12">
           <img
-            src={coinFlow}
-            alt=""
-            className="pointer-events-none absolute -top-[15%] left-1/2 z-0 w-[115%] max-w-none -translate-x-1/2 opacity-85"
-          />
-
-          {/* Phone mockup */}
-          <img
-            src={phoneMockup}
+            src={heroSvg}
             alt="Zenaex App — Sell Giftcard, Withdraw Funds, Trade Crypto"
-            className="left-40 relative z-10 mx-auto w-full max-w-[700px] top-40"
-          />
-
-          {/* ── Floating Tooltip Cards ── */}
-
-          {/* Top-left: Bitcoin Received */}
-          <img
-            src={tooltipBtc}
-            alt="Crypto Credited – Bitcoin Received $2500.00"
-            className="absolute top-[22%] left-[-2%] z-20 hidden w-[160px] lg:block xl:left-[-4%] xl:w-[186px]"
-          />
-
-          {/* Bottom-left: Giftcard Sold */}
-          <img
-            src={tooltipGiftcard}
-            alt="Giftcard Sold – Funds Received $1,500.00"
-            className="absolute bottom-[12%] left-[-3%] z-20 hidden w-[150px] lg:block xl:left-[-5%] xl:w-[173px]"
-          />
-
-          {/* Top-right: Other Banks */}
-          <img
-            src={tooltipWithdraw}
-            alt="You Withdrew to Other Banks $1,000.00"
-            className="absolute top-[22%] right-[-2%] z-20 hidden w-[160px] lg:block xl:right-[-4%] xl:w-[186px]"
-          />
-
-          {/* Bottom-right: Funds Sent */}
-          <img
-            src={tooltipFundsSent}
-            alt="Bills Payment – Funds Sent ₦1500.00"
-            className="absolute right-[-3%] bottom-[12%] z-20 hidden w-[150px] lg:block xl:right-[-5%] xl:w-[177px]"
+            className="relative z-10 mx-auto w-full"
           />
         </div>
       </div>
