@@ -1,4 +1,4 @@
-import arrowRight from '../assets/ArrowRight.svg';
+import arrowRight from '../assets/shared/ArrowRight.svg';
 
 export const NewsletterSection = () => {
   return (

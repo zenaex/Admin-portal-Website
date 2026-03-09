@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Assets
-import plusIcon from '../assets/plus.svg';
-import minusIcon from '../assets/minus.svg';
-import arrowRight from '../assets/ArrowRight.svg';
+import plusIcon from '../assets/faq/plus.svg';
+import minusIcon from '../assets/faq/minus.svg';
+import arrowRight from '../assets/shared/ArrowRight.svg';
 
 const FAQ_DATA = [
   {

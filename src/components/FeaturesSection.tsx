@@ -1,13 +1,13 @@
-import appVideo from '../assets/Screen Recording 2026-03-01 at 01.21.19.mp4';
-import playStore from '../assets/Play store.svg';
-import appleSvg from '../assets/apple.svg';
+import appVideo from '../assets/features/appVideo.mp4';
+import playStore from '../assets/shared/Play store.svg';
+import appleSvg from '../assets/shared/apple.svg';
 
-// Card icon sets (overlapping circular icons for each feature block)
-import cardIcons1 from '../assets/Frame copy.svg';
-import cardIcons2 from '../assets/Frame 214.svg';
-import cardIcons3 from '../assets/Frame 214722.svg';
-import cardIcons4 from '../assets/Frame.svg';
-import cardIcons5 from '../assets/Frame 2147227761.svg';
+// Custom icons
+import cardIcons1 from '../assets/features/Frame copy.svg';
+import cardIcons2 from '../assets/features/Frame 214.svg';
+import cardIcons3 from '../assets/features/Frame 214722.svg';
+import cardIcons4 from '../assets/features/Frame.svg';
+import cardIcons5 from '../assets/features/Frame 2147227761.svg';
 
 interface FeatureBlock {
   label: string;

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import heroImage from '../assets/heroimage.png';
-import heroSvg from '../assets/hero.svg';
-import qrCode from '../assets/qr code.png';
-import playStore from '../assets/Play store.svg';
-import appleSvg from '../assets/apple.svg';
+import heroImage from '../assets/hero/heroimage.png';
+import heroSvg from '../assets/hero/hero.svg';
+import qrCode from '../assets/shared/qr code.png';
+import playStore from '../assets/shared/Play store.svg';
+import appleSvg from '../assets/shared/apple.svg';
 
 export function Hero() {
   const phrases = ['No borders', 'Moving free', 'Spend locally'];

@@ -1,17 +1,17 @@
-import zenaexLogo from '../assets/green_logo.svg';
-import qrCodeImg from '../assets/qr code.png';
-import playStoreIcon from '../assets/Play store.svg';
-import appleIcon from '../assets/apple.svg';
+import zenaexLogo from '../assets/shared/green_logo.svg';
+import qrCodeImg from '../assets/shared/qr code.png';
+import playStoreIcon from '../assets/shared/Play store.svg';
+import appleIcon from '../assets/shared/apple.svg';
 
 // Socials
-import facebookIcon from '../assets/uiw_facebook.svg';
-import xIcon from '../assets/streamline-logos_x-twitter-logo-block.svg';
-import instaIcon from '../assets/ri_instagram-fill.svg';
-import youtubeIcon from '../assets/mdi_youtube.svg';
-import linkedinIcon from '../assets/Link.svg';
-import tiktokIcon from '../assets/lineicons_tiktok-alt.svg';
+import facebookIcon from '../assets/socials/uiw_facebook.svg';
+import xIcon from '../assets/socials/streamline-logos_x-twitter-logo-block.svg';
+import instaIcon from '../assets/socials/ri_instagram-fill.svg';
+import youtubeIcon from '../assets/socials/mdi_youtube.svg';
+import linkedinIcon from '../assets/socials/Link.svg';
+import tiktokIcon from '../assets/socials/lineicons_tiktok-alt.svg';
 
-import arrowRightBlack from '../assets/ArrowRight.svg'; // Needs to be black if on white button, but maybe we can just use an inline SVG for the arrow on the footer to be safe or use css invert
+
 
 export const Footer = () => {
   return (

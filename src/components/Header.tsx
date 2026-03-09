@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from './Button';
-import logo from '../assets/logo.svg';
+import logo from '../assets/shared/logo.svg';
 
 const navLinks = ['Products', 'Support', 'FAQ'];
 

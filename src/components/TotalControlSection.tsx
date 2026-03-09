@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Assets
-import receiveImg from '../assets/999.png';
-import convertImg from '../assets/000.png';
-import withdrawImg from '../assets/Frame 2147227868.png';
-import arrowRight from '../assets/ArrowRight.svg';
+import receiveImg from '../assets/control/999.png';
+import convertImg from '../assets/control/000.png';
+import withdrawImg from '../assets/control/Frame 2147227868.png';
+import arrowRight from '../assets/shared/ArrowRight.svg';
 
 type Tab = 'Receive' | 'Convert' | 'Withdraw';
 

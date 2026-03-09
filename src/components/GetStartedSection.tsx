@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import stepVideo from '../assets/Screen Recording 2026-02-27 at 02.04.09.mp4';
+import stepVideo from '../assets/features/stepVideo.mp4';
 
 const steps = [
   {

@@ -1,5 +1,5 @@
-import transactionList from '../assets/Frame 2147227792.png';
-import groupDiagram from '../assets/Group.png';
+import transactionList from '../assets/features/Frame 2147227792.png';
+import groupDiagram from '../assets/features/Group.png';
 import iconSecurity from '../assets/00.svg';
 import iconGlobe from '../assets/1.svg';
 import iconDeposit from '../assets/2.svg';
