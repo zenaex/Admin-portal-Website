@@ -1,6 +1,6 @@
 import bgImage from '../assets/Frame 2147228108.png';
 import portraitImage from '../assets/Frame 2147228107.png';
-import videoSrc from '../assets/Screen Recording 2026-02-27 at 02.07.28.mp4';
+import videoSrc from '../assets/Screen Recording 2026-03-04 at 13.52.41.mp4';
 
 export const WithdrawAfricaSection = () => {
   return (

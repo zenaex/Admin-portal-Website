@@ -97,7 +97,7 @@ const cards: CardData[] = [
     containerClass: 'flex flex-col md:flex-row justify-between min-h-[420px] md:min-h-[480px] lg:min-h-[540px] items-center',
     textWrapperClass: 'relative z-20 w-fit p-10 md:p-14 lg:p-16 lg:pl-20 xl:pl-24 pointer-events-none',
     imageContainerClass: 'absolute top-0 right-0 w-full md:w-[50%] lg:w-[48%] h-full pointer-events-none z-10 overflow-hidden rounded-bl-[48px] md:rounded-bl-none md:rounded-br-[48px] md:rounded-tr-[48px]',
-    imageClass: 'absolute bottom-[-15%] md:bottom-[-20%] lg:bottom-[-25%] right-0 md:right-[-5%] lg:right-[5%] w-[90%] md:w-[110%] lg:w-[115%] h-auto object-contain object-right-bottom'
+    imageClass: 'absolute bottom-[-35%] md:bottom-[-40%] lg:bottom-[-45%] right-0 md:right-[-2%] lg:right-[5%] w-[100%] md:w-[125%] lg:w-[130%] h-auto object-contain object-right-bottom'
   },
   {
     id: 5,
@@ -183,7 +183,11 @@ export function StackingSection() {
                     {card.listItems && (
                       <div className="flex flex-col gap-4 mt-6">
                         {card.listItems.map((item, idx) => (
-                          <div key={idx} className="flex items-center justify-between gap-6 bg-[#F9FAFB] rounded-full py-[6px] pr-[6px] pl-6 w-full max-w-[340px]">
+                          <div
+                            key={idx}
+                            className={`flex items-center justify-between gap-6 bg-white rounded-full py-[6px] pr-[6px] pl-6 w-full ${idx === 1 ? 'max-w-[380px] md:max-w-[400px]' : 'max-w-[320px] md:max-w-[340px]'
+                              }`}
+                          >
                             <span className="text-[#101828] font-medium text-[16px] xl:text-[18px] leading-[1.2] whitespace-nowrap">{item.text}</span>
                             <img src={item.icon} alt={item.text} className="w-[42px] h-[42px] flex-shrink-0 object-contain" />
                           </div>

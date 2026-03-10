@@ -1,26 +1,34 @@
 import { useState } from 'react';
-import stepVideo from '../assets/features/stepVideo.mp4';
+import { motion, AnimatePresence } from 'framer-motion';
+import video1 from '../assets/Screen Recording 2026-02-27 at 02.04.09 (1).mp4';
+import video2 from '../assets/Screen Recording 2026-02-27 at 02.05.53 copy.mp4';
+import video3 from '../assets/Screen Recording 2026-02-27 at 02.07.28 copy.mp4';
+import video4 from '../assets/Screen Recording 2026-02-27 at 02.09.08.mp4';
 
 const steps = [
   {
     title: 'Download the Zena App',
     description:
       'Get Zena from the App Store or Google Play and open your digital finance hub instantly.',
+    video: video1,
   },
   {
     title: 'Create your account and verify',
     description:
       'Sign up with your email or phone number and complete quick identity verification. It takes just a few minutes.',
+    video: video2,
   },
   {
     title: 'Fund your wallet',
     description:
       'Deposit crypto or receive funds directly into your Zena wallet from anywhere in the world.',
+    video: video3,
   },
   {
     title: 'Start using your money',
     description:
       'Convert currencies, pay bills, trade gift cards, access eTrade features, or activate global eSIM all from one powerful platform.',
+    video: video4,
   },
 ];
 
@@ -64,14 +72,21 @@ export function GetStartedSection() {
           <div className="flex flex-col gap-6">
             {/* Video container matches the left card dimensions via aspect-square */}
             <div className="relative w-full aspect-square overflow-hidden rounded-[2rem] bg-primary-black shadow-lg">
-              <video
-                src={stepVideo}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 h-full w-full object-cover"
-              />
+              <AnimatePresence>
+                <motion.video
+                  key={activeStep}
+                  src={steps[activeStep].video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.6, ease: 'easeInOut' }}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </AnimatePresence>
             </div>
 
             {/* Step indicators below the video */}
@@ -83,7 +98,7 @@ export function GetStartedSection() {
                   onClick={() => setActiveStep(i)}
                   className={`flex h-11 w-11 items-center justify-center rounded-full text-sm font-bold transition-all duration-300 ${
                     activeStep === i
-                      ? 'bg-primary-green text-primary-black'
+                      ? 'bg-[#CCFF00] text-primary-black'
                       : 'bg-[#E8EBEE] text-gray-500 hover:bg-gray-300'
                   }`}
                 >

@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // Assets
 import receiveImg from '../assets/control/999.png';
-import convertImg from '../assets/control/000.png';
-import withdrawImg from '../assets/Frame 2147227868.png';
+import convertImg from '../assets/control/Frame 2147227868.png';
+import withdrawImg from '../assets/control/Frame 2147227868 copy.png';
 import arrowRight from '../assets/shared/ArrowRight.svg';
 
 type Tab = 'Receive' | 'Convert' | 'Withdraw';
