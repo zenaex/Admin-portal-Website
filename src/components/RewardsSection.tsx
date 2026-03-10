@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import rewardsImage from '../assets/Frame 2147227997.svg';
 

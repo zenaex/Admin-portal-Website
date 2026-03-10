@@ -47,11 +47,11 @@ export function EverythingSection() {
         {/* ── Two cards ── */}
         <div className="grid gap-8 md:grid-cols-2">
           {/* Left card: Personal Digital Wallet */}
-          <div className="overflow-hidden rounded-3xl bg-white p-10 shadow-sm ring-1 ring-black/5">
-            <h3 className="text-2xl font-bold text-primary-black">
+          <div className="overflow-hidden rounded-3xl bg-[#0F2618] p-10 text-white shadow-sm ring-1 ring-black/5">
+            <h3 className="text-2xl font-bold text-white">
               Personal Digital Wallet
             </h3>
-            <p className="mt-2 max-w-sm text-sm leading-relaxed text-gray-500">
+            <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/70">
               Your secure command center for holding, sending, and tracking
               digital assets with total control and clarity.
             </p>
@@ -61,7 +61,7 @@ export function EverythingSection() {
               {walletFeatures.map((f, i) => (
                 <div key={i} className="flex items-center gap-2.5">
                   <img src={f.icon} alt="" className="h-6 w-6 shrink-0" />
-                  <span className="text-xs font-medium text-primary-black">
+                  <span className="text-xs font-medium text-white/90">
                     {f.text}
                   </span>
                 </div>
@@ -79,13 +79,13 @@ export function EverythingSection() {
           </div>
 
           {/* Right card: Move between crypto, dollars, and naira */}
-          <div className="overflow-hidden rounded-3xl bg-[#1B2E1B] p-10 text-white shadow-sm">
+          <div className="overflow-hidden rounded-3xl bg-[#F2F4F7] p-10 text-primary-black shadow-sm">
             <h3 className="text-2xl font-bold">
               Move between crypto, dollars
               <br />
               and naira seamlessly
             </h3>
-            <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/70">
+            <p className="mt-2 max-w-sm text-sm leading-relaxed text-[#666666]">
               Convert, trade and transact across currencies and digital assets
               without friction. One wallet. Multiple rails.
             </p>
@@ -95,7 +95,7 @@ export function EverythingSection() {
               {convertFeatures.map((f, i) => (
                 <div key={i} className="flex items-center gap-2.5">
                   <img src={f.icon} alt="" className="h-6 w-6 shrink-0" />
-                  <span className="text-xs font-medium text-white/90">
+                  <span className="text-xs font-medium text-primary-black">
                     {f.text}
                   </span>
                 </div>

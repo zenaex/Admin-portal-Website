@@ -41,7 +41,19 @@ const FAQ_DATA = [
   }
 ];
 
-export const FAQSection = () => {
+interface FAQSectionProps {
+  title?: React.ReactNode;
+  subtitle?: React.ReactNode;
+  preTitle?: React.ReactNode;
+  className?: string;
+}
+
+export const FAQSection = ({
+  title = "Frequently asked question",
+  subtitle = "Any questions ?",
+  preTitle,
+  className = "bg-[#F8F9FA] py-24 md:py-32 flex flex-col items-center border-t border-gray-100"
+}: FAQSectionProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
@@ -49,16 +61,17 @@ export const FAQSection = () => {
   };
 
   return (
-    <section className="bg-[#F8F9FA] py-24 md:py-32 flex flex-col items-center border-t border-gray-100" id="faq">
+    <section className={className} id="faq">
       <div className="w-full max-w-[800px] px-6">
         
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 flex flex-col items-center">
+          {preTitle && <p className="text-[#A3A3A3] text-sm font-medium mb-3">{preTitle}</p>}
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-primary-black mb-4">
-            Frequently asked question
+            {title}
           </h2>
-          <p className="text-[#A3A3A3] text-lg font-medium">
-            Any questions ?
+          <p className="text-[#A3A3A3] text-sm md:text-base font-medium max-w-xl mx-auto leading-relaxed">
+            {subtitle}
           </p>
         </div>
 

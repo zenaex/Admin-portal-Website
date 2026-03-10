@@ -1,51 +1,61 @@
-import group3Img from '../assets/security/Group 3.svg';
+import frameSvg from '../assets/Frame.svg';
 import qrCodeImg from '../assets/shared/qr-code.svg';
 import playStoreIcon from '../assets/shared/Play store.svg';
 import appleIcon from '../assets/shared/apple.svg';
 
 export const SecuritySection = () => {
   return (
-    <section className="relative flex flex-col items-center justify-center overflow-hidden bg-[#0A0D0F] pt-24 pb-24" id="security">
-      <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="relative flex flex-col justify-center min-h-[500px] md:min-h-[600px] lg:min-h-[750px] overflow-hidden bg-[#0A0A0A]" id="security">
+      {/* ── Desktop Full SVG Background ── */}
+      <div className="absolute inset-0 z-0 w-full h-full">
+        <img
+          src={frameSvg}
+          alt="Security background"
+          className="w-full h-full object-cover object-[center_right] xl:object-center"
+        />
+      </div>
+
+      {/* ── Content Container (Left Aligned) ── */}
+      <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 lg:px-8">
         
-        {/* Left Column: Text & QR Box */}
-        <div className="flex flex-col text-white max-w-xl">
-          <h2 className="text-[clamp(2.5rem,4vw,4rem)] leading-[1.1] font-bold tracking-tight mb-6">
+        {/* Left Text Block */}
+        <div className="flex flex-col text-white max-w-md lg:max-w-lg xl:max-w-xl md:py-16">
+          <h2 className="text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.05] font-bold tracking-tight mb-4 text-balance">
             Security Built Into
             <br />
             Every Transaction
           </h2>
-          <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-[90%]">
+          <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-8 max-w-[85%] font-medium">
             Zena is built with advanced security infrastructure designed to
             protect your funds, your data, and every transaction you make.
           </p>
 
           {/* Download CTA Card */}
-          <div className="flex items-center gap-5 rounded-2xl bg-white pl-3 pr-7 py-2.5 shadow-sm md:pl-4 md:pr-8 md:py-3 self-start">
+          <div className="flex items-center gap-4 rounded-[20px] bg-white pl-3 pr-7 py-3 shadow-md md:pl-4 md:pr-8 md:py-3.5 w-fit">
             {/* QR Code */}
             <img
               src={qrCodeImg}
               alt="QR code to download Zenaex"
-              className="hidden h-14 w-14 rounded-md sm:block"
+              className="h-16 w-16 sm:h-[72px] sm:w-[72px] rounded-lg shrink-0 object-contain"
             />
 
-            <div className="flex flex-col gap-2">
-              <span className="text-lg leading-none font-medium text-primary-black">
+            <div className="flex flex-col gap-1.5 justify-center">
+              <span className="text-[13px] sm:text-[15px] font-bold text-primary-black tracking-tight leading-none mb-1">
                 Scan to Download Zenaex App
               </span>
 
-              <div className="flex items-center gap-2 mt-1">
+              <div className="flex items-center gap-2">
                 {/* Google Play */}
                 <a
                   href="#"
-                  className="flex min-w-33 items-center justify-center gap-2 rounded-full bg-primary-black px-3.5 py-1.5 transition-opacity hover:opacity-90"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-black px-3 py-1.5 transition-transform hover:scale-105 active:scale-95"
                 >
-                  <img src={playStoreIcon} alt="" className="h-4 w-4" />
+                  <img src={playStoreIcon} alt="" className="h-[18px] w-[18px]" />
                   <div className="flex flex-col items-start justify-center">
-                    <span className="text-[8px] uppercase leading-none tracking-wide text-white/70 whitespace-nowrap">
+                    <span className="text-[7px] uppercase font-medium leading-[1] tracking-wider text-white/80 whitespace-nowrap">
                       GET IT ON
                     </span>
-                    <span className="text-[13px] font-semibold leading-none text-white whitespace-nowrap mt-0.5">
+                    <span className="text-[11px] sm:text-[13px] font-semibold leading-[1.2] text-white whitespace-nowrap">
                       Google Play
                     </span>
                   </div>
@@ -54,32 +64,20 @@ export const SecuritySection = () => {
                 {/* App Store */}
                 <a
                   href="#"
-                  className="flex min-w-33 items-center justify-center gap-2 rounded-full bg-primary-black px-3.5 py-1.5 transition-opacity hover:opacity-90"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-black px-3 py-1.5 transition-transform hover:scale-105 active:scale-95"
                 >
-                  <img src={appleIcon} alt="" className="h-4 w-4 brightness-0 invert" />
+                  <img src={appleIcon} alt="" className="h-[20px] w-[20px] text-white brightness-0 invert" />
                   <div className="flex flex-col items-start justify-center">
-                    <span className="text-[8px] leading-none text-white/70 whitespace-nowrap">
+                    <span className="text-[7px] font-medium leading-[1] text-white/80 whitespace-nowrap">
                       Download on the
                     </span>
-                    <span className="text-[13px] font-semibold leading-none text-white whitespace-nowrap mt-0.5">
+                    <span className="text-[11px] sm:text-[13px] font-semibold leading-[1.2] text-white whitespace-nowrap">
                       App Store
                     </span>
                   </div>
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Right Column: Grouped Graphic */}
-        <div className="relative flex justify-center lg:justify-end w-full mt-12 lg:mt-0">
-          {/* Increased scale and added negative right margin to hide the right rim */}
-          <div className="w-full max-w-[900px] lg:scale-125 lg:origin-left lg:-mr-[15%] flex justify-end">
-             <img 
-              src={group3Img} 
-              alt="Security Infrastructure"
-              className="relative z-10 w-full h-auto object-contain"
-            />
           </div>
         </div>
 

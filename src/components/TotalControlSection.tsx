@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // Assets
 import receiveImg from '../assets/control/999.png';
 import convertImg from '../assets/control/000.png';
-import withdrawImg from '../assets/control/Frame 2147227868.png';
+import withdrawImg from '../assets/Frame 2147227868.png';
 import arrowRight from '../assets/shared/ArrowRight.svg';
 
 type Tab = 'Receive' | 'Convert' | 'Withdraw';
@@ -38,7 +38,7 @@ export const TotalControlSection = () => {
 
   return (
     <section className="relative w-full bg-white py-24 md:py-32 overflow-hidden" id="control">
-      <div className="mx-auto max-w-[1240px] px-6 lg:px-8 flex flex-col lg:flex-row gap-16 lg:gap-20 items-center lg:items-center">
+      <div className="mx-auto max-w-[1240px] px-6 lg:px-8 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center lg:items-center">
         
         {/* Left Column (Text & Tabs) */}
         <div className="flex flex-col items-start w-full lg:w-[480px] shrink-0">
@@ -79,9 +79,8 @@ export const TotalControlSection = () => {
           </button>
         </div>
 
-        {/* Right Column (Image) */}
-        {/* Using flex-1 to take remaining space, and letting image dictate its natural aspect ratio */}
-        <div className="relative w-full flex-1 flex items-center justify-center lg:justify-end">
+        {/* Right Column (Image) - Layout anchored to fixed container to prevent height jumping */}
+        <div className="relative w-full flex-1 flex items-center justify-center lg:justify-end min-h-[400px] md:min-h-[500px] lg:min-h-[650px]">
           <AnimatePresence mode="wait">
             <motion.img
               key={activeTab}
@@ -91,7 +90,7 @@ export const TotalControlSection = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="w-full h-auto max-h-[700px] object-contain object-center lg:object-right"
+              className="absolute inset-x-0 mx-auto lg:mx-0 lg:right-0 lg:inset-y-0 lg:my-auto w-auto h-auto max-w-full max-h-full object-contain drop-shadow-sm"
             />
           </AnimatePresence>
         </div>
