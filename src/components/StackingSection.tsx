@@ -75,7 +75,7 @@ const cards: CardData[] = [
     containerClass: 'flex flex-col md:flex-row justify-between min-h-[420px] md:min-h-[480px] lg:min-h-[540px]',
     textWrapperClass: 'relative z-20 w-fit p-10 md:p-14 lg:p-16 lg:pl-20 pointer-events-none self-center md:self-start',
     // Using top-1/2 and -translate-y-1/2 to perfectly center the fixed-height container vertically
-    imageContainerClass: 'absolute bottom-4 right-4 left-4 h-[45%] md:top-1/2 md:-translate-y-1/2 md:bottom-auto md:right-6 md:left-auto md:w-[50%] lg:w-[52%] md:h-[85%] pointer-events-none z-10 overflow-hidden rounded-[24px] md:rounded-[36px]',
+    imageContainerClass: 'absolute bottom-4 right-4 left-4 h-[45%] md:top-1/2 md:-translate-y-1/2 md:bottom-auto md:right-6 md:left-auto md:w-[50%] lg:w-[52%] md:h-[85%] pointer-events-none z-10 overflow-hidden rounded-md',
     imageClass: 'absolute inset-0 w-full h-full object-cover',
     logoGridClass: 'w-[220px] md:w-[260px] lg:w-[280px] h-auto object-contain flex-shrink-0 mt-2'
   },
@@ -96,7 +96,7 @@ const cards: CardData[] = [
     ],
     containerClass: 'flex flex-col md:flex-row justify-between min-h-[420px] md:min-h-[480px] lg:min-h-[540px] items-center',
     textWrapperClass: 'relative z-20 w-fit p-10 md:p-14 lg:p-16 lg:pl-20 xl:pl-24 pointer-events-none',
-    imageContainerClass: 'absolute top-0 right-0 w-full md:w-[50%] lg:w-[48%] h-full pointer-events-none z-10 overflow-hidden rounded-bl-[48px] md:rounded-bl-none md:rounded-br-[48px] md:rounded-tr-[48px]',
+    imageContainerClass: 'absolute top-0 right-0 w-full md:w-[50%] lg:w-[48%] h-full pointer-events-none z-10 overflow-hidden rounded-bl-md md:rounded-bl-none md:rounded-br-md md:rounded-tr-md',
     imageClass: 'absolute bottom-[-35%] md:bottom-[-40%] lg:bottom-[-45%] right-0 md:right-[-2%] lg:right-[5%] w-[100%] md:w-[125%] lg:w-[130%] h-auto object-contain object-right-bottom'
   },
   {
@@ -111,7 +111,7 @@ const cards: CardData[] = [
     descriptionClass: "max-w-[100%] md:max-w-[360px] text-[#667085] text-[16px] lg:text-[18px] mb-8 leading-[1.4]",
     containerClass: 'flex flex-col md:flex-row justify-between min-h-[420px] md:min-h-[480px] lg:min-h-[540px] items-start',
     textWrapperClass: 'relative z-20 w-fit p-10 md:p-14 lg:p-16 lg:pl-20 xl:pl-24 pointer-events-none',
-    imageContainerClass: 'absolute bottom-0 right-0 w-full md:w-[65%] lg:w-[60%] h-[60%] md:h-full pointer-events-none z-10 overflow-hidden rounded-bl-[48px] md:rounded-bl-none md:rounded-tr-[48px] md:rounded-br-[48px]',
+    imageContainerClass: 'absolute bottom-0 right-0 w-full md:w-[65%] lg:w-[60%] h-[60%] md:h-full pointer-events-none z-10 overflow-hidden rounded-bl-md md:rounded-bl-none md:rounded-tr-md md:rounded-br-md',
     imageClass: 'absolute top-[5%] md:top-[0%] lg:top-[5%] xl:top-[0%] right-[-30%] md:right-[-40%] lg:right-[-35%] xl:right-[-25%] w-[160%] md:w-[150%] lg:w-[140%] xl:w-[130%] max-w-none h-auto object-contain'
   }
 ];
@@ -157,7 +157,7 @@ export function StackingSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10%" }}
                 transition={{ duration: 0.8 }}
-                className={`${card.bgColor} rounded-[48px] overflow-hidden min-h-[420px] md:min-h-[480px] lg:min-h-[540px] relative mb-[4vh] ${card.containerClass}`}
+                className={`${card.bgColor} rounded-md overflow-hidden min-h-[420px] md:min-h-[480px] lg:min-h-[540px] relative mb-[4vh] ${card.containerClass}`}
               >
                 {/* Text Content Layer */}
                 <div className={card.textWrapperClass}>

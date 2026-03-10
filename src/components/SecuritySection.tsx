@@ -31,7 +31,7 @@ export const SecuritySection = () => {
           </p>
 
           {/* Download CTA Card */}
-          <div className="flex items-center gap-4 rounded-[20px] bg-white pl-3 pr-7 py-3 md:pl-4 md:pr-8 md:py-3.5 w-fit">
+          <div className="flex items-center gap-4 rounded-md bg-white pl-3 pr-7 py-3 md:pl-4 md:pr-8 md:py-3.5 w-fit">
             {/* QR Code */}
             <img
               src={qrCodeImg}
@@ -48,7 +48,7 @@ export const SecuritySection = () => {
                 {/* Google Play */}
                 <a
                   href="#"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-black px-3 py-1.5 transition-transform hover:scale-105 active:scale-95"
+                  className="flex items-center justify-center gap-2 rounded-md bg-black px-3 py-1.5 transition-transform hover:scale-105 active:scale-95"
                 >
                   <img src={playStoreIcon} alt="" className="h-[18px] w-[18px]" />
                   <div className="flex flex-col items-start justify-center">
@@ -64,7 +64,7 @@ export const SecuritySection = () => {
                 {/* App Store */}
                 <a
                   href="#"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-black px-3 py-1.5 transition-transform hover:scale-105 active:scale-95"
+                  className="flex items-center justify-center gap-2 rounded-md bg-black px-3 py-1.5 transition-transform hover:scale-105 active:scale-95"
                 >
                   <img src={appleIcon} alt="" className="h-[20px] w-[20px] text-white brightness-0 invert" />
                   <div className="flex flex-col items-start justify-center">

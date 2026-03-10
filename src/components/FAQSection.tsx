@@ -82,7 +82,7 @@ export const FAQSection = ({
             return (
               <div 
                 key={index} 
-                className={`bg-white rounded-[20px] overflow-hidden border transition-all duration-300 ${isOpen ? 'border-gray-200' : 'border-transparent hover:border-gray-100'}`}
+                className={`bg-white rounded-md overflow-hidden border transition-all duration-300 ${isOpen ? 'border-gray-200' : 'border-transparent hover:border-gray-100'}`}
               >
                 <button
                   onClick={() => toggleAccordion(index)}

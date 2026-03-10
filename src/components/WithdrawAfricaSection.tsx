@@ -16,7 +16,7 @@ export const WithdrawAfricaSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-6 md:gap-8">
         {/* Left Card: Portrait */}
-        <div className="relative rounded-[32px] md:rounded-[48px] overflow-hidden w-full aspect-[4/5] md:aspect-auto h-[400px] md:h-full">
+        <div className="relative rounded-md overflow-hidden w-full aspect-[4/5] md:aspect-auto h-[400px] md:h-full">
           <img 
             src={portraitImage} 
             alt="Woman smiling at phone" 
@@ -25,7 +25,7 @@ export const WithdrawAfricaSection = () => {
         </div>
 
         {/* Right Card: Phone and Video */}
-        <div className="relative rounded-[32px] md:rounded-[48px] overflow-hidden w-full bg-black">
+        <div className="relative rounded-md overflow-hidden w-full bg-black">
           {/* Base Background Image (Phone + Arrow + Glow) */}
           <img 
             src={bgImage} 
@@ -34,7 +34,7 @@ export const WithdrawAfricaSection = () => {
           />
           
           {/* Video positioned over the white block */}
-          <div className="absolute top-[8%] right-[4.5%] w-[38.5%] h-[84%] rounded-[20px] overflow-hidden">
+          <div className="absolute top-[8%] right-[4.5%] w-[38.5%] h-[84%] rounded-md overflow-hidden">
             <video
               autoPlay
               loop

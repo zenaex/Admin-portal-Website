@@ -24,7 +24,7 @@ export const MoneyLimitsSection = () => {
           </h2>
           
           {/* QR Code Box */}
-          <div className="hidden md:flex items-center justify-center gap-3 border border-white/20 rounded-xl p-3 bg-transparent mb-12">
+          <div className="hidden md:flex items-center justify-center gap-3 border border-white/20 rounded-md p-3 bg-transparent mb-12">
             <div className="flex flex-col items-start justify-center pr-2">
               <span className="text-white/90 text-sm font-medium leading-[1.2]">Scan to</span>
               <span className="text-white/90 text-sm font-medium leading-[1.2]">Get the</span>
