@@ -110,6 +110,7 @@
 
   /* Font Family */
   --font-sans: "Schibsted Grotesk", system-ui, sans-serif;
+  --font-heading: "Schibsted Grotesk", system-ui, sans-serif;
 }
 
 /* ── Base Resets ── */

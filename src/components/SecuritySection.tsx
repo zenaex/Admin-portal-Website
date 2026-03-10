@@ -31,7 +31,7 @@ export const SecuritySection = () => {
           </p>
 
           {/* Download CTA Card */}
-          <div className="flex items-center gap-4 rounded-[20px] bg-white pl-3 pr-7 py-3 shadow-md md:pl-4 md:pr-8 md:py-3.5 w-fit">
+          <div className="flex items-center gap-4 rounded-[20px] bg-white pl-3 pr-7 py-3 md:pl-4 md:pr-8 md:py-3.5 w-fit">
             {/* QR Code */}
             <img
               src={qrCodeImg}

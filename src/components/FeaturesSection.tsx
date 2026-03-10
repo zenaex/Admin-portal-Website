@@ -96,7 +96,7 @@ export function FeaturesSection() {
         {/* ── Center column: sticky video card ── */}
         <div className="flex items-start justify-center">
           <div className="sticky top-[25%] flex flex-col items-center gap-5">
-            <div className="w-[280px] overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-black/5">
+            <div className="w-[280px] overflow-hidden rounded-3xl bg-white ring-1 ring-black/5">
               <video
                 src={appVideo}
                 autoPlay
@@ -129,7 +129,7 @@ export function FeaturesSection() {
         <div className="flex flex-col">
           {features.map((f, i) => (
             <div key={i} className="flex min-h-[50vh] items-center">
-              <div className="w-full max-w-[260px] rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
+              <div className="w-full max-w-[260px] rounded-2xl bg-white p-6 ring-1 ring-black/5">
                 <p className="text-sm font-medium leading-snug text-primary-black">
                   {f.sideCard.text}
                 </p>

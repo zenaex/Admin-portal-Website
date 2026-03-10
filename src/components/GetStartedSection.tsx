@@ -40,7 +40,7 @@ export function GetStartedSection() {
       <div className="mx-auto max-w-[1100px] px-8">
         <div className="grid items-start gap-12 md:grid-cols-2">
           {/* ── Left: Unified Big White Card ── */}
-          <div className="flex h-full w-full flex-col justify-center rounded-[2rem] bg-white p-8 shadow-sm lg:p-12 md:aspect-square">
+          <div className="flex h-full w-full flex-col justify-center rounded-[2rem] bg-white p-8 lg:p-12 md:aspect-square">
             <h2 className="mb-6 text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.15] text-primary-black">
               Get started in under 3 minutes
             </h2>
@@ -71,7 +71,7 @@ export function GetStartedSection() {
           {/* ── Right: Video + Step Indicators ── */}
           <div className="flex flex-col gap-6">
             {/* Video container matches the left card dimensions via aspect-square */}
-            <div className="relative w-full aspect-square overflow-hidden rounded-[2rem] bg-primary-black shadow-lg">
+            <div className="relative w-full aspect-square overflow-hidden rounded-[2rem] bg-primary-black">
               <AnimatePresence>
                 <motion.video
                   key={activeStep}

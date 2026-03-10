@@ -14,7 +14,7 @@ export const NewsletterSection = () => {
         </p>
 
         {/* Newsletter Input Container */}
-        <div className="mx-auto max-w-[600px] relative flex shadow-sm rounded-full overflow-hidden bg-white border border-gray-100 p-1.5 focus-within:ring-2 focus-within:ring-black/10 focus-within:border-black/20 transition-all">
+        <div className="mx-auto max-w-[600px] relative flex rounded-full overflow-hidden bg-white border border-gray-100 p-1.5 focus-within:ring-2 focus-within:ring-black/10 focus-within:border-black/20 transition-all">
           <input
             type="email"
             placeholder="Your email address"

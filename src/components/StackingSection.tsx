@@ -157,7 +157,7 @@ export function StackingSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10%" }}
                 transition={{ duration: 0.8 }}
-                className={`${card.bgColor} rounded-[48px] overflow-hidden min-h-[420px] md:min-h-[480px] lg:min-h-[540px] relative shadow-[0_20px_50px_rgba(0,0,0,0.05)] mb-[4vh] ${card.containerClass}`}
+                className={`${card.bgColor} rounded-[48px] overflow-hidden min-h-[420px] md:min-h-[480px] lg:min-h-[540px] relative mb-[4vh] ${card.containerClass}`}
               >
                 {/* Text Content Layer */}
                 <div className={card.textWrapperClass}>

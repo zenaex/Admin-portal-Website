@@ -29,14 +29,14 @@ export function CalculatorSection() {
         {/* ── Content: Calculator + Image ── */}
         <div className="grid items-stretch gap-12 md:grid-cols-[1fr_1fr]">
           {/* Left: Calculator Card */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm flex flex-col justify-center h-full">
+          <div className="rounded-2xl border border-gray-100 bg-white p-8  flex flex-col justify-center h-full">
             {/* Tabs */}
-            <div className="mx-auto mb-8 flex w-fit rounded-full bg-[#F0F2F4] p-1.5 shadow-inner">
+            <div className="mx-auto mb-8 flex w-fit rounded-full bg-[#F0F2F4] p-1.5 ">
               <button
                 onClick={() => setActiveTab('crypto')}
                 className={`flex items-center gap-2.5 rounded-full px-8 py-2.5 text-sm font-semibold transition-all duration-300 ${activeTab === 'crypto'
-                    ? 'bg-white text-primary-black shadow-[0_2px_8px_rgba(0,0,0,0.04)]'
-                    : 'text-[#9CA3AF] hover:text-gray-700'
+                  ? 'bg-white text-primary-black '
+                  : 'text-[#9CA3AF] hover:text-gray-700'
                   }`}
               >
                 <img src={coinIcon} alt="" className={`h-[18px] w-[18px] ${activeTab === 'crypto' ? 'opacity-100' : 'opacity-40 grayscale'}`} />
@@ -45,8 +45,8 @@ export function CalculatorSection() {
               <button
                 onClick={() => setActiveTab('giftcard')}
                 className={`flex items-center gap-2.5 rounded-full px-8 py-2.5 text-sm font-semibold transition-all duration-300 ${activeTab === 'giftcard'
-                    ? 'bg-white text-primary-black shadow-[0_2px_8px_rgba(0,0,0,0.04)]'
-                    : 'text-[#9CA3AF] hover:text-gray-700'
+                  ? 'bg-white text-primary-black'
+                  : 'text-[#9CA3AF] hover:text-gray-700'
                   }`}
               >
                 <img src={moneyIcon} alt="" className={`h-[18px] w-[18px] ${activeTab === 'giftcard' ? 'opacity-100' : 'opacity-40 grayscale'}`} />
@@ -82,7 +82,7 @@ export function CalculatorSection() {
             {/* Form fields with swap icon */}
             <div className="relative mb-6 rounded-2xl bg-[#FAFAFA] p-2 border border-gray-50">
               {/* Select Coin / Giftcard */}
-              <div className="rounded-xl bg-white p-4 shadow-[0_2px_8px_rgba(0,0,0,0.04)] relative z-0">
+              <div className="rounded-xl bg-white p-4 relative z-0">
                 <label className="mb-1 block text-[11px] font-medium text-gray-400">
                   {activeTab === 'crypto' ? 'Select Coin' : 'Select Giftcard'}
                 </label>
@@ -107,13 +107,13 @@ export function CalculatorSection() {
 
               {/* Swap icon */}
               <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-[0_4px_12px_rgba(0,0,0,0.06)] border border-gray-50 cursor-pointer hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)] transition-shadow">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white border border-gray-50 cursor-pointer">
                   <img src={swapIcon} alt="Swap" className="h-5 w-5 opacity-80" />
                 </div>
               </div>
 
               {/* Select Currency */}
-              <div className="mt-2 rounded-xl bg-white p-4 shadow-[0_2px_8px_rgba(0,0,0,0.04)] relative z-0">
+              <div className="mt-2 rounded-xl bg-white p-4 relative z-0">
                 <label className="mb-1 block text-[11px] font-medium text-gray-400">Select Currency</label>
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium text-primary-black">
@@ -143,8 +143,8 @@ export function CalculatorSection() {
               {/* Crypto results */}
               <div
                 className={`transition-all duration-500 ease-in-out ${activeTab === 'crypto'
-                    ? 'translate-x-0 opacity-100'
-                    : '-translate-x-full absolute inset-0 opacity-0'
+                  ? 'translate-x-0 opacity-100'
+                  : '-translate-x-full absolute inset-0 opacity-0'
                   }`}
               >
                 <p className="mb-4 text-sm font-semibold text-primary-black">BTC 0.000029200716527182143</p>
@@ -163,8 +163,8 @@ export function CalculatorSection() {
               {/* Giftcard results */}
               <div
                 className={`transition-all duration-500 ease-in-out ${activeTab === 'giftcard'
-                    ? 'translate-x-0 opacity-100'
-                    : 'translate-x-full absolute inset-0 opacity-0'
+                  ? 'translate-x-0 opacity-100'
+                  : 'translate-x-full absolute inset-0 opacity-0'
                   }`}
               >
                 <p className="mb-4 text-center text-sm font-medium text-blue-600">

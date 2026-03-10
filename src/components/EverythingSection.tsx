@@ -47,7 +47,7 @@ export function EverythingSection() {
         {/* ── Two cards ── */}
         <div className="grid gap-8 md:grid-cols-2">
           {/* Left card: Personal Digital Wallet */}
-          <div className="overflow-hidden rounded-3xl bg-[#0F2618] p-10 text-white shadow-sm ring-1 ring-black/5">
+          <div className="overflow-hidden rounded-3xl bg-[#0F2618] p-10 text-white ring-1 ring-black/5">
             <h3 className="text-2xl font-bold text-white">
               Personal Digital Wallet
             </h3>
@@ -79,7 +79,7 @@ export function EverythingSection() {
           </div>
 
           {/* Right card: Move between crypto, dollars, and naira */}
-          <div className="overflow-hidden rounded-3xl bg-[#F2F4F7] p-10 text-primary-black shadow-sm">
+          <div className="overflow-hidden rounded-3xl bg-[#F2F4F7] p-10 text-primary-black">
             <h3 className="text-2xl font-bold">
               Move between crypto, dollars
               <br />

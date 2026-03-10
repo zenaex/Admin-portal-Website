@@ -57,7 +57,7 @@ export const TotalControlSection = () => {
                 {activeTab === tab && (
                   <motion.div
                     layoutId="activeControlTab"
-                    className="absolute inset-0 bg-white rounded-full shadow-sm -z-10"
+                    className="absolute inset-0 bg-white rounded-full -z-10"
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                   />
                 )}
@@ -90,7 +90,7 @@ export const TotalControlSection = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="absolute inset-x-0 mx-auto lg:mx-0 lg:right-0 lg:inset-y-0 lg:my-auto w-auto h-auto max-w-full max-h-full object-contain drop-shadow-sm"
+              className="absolute inset-x-0 mx-auto lg:mx-0 lg:right-0 lg:inset-y-0 lg:my-auto w-auto h-auto max-w-full max-h-full object-contain"
             />
           </AnimatePresence>
         </div>

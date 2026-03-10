@@ -38,7 +38,7 @@ export function Hero() {
       {/* ── Content ── */}
       <div className="relative z-20 mx-auto flex w-full max-w-[1440px] flex-1 flex-col items-center px-8 pt-18 md:px-12 md:pt-20 lg:px-[110px] lg:pt-24">
         {/* Headline */}
-        <h1 className="text-center text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] font-bold italic text-white min-h-[2.1em]">
+        <h1 className="text-center text-[clamp(2.5rem,8vw,94px)] leading-[1] font-bold tracking-[-0.02em] text-white min-h-[2.1em]">
           Your Money,
           <br />
           <span
@@ -56,7 +56,7 @@ export function Hero() {
         </p>
 
         {/* Download CTA Card */}
-        <div className="mt-10 flex items-center gap-5 rounded-2xl border border-gray-200 bg-white pl-3 pr-7 py-2.5 shadow-sm md:mt-12 md:pl-4 md:pr-8 md:py-3">
+        <div className="mt-10 flex items-center gap-5 rounded-2xl border border-gray-200 bg-white pl-3 pr-7 py-2.5 md:mt-12 md:pl-4 md:pr-8 md:py-3">
           {/* QR Code */}
           <img
             src={qrCode}
