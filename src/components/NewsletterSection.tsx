@@ -2,7 +2,7 @@ import arrowRight from '../assets/shared/ArrowRight.svg';
 
 export const NewsletterSection = () => {
   return (
-    <section className="bg-[#F0F2F4] py-24 md:py-32 flex flex-col items-center justify-center border-t border-gray-100" id="newsletter">
+    <section className="bg-[#F0F2F4] py-20 flex flex-col items-center justify-center border-t border-gray-100" id="newsletter">
       <div className="w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px] text-center">
         <div className="mx-auto max-w-[800px]">
 

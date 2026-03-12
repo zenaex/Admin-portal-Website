@@ -4,7 +4,7 @@ import videoSrc from '../assets/Screen Recording 2026-03-04 at 13.52.41.mp4';
 
 export const WithdrawAfricaSection = () => {
   return (
-    <section id="withdraw-africa" className="py-20 md:py-32 bg-white">
+    <section id="withdraw-africa" className="py-20 bg-white">
       <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
       <div className="text-center mb-16 md:mb-24">
         <h2 className="text-[48px] font-semibold text-primary-black mb-6 leading-[1.1] tracking-[-0.02em]">

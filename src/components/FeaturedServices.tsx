@@ -33,7 +33,7 @@ export function FeaturedServices() {
   const marqueeItems = [...svgLogos, ...svgLogos];
 
   return (
-    <section className="bg-[#F0F2F4] py-12" id="featured-services">
+    <section className="bg-[#F0F2F4] py-20" id="featured-services">
       {/* Heading */}
       <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
         <h2 className="mt-[-10px] mb-10 text-center font-['Schibsted_Grotesk'] text-[18px] font-semibold leading-[1.2] tracking-normal uppercase text-primary-black">

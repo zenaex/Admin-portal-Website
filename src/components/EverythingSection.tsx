@@ -24,7 +24,7 @@ const convertFeatures = [
 
 export function EverythingSection() {
   return (
-    <section className="relative z-20 flex justify-center bg-[#ffffff] pt-40 pb-24" id="everything">
+    <section className="relative z-20 flex justify-center bg-[#ffffff] py-20" id="everything">
       <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
         {/* ── Heading area ── */}
         <div className="mx-auto mb-16 max-w-3xl text-center">

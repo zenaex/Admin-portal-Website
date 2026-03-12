@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import heroImage from '../assets/hero/hero image.png';
 import heroSvg from '../assets/hero/hero.svg';
-import qrCode from '../assets/shared/qr-code.svg';
 import playStore from '../assets/shared/Play store.svg';
 import appleSvg from '../assets/shared/apple.svg';
 
@@ -55,54 +54,39 @@ export function Hero() {
           instantly, and spend anywhere. The way digital money should be.
         </p>
 
-        {/* Download CTA Card */}
-        <div className="mt-10 flex items-center gap-6 rounded-lg border border-gray-200 bg-white px-6 py-3 md:mt-12 md:px-8 md:py-4">
-          {/* QR Code */}
-          <img
-            src={qrCode}
-            alt="QR code to download Zenaex"
-            className="hidden h-14 w-14 rounded-lg sm:block"
-          />
-
-          <div className="flex flex-col gap-2">
-            <span className="text-lg leading-none font-medium text-primary-black">
-              Scan to Download Zenaex App
-            </span>
-
-            <div className="flex items-center gap-2">
-              {/* Google Play */}
-              <a
-                href="#"
-                className="flex min-w-33 items-center justify-center gap-2 rounded-full bg-primary-black px-3 py-1.5 transition-opacity hover:opacity-90"
-              >
-                <img src={playStore} alt="" className="h-4 w-4" />
-                <div className="flex flex-col items-start justify-center">
-                  <span className="text-[8px] uppercase leading-none tracking-wide text-white/70 whitespace-nowrap">
-                    GET IT ON
-                  </span>
-                  <span className="text-xs font-semibold leading-none text-white whitespace-nowrap">
-                    Google Play
-                  </span>
-                </div>
-              </a>
-
-              {/* App Store */}
-              <a
-                href="#"
-                className="flex min-w-33 items-center justify-center gap-2 rounded-full bg-primary-black px-3 py-1.5 transition-opacity hover:opacity-90"
-              >
-                <img src={appleSvg} alt="" className="h-4 w-4 brightness-0 invert" />
-                <div className="flex flex-col items-start justify-center">
-                  <span className="text-[8px] leading-none text-white/70 whitespace-nowrap">
-                    Download on the
-                  </span>
-                  <span className="text-xs font-semibold leading-none text-white whitespace-nowrap">
-                    App Store
-                  </span>
-                </div>
-              </a>
+        {/* App Download Buttons */}
+        <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 md:mt-12">
+          {/* Google Play */}
+          <a
+            href="#"
+            className="flex min-w-[170px] items-center justify-center gap-3 rounded-full bg-white px-6 py-2.5 transition-transform hover:scale-105 active:scale-95"
+          >
+            <img src={playStore} alt="" className="h-6 w-6" />
+            <div className="flex flex-col items-start justify-center">
+              <span className="text-[10px] uppercase font-bold leading-none tracking-wide text-black/60 whitespace-nowrap">
+                GET IT ON
+              </span>
+              <span className="text-[15px] font-bold leading-none text-black whitespace-nowrap mt-0.5">
+                Google Play
+              </span>
             </div>
-          </div>
+          </a>
+
+          {/* App Store */}
+          <a
+            href="#"
+            className="flex min-w-[170px] items-center justify-center gap-3 rounded-full bg-white px-6 py-2.5 transition-transform hover:scale-105 active:scale-95"
+          >
+            <img src={appleSvg} alt="" className="h-6 w-6" />
+            <div className="flex flex-col items-start justify-center">
+              <span className="text-[10px] font-bold leading-none text-black/60 whitespace-nowrap">
+                Download on the
+              </span>
+              <span className="text-[15px] font-bold leading-none text-black whitespace-nowrap mt-0.5">
+                App Store
+              </span>
+            </div>
+          </a>
         </div>
 
         {/* ── Combined Hero SVG (phones, coin flow, tooltip cards) ── */}

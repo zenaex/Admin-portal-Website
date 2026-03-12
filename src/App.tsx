@@ -4,6 +4,7 @@ import { ProductsPage } from './components/ProductsPage';
 import { SupportPage } from './components/SupportPage';
 import { FAQPage } from './components/FAQPage';
 import { ScrollToHash } from './components/ScrollToHash';
+import { NotFound } from './components/NotFound';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/support" element={<SupportPage />} />
         <Route path="/FAQ" element={<FAQPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

@@ -37,7 +37,7 @@ export const TotalControlSection = () => {
   const currentContent = TAB_CONTENT[activeTab];
 
   return (
-    <section className="relative w-full bg-white py-24 md:py-32 overflow-hidden rounded-lg" id="control">
+    <section className="relative w-full bg-white py-20 overflow-hidden rounded-lg" id="control">
       <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px] flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
         
         {/* Left Column (Text & Tabs) */}

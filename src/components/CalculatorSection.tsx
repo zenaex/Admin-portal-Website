@@ -27,7 +27,7 @@ export function CalculatorSection() {
   };
 
   return (
-    <section className="bg-[#F7F7F7] py-24" id="calculator">
+    <section className="bg-[#F7F7F7] py-20" id="calculator">
       <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
         {/* ── Heading ── */}
         <div className="mx-auto mb-14 max-w-2xl text-center">

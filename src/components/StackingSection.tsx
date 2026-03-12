@@ -118,7 +118,7 @@ const cards: CardData[] = [
 
 export function StackingSection() {
   return (
-    <section id="stacking" className="relative w-full bg-[#F2F4F7] pt-32 pb-64">
+    <section id="stacking" className="relative w-full bg-[#F2F4F7] py-20">
       <div className="mx-auto max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
 
         {/* Header Content */}

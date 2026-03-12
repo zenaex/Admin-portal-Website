@@ -61,7 +61,7 @@ export const FAQSection = ({
   };
 
   return (
-    <section className={className} id="faq">
+    <section className={`w-full py-20 ${className}`} id={'faq'}>
       <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
         <div className="mx-auto max-w-[800px]">
         
