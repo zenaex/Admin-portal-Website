@@ -11,7 +11,20 @@ type Tab = 'crypto' | 'giftcard';
 
 export function CalculatorSection() {
   const [activeTab, setActiveTab] = useState<Tab>('crypto');
-  const [amount, setAmount] = useState(100);
+  const [amount, setAmount] = useState<string>('100');
+
+  const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // Only allow integers
+    if (value === '' || /^\d+$/.test(value)) {
+      setAmount(value);
+    }
+  };
+
+  const adjustAmount = (delta: number) => {
+    const current = parseInt(amount) || 0;
+    setAmount(Math.max(0, current + delta).toString());
+  };
 
   return (
     <section className="bg-[#F7F7F7] py-24" id="calculator">
@@ -59,19 +72,25 @@ export function CalculatorSection() {
               <div>
                 <label className="mb-1 block text-[11px] font-medium text-gray-400">Amount</label>
                 <div className="flex items-center text-[40px] font-bold tracking-tight text-primary-black leading-none">
-                  {amount}
-                  <span className="ml-1 text-gray-200 font-light translate-y-[2px]">|</span>
+                  <input
+                    type="text"
+                    value={amount}
+                    onChange={handleAmountChange}
+                    className="w-[120px] bg-transparent outline-none p-0 border-none focus:ring-0"
+                    placeholder="0"
+                  />
+                  <span className="text-gray-200 font-light translate-y-[2px]">|</span>
                 </div>
               </div>
               <div className="flex items-center gap-2 pb-1">
                 <button
-                  onClick={() => setAmount(Math.max(0, amount - 10))}
+                  onClick={() => adjustAmount(-10)}
                   className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2F4F7] font-medium text-gray-500 hover:bg-gray-200 transition-colors"
                 >
                   −
                 </button>
                 <button
-                  onClick={() => setAmount(amount + 10)}
+                  onClick={() => adjustAmount(10)}
                   className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2F4F7] font-medium text-gray-500 hover:bg-gray-200 transition-colors"
                 >
                   +

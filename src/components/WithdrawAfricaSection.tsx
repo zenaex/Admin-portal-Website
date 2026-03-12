@@ -35,7 +35,7 @@ export const WithdrawAfricaSection = () => {
           />
           
           {/* Video positioned over the white block */}
-          <div className="absolute top-[8%] right-[4.5%] w-[38.5%] h-[84%] rounded-lg overflow-hidden">
+          <div className="absolute top-[10%] right-[3%] w-[42%] h-[80%] rounded-lg overflow-hidden">
             <video
               autoPlay
               loop

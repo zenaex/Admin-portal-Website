@@ -75,11 +75,12 @@ const features: FeatureBlock[] = [
 export function FeaturesSection() {
   return (
     <section className="relative z-10 bg-[#F0F2F4] pt-20 pb-20" id="features">
-      <div className="relative mx-auto grid w-full max-w-[1440px] grid-cols-[1fr_300px_1fr] gap-x-12 px-8 md:px-12 lg:px-[110px]">
+      <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
+        <div className="relative grid w-full grid-cols-[1fr_300px_1fr] gap-x-12">
         {/* ── Left column: feature text blocks ── */}
         <div className="flex flex-col items-start">
           {features.map((f, i) => (
-            <div key={i} className="flex min-h-[70vh] w-full max-w-[320px] flex-col justify-center">
+            <div key={i} className="flex min-h-[70vh] w-full max-w-sm flex-col justify-center">
               <span className="mb-4 inline-block w-fit rounded-full bg-[#eaedf1] px-4 py-1.5 text-xs font-medium text-gray-600">
                 {f.label}
               </span>
@@ -141,6 +142,7 @@ export function FeaturesSection() {
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>

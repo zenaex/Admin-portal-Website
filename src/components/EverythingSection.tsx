@@ -69,7 +69,7 @@ export function EverythingSection() {
             </div>
 
             {/* Transaction preview image */}
-            <div className="mt-8 overflow-hidden rounded-lg border border-gray-100">
+            <div className="mt-8 overflow-hidden rounded-lg">
               <img
                 src={transactionList}
                 alt="Transaction history showing Amazon Giftcard, DOGE-USDT, and Transfer"
