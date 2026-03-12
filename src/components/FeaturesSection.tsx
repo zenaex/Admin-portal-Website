@@ -77,7 +77,7 @@ export function FeaturesSection() {
     <section className="relative z-10 bg-[#F0F2F4] pt-20 pb-20" id="features">
       <div className="relative mx-auto grid w-full max-w-[1440px] grid-cols-[1fr_300px_1fr] gap-x-12 px-8 md:px-12 lg:px-[110px]">
         {/* ── Left column: feature text blocks ── */}
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col items-start">
           {features.map((f, i) => (
             <div key={i} className="flex min-h-[70vh] w-full max-w-[320px] flex-col justify-center">
               <span className="mb-4 inline-block w-fit rounded-full bg-[#eaedf1] px-4 py-1.5 text-xs font-medium text-gray-600">
@@ -128,7 +128,7 @@ export function FeaturesSection() {
         </div>
 
         {/* ── Right column: side info cards ── */}
-        <div className="flex flex-col">
+        <div className="flex flex-col items-end">
           {features.map((f, i) => (
             <div key={i} className="flex min-h-[70vh] items-center">
               <div className="w-full max-w-[260px] rounded-md bg-white p-6 ring-1 ring-black/5">
