@@ -11,7 +11,7 @@ export function SupportPage() {
     <div className="min-h-screen bg-[#F2F4F7] flex flex-col font-sans">
       <Header variant="dark" />
       
-      <main className="flex-grow pt-32 pb-24 px-6 md:px-12 lg:px-[110px] w-full max-w-[1440px] mx-auto">
+      <main className="flex-grow pt-32 pb-24 px-8 md:px-12 lg:px-[110px] w-full max-w-[1440px] mx-auto">
         
         {/* Hero Section */}
         <section className="text-center mb-16 max-w-2xl mx-auto">

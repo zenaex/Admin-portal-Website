@@ -37,8 +37,8 @@ export function GetStartedSection() {
 
   return (
     <section className="bg-[#F0F2F4] py-24" id="get-started">
-      <div className="mx-auto max-w-[1100px] px-8">
-        <div className="grid items-start gap-12 md:grid-cols-2">
+      <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
+        <div className="mx-auto max-w-[1100px] grid items-start gap-12 md:grid-cols-2">
           {/* ── Left: Unified Big White Card ── */}
           <div className="flex h-full w-full flex-col justify-center rounded-md bg-white p-8 lg:p-12 md:aspect-square">
             <h2 className="mb-6 text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.15] text-primary-black">

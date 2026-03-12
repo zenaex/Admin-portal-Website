@@ -17,7 +17,7 @@ import tiktokIcon from '../assets/socials/lineicons_tiktok-alt.svg';
 export const Footer = () => {
   return (
     <footer className="bg-[#0A0D0F] text-white pt-24 pb-12 w-full">
-      <div className="mx-auto max-w-[1240px] px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
         
         {/* Top CTA Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-20">

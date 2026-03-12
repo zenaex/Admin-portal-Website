@@ -35,9 +35,11 @@ export function FeaturedServices() {
   return (
     <section className="bg-[#F0F2F4] py-12" id="featured-services">
       {/* Heading */}
-      <h2 className=" mt-[-10px] mb-10 text-center font-['Schibsted_Grotesk'] text-[18px] font-semibold leading-[1.2] tracking-normal uppercase text-primary-black">
-        Featured Services
-      </h2>
+      <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
+        <h2 className="mt-[-10px] mb-10 text-center font-['Schibsted_Grotesk'] text-[18px] font-semibold leading-[1.2] tracking-normal uppercase text-primary-black">
+          Featured Services
+        </h2>
+      </div>
 
       {/* Marquee container */}
       <div className="relative overflow-hidden">

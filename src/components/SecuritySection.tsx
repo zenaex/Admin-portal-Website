@@ -16,7 +16,7 @@ export const SecuritySection = () => {
       </div>
 
       {/* ── Content Container (Left Aligned) ── */}
-      <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
         
         {/* Left Text Block */}
         <div className="flex flex-col text-white max-w-md lg:max-w-lg xl:max-w-xl md:py-16">

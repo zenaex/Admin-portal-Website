@@ -38,7 +38,7 @@ export const TotalControlSection = () => {
 
   return (
     <section className="relative w-full bg-white py-24 md:py-32 overflow-hidden rounded-md" id="control">
-      <div className="mx-auto max-w-[1240px] px-6 lg:px-8 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center lg:items-center">
+      <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px] flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
         
         {/* Left Column (Text & Tabs) */}
         <div className="flex flex-col items-start w-full lg:w-[480px] shrink-0">

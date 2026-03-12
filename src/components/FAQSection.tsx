@@ -62,7 +62,8 @@ export const FAQSection = ({
 
   return (
     <section className={className} id="faq">
-      <div className="w-full max-w-[800px] px-6">
+      <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
+        <div className="mx-auto max-w-[800px]">
         
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center">
@@ -133,6 +134,7 @@ export const FAQSection = ({
           </button>
         </div>
 
+        </div>
       </div>
     </section>
   );

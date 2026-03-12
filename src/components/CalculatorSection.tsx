@@ -15,7 +15,7 @@ export function CalculatorSection() {
 
   return (
     <section className="bg-[#F7F7F7] py-24" id="calculator">
-      <div className="mx-auto max-w-[1080px] px-8">
+      <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
         {/* ── Heading ── */}
         <div className="mx-auto mb-14 max-w-2xl text-center">
           <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold leading-[1.15] text-primary-black">
