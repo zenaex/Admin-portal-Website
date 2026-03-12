@@ -47,7 +47,7 @@ export function EverythingSection() {
         {/* ── Two cards ── */}
         <div className="grid gap-8 md:grid-cols-2">
           {/* Left card: Personal Digital Wallet */}
-          <div className="overflow-hidden rounded-md bg-[#0F2618] p-10 text-white ring-1 ring-black/5">
+          <div className="overflow-hidden rounded-lg bg-[#0F2618] p-10 text-white ring-1 ring-black/5">
             <h3 className="text-2xl font-bold text-white">
               Personal Digital Wallet
             </h3>
@@ -69,7 +69,7 @@ export function EverythingSection() {
             </div>
 
             {/* Transaction preview image */}
-            <div className="mt-8 overflow-hidden rounded-2xl border border-gray-100">
+            <div className="mt-8 overflow-hidden rounded-lg border border-gray-100">
               <img
                 src={transactionList}
                 alt="Transaction history showing Amazon Giftcard, DOGE-USDT, and Transfer"
@@ -79,7 +79,7 @@ export function EverythingSection() {
           </div>
 
           {/* Right card: Move between crypto, dollars, and naira */}
-          <div className="overflow-hidden rounded-md bg-[#F2F4F7] p-10 text-primary-black">
+          <div className="overflow-hidden rounded-lg bg-[#F2F4F7] p-10 text-primary-black">
             <h3 className="text-2xl font-bold">
               Move between crypto, dollars
               <br />

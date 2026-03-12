@@ -28,7 +28,7 @@ export function SupportPage() {
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24 max-w-5xl mx-auto">
           
           {/* Card 1 */}
-          <div className="bg-white rounded-md p-8 flex flex-col items-start min-h-[220px]">
+          <div className="bg-white rounded-lg p-8 flex flex-col items-start min-h-[220px]">
             <div className="w-12 h-12 bg-[#CCFF00] rounded-full flex items-center justify-center mb-6">
               <MessageCircle className="w-6 h-6 text-primary-black" />
             </div>
@@ -46,7 +46,7 @@ export function SupportPage() {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-white rounded-md p-8 flex flex-col items-start min-h-[220px]">
+          <div className="bg-white rounded-lg p-8 flex flex-col items-start min-h-[220px]">
             <div className="w-12 h-12 bg-[#CCFF00] rounded-full flex items-center justify-center mb-6">
               <Users className="w-6 h-6 text-primary-black" />
             </div>
@@ -66,7 +66,7 @@ export function SupportPage() {
         </section>
 
         {/* Contact Form Section */}
-        <section id="contact-form" className="bg-white rounded-md p-8 md:p-12 lg:p-16 max-w-5xl mx-auto">
+        <section id="contact-form" className="bg-white rounded-lg p-8 md:p-12 lg:p-16 max-w-5xl mx-auto">
           <div className="text-center mb-12 max-w-lg mx-auto">
             <h2 className="text-primary-black text-3xl font-bold mb-4">Contact Support</h2>
             <p className="text-[#666666] text-sm leading-relaxed">

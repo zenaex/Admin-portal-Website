@@ -40,7 +40,7 @@ export function GetStartedSection() {
       <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
         <div className="mx-auto max-w-[1100px] grid items-start gap-12 md:grid-cols-2">
           {/* ── Left: Unified Big White Card ── */}
-          <div className="flex h-full w-full flex-col justify-center rounded-md bg-white p-8 lg:p-12 md:aspect-square">
+          <div className="flex h-full w-full flex-col justify-center rounded-lg bg-white p-8 lg:p-12 md:aspect-square">
             <h2 className="mb-6 text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.15] text-primary-black">
               Get started in under 3 minutes
             </h2>
@@ -51,7 +51,7 @@ export function GetStartedSection() {
                   key={i}
                   onMouseEnter={() => setActiveStep(i)}
                   onClick={() => setActiveStep(i)}
-                  className={`w-full cursor-pointer rounded-md p-4 text-left transition-colors duration-300 ${
+                  className={`w-full cursor-pointer rounded-lg p-4 text-left transition-colors duration-300 ${
                     activeStep === i
                       ? 'bg-[#E8EBEE]'
                       : 'bg-transparent hover:bg-gray-50'
@@ -71,7 +71,7 @@ export function GetStartedSection() {
           {/* ── Right: Video + Step Indicators ── */}
           <div className="flex flex-col gap-6">
             {/* Video container matches the left card dimensions via aspect-square */}
-            <div className="relative w-full aspect-square overflow-hidden rounded-md bg-primary-black">
+            <div className="relative w-full aspect-square overflow-hidden rounded-lg bg-primary-black">
               <AnimatePresence>
                 <motion.video
                   key={activeStep}

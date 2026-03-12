@@ -29,7 +29,7 @@ export function CalculatorSection() {
         {/* ── Content: Calculator + Image ── */}
         <div className="grid items-stretch gap-12 md:grid-cols-[1fr_1fr]">
           {/* Left: Calculator Card */}
-          <div className="rounded-md border border-gray-100 bg-white p-8  flex flex-col justify-center h-full">
+          <div className="rounded-lg border border-gray-100 bg-white p-8  flex flex-col justify-center h-full">
             {/* Tabs */}
             <div className="mx-auto mb-8 flex w-fit rounded-full bg-[#F0F2F4] p-1.5 ">
               <button
@@ -80,9 +80,9 @@ export function CalculatorSection() {
             </div>
 
             {/* Form fields with swap icon */}
-            <div className="relative mb-6 rounded-md bg-[#FAFAFA] p-2 border border-gray-50">
+            <div className="relative mb-6 rounded-lg bg-[#FAFAFA] p-2 border border-gray-50">
               {/* Select Coin / Giftcard */}
-              <div className="rounded-md bg-white p-4 relative z-0">
+              <div className="rounded-lg bg-white p-4 relative z-0">
                 <label className="mb-1 block text-[11px] font-medium text-gray-400">
                   {activeTab === 'crypto' ? 'Select Coin' : 'Select Giftcard'}
                 </label>
@@ -113,7 +113,7 @@ export function CalculatorSection() {
               </div>
 
               {/* Select Currency */}
-              <div className="mt-2 rounded-md bg-white p-4 relative z-0">
+              <div className="mt-2 rounded-lg bg-white p-4 relative z-0">
                 <label className="mb-1 block text-[11px] font-medium text-gray-400">Select Currency</label>
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium text-primary-black">
@@ -149,11 +149,11 @@ export function CalculatorSection() {
               >
                 <p className="mb-4 text-sm font-semibold text-primary-black">BTC 0.000029200716527182143</p>
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="rounded-md bg-[#FAFAFA] p-4">
+                  <div className="rounded-lg bg-[#FAFAFA] p-4">
                     <span className="mb-1.5 block text-xs font-medium text-gray-400">Buy</span>
                     <span className="text-xl font-bold tracking-tight text-primary-black">NGN 2,800.00</span>
                   </div>
-                  <div className="rounded-md bg-[#FAFAFA] p-4">
+                  <div className="rounded-lg bg-[#FAFAFA] p-4">
                     <span className="mb-1.5 block text-xs font-medium text-gray-400">Sell</span>
                     <span className="text-xl font-bold tracking-tight text-primary-black">NGN 2,710.00</span>
                   </div>
@@ -170,7 +170,7 @@ export function CalculatorSection() {
                 <p className="mb-4 text-center text-sm font-medium text-blue-600">
                   Average Confirmation Time 60 - 210 Minutes
                 </p>
-                <div className="rounded-md bg-[#FAFAFA] p-4 text-center">
+                <div className="rounded-lg bg-[#FAFAFA] p-4 text-center">
                   <span className="mb-1.5 block text-xs font-medium text-gray-400">Cash Value</span>
                   <span className="text-xl font-bold tracking-tight text-primary-black">NGN 73,000.00</span>
                 </div>
@@ -184,7 +184,7 @@ export function CalculatorSection() {
           </div>
 
           {/* Right: Image with smooth crossfade */}
-          <div className="relative aspect-square md:aspect-auto h-full w-full overflow-hidden rounded-md">
+          <div className="relative aspect-square md:aspect-auto h-full w-full overflow-hidden rounded-lg">
             <img
               src={cryptoPhoto}
               alt="Crypto trading"

@@ -75,7 +75,7 @@ const cards: CardData[] = [
     containerClass: 'flex flex-col md:flex-row justify-between min-h-[420px] md:min-h-[480px] lg:min-h-[540px]',
     textWrapperClass: 'relative z-20 w-fit p-10 md:p-14 lg:p-16 lg:pl-20 pointer-events-none self-center md:self-start',
     // Using top-1/2 and -translate-y-1/2 to perfectly center the fixed-height container vertically
-    imageContainerClass: 'absolute bottom-4 right-4 left-4 h-[45%] md:top-1/2 md:-translate-y-1/2 md:bottom-auto md:right-6 md:left-auto md:w-[50%] lg:w-[52%] md:h-[85%] pointer-events-none z-10 overflow-hidden rounded-md',
+    imageContainerClass: 'absolute bottom-4 right-4 left-4 h-[45%] md:top-1/2 md:-translate-y-1/2 md:bottom-auto md:right-6 md:left-auto md:w-[50%] lg:w-[52%] md:h-[85%] pointer-events-none z-10 overflow-hidden rounded-lg',
     imageClass: 'absolute inset-0 w-full h-full object-cover',
     logoGridClass: 'w-[220px] md:w-[260px] lg:w-[280px] h-auto object-contain flex-shrink-0 mt-2'
   },
@@ -157,7 +157,7 @@ export function StackingSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10%" }}
                 transition={{ duration: 0.8 }}
-                className={`${card.bgColor} rounded-md overflow-hidden min-h-[420px] md:min-h-[480px] lg:min-h-[540px] relative mb-[4vh] ${card.containerClass}`}
+                className={`${card.bgColor} rounded-lg overflow-hidden min-h-[420px] md:min-h-[480px] lg:min-h-[540px] relative mb-[4vh] ${card.containerClass}`}
               >
                 {/* Text Content Layer */}
                 <div className={card.textWrapperClass}>

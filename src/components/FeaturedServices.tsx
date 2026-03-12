@@ -55,7 +55,7 @@ export function FeaturedServices() {
               <img
                 src={logo.src}
                 alt={`${logo.name} logo`}
-                className="h-14 w-auto rounded-md"
+                className="h-14 w-auto rounded-lg"
               />
             </div>
           ))}

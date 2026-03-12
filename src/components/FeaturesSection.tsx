@@ -131,7 +131,7 @@ export function FeaturesSection() {
         <div className="flex flex-col items-end">
           {features.map((f, i) => (
             <div key={i} className="flex min-h-[70vh] items-center">
-              <div className="w-full max-w-[260px] rounded-md bg-white p-6 ring-1 ring-black/5">
+              <div className="w-full max-w-[260px] rounded-lg bg-white p-6 ring-1 ring-black/5">
                 <p className="text-sm font-medium leading-snug text-primary-black">
                   {f.sideCard.text}
                 </p>

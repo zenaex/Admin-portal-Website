@@ -56,12 +56,12 @@ export function Hero() {
         </p>
 
         {/* Download CTA Card */}
-        <div className="mt-10 flex items-center gap-6 rounded-md border border-gray-200 bg-white px-6 py-3 md:mt-12 md:px-8 md:py-4">
+        <div className="mt-10 flex items-center gap-6 rounded-lg border border-gray-200 bg-white px-6 py-3 md:mt-12 md:px-8 md:py-4">
           {/* QR Code */}
           <img
             src={qrCode}
             alt="QR code to download Zenaex"
-            className="hidden h-14 w-14 rounded-md sm:block"
+            className="hidden h-14 w-14 rounded-lg sm:block"
           />
 
           <div className="flex flex-col gap-2">
