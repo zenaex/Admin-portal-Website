@@ -79,7 +79,7 @@ export function FeaturesSection() {
         {/* ── Left column: feature text blocks ── */}
         <div className="flex flex-col items-end">
           {features.map((f, i) => (
-            <div key={i} className="flex min-h-[50vh] w-full max-w-[320px] flex-col justify-center">
+            <div key={i} className="flex h-[386px] w-full max-w-[320px] flex-col justify-center">
               <span className="mb-4 inline-block w-fit rounded-full bg-[#eaedf1] px-4 py-1.5 text-xs font-medium text-gray-600">
                 {f.label}
               </span>
@@ -130,7 +130,7 @@ export function FeaturesSection() {
         {/* ── Right column: side info cards ── */}
         <div className="flex flex-col">
           {features.map((f, i) => (
-            <div key={i} className="flex min-h-[50vh] items-center">
+            <div key={i} className="flex h-[386px] items-center">
               <div className="w-full max-w-[260px] rounded-md bg-white p-6 ring-1 ring-black/5">
                 <p className="text-sm font-medium leading-snug text-primary-black">
                   {f.sideCard.text}
