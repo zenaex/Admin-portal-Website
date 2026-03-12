@@ -40,9 +40,9 @@ export const SecuritySection = () => {
             />
 
             <div className="flex flex-col gap-1.5 justify-center">
-              <span className="text-[13px] sm:text-[15px] font-bold text-primary-black tracking-tight leading-none mb-1">
+              <h2 className="text-white text-[60px] font-semibold tracking-tight leading-[1.1] mb-6">
                 Scan to Download Zenaex App
-              </span>
+              </h2>
 
               <div className="flex items-center gap-2">
                 {/* Google Play */}

@@ -41,7 +41,7 @@ export function GetStartedSection() {
         <div className="mx-auto max-w-[1100px] grid items-start gap-12 md:grid-cols-2">
           {/* ── Left: Unified Big White Card ── */}
           <div className="flex h-full w-full flex-col justify-center rounded-lg bg-white p-8 lg:p-12 md:aspect-square">
-            <h2 className="mb-6 text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.15] text-primary-black">
+            <h2 className="mb-6 text-[48px] font-semibold leading-[1.15] text-primary-black">
               Get started in under 3 minutes
             </h2>
 

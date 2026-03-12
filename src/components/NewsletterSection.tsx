@@ -7,7 +7,7 @@ export const NewsletterSection = () => {
         <div className="mx-auto max-w-[800px]">
 
         {/* Header content */}
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-primary-black mb-4">
+        <h2 className="text-[48px] font-semibold tracking-tight text-primary-black mb-4">
           Newsletter
         </h2>
         <p className="text-[#A3A3A3] text-sm md:text-base font-medium mb-12">

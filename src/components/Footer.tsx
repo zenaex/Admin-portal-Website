@@ -82,9 +82,9 @@ export const Footer = () => {
 
             {/* QR Code Box */}
             <div className="flex items-center justify-between border border-white/20 rounded-lg p-4 w-full max-w-[280px]">
-              <span className="text-white/60 text-sm font-medium leading-tight max-w-[100px]">
-                Scan to Get the app
-              </span>
+              <h2 className="text-white text-[48px] font-semibold mb-4 text-center md:text-left">
+              Ready to move money?
+            </h2>
               <div className="bg-white p-1 rounded-lg">
                 <img src={qrCodeImg} alt="QR Code" className="w-16 h-16" />
               </div>

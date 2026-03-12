@@ -23,7 +23,7 @@ export function ProductsHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-[clamp(2.5rem,5.5vw,4.5rem)] font-bold leading-[1.05] tracking-tight text-primary-black mb-8"
+              className="text-[60px] font-semibold leading-[1.05] tracking-tight text-primary-black mb-8"
             >
               Earn global.<br />Spend anywhere
             </motion.h1>

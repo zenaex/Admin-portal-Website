@@ -16,7 +16,7 @@ export function SupportPage() {
         {/* Hero Section */}
         <section className="text-center mb-16 max-w-2xl mx-auto">
           <p className="text-[#A3A3A3] text-sm font-medium mb-3">Support</p>
-          <h1 className="text-primary-black text-4xl md:text-5xl lg:text-[56px] font-bold tracking-tight leading-[1.1] mb-6">
+          <h1 className="text-primary-black text-[60px] font-semibold tracking-tight leading-[1.1] mb-6">
             How can we help you today?
           </h1>
           <p className="text-[#666666] text-lg">

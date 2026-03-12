@@ -28,7 +28,7 @@ export function EverythingSection() {
       <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
         {/* ── Heading area ── */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.15] font-bold text-primary-black">
+          <h2 className="text-[48px] leading-[1.15] font-semibold text-primary-black">
             Everything you need to manage,
             <br />
             move, and use digital money
