@@ -56,7 +56,7 @@ export function Hero() {
         </p>
 
         {/* Download CTA Card */}
-        <div className="mt-10 flex items-center gap-5 rounded-2xl border border-gray-200 bg-white pl-3 pr-7 py-2.5 md:mt-12 md:pl-4 md:pr-8 md:py-3">
+        <div className="mt-10 flex items-center gap-6 rounded-md border border-gray-200 bg-white px-6 py-3 md:mt-12 md:px-8 md:py-4">
           {/* QR Code */}
           <img
             src={qrCode}

@@ -114,11 +114,13 @@ export function FeaturesSection() {
             {/* Store icons — pill that expands on hover */}
             <a
               href="#"
-              className="group flex items-center gap-2 rounded-full bg-white px-4 py-3 transition-all duration-500 ease-in-out hover:bg-primary-black hover:px-6 shadow-sm"
+              className="group flex items-center rounded-full bg-white px-5 py-3 transition-all duration-500 ease-in-out hover:bg-primary-black shadow-sm"
             >
-              <img src={playStore} alt="Google Play" className="h-5 w-5" />
-              <img src={appleSvg} alt="App Store" className="h-5 w-5 transition-all duration-500 group-hover:brightness-0 group-hover:invert" />
-              <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-semibold text-white opacity-0 transition-all duration-500 ease-in-out group-hover:max-w-[150px] group-hover:opacity-100">
+              <div className="flex items-center gap-2">
+                <img src={playStore} alt="Google Play" className="h-5 w-5" />
+                <img src={appleSvg} alt="App Store" className="h-5 w-5 transition-all duration-500 group-hover:brightness-0 group-hover:invert" />
+              </div>
+              <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-semibold text-white opacity-0 transition-all duration-500 ease-in-out group-hover:max-w-[150px] group-hover:opacity-100 group-hover:ml-3">
                 Download App
               </span>
             </a>
