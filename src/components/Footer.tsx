@@ -21,7 +21,7 @@ export const Footer = () => {
         
         {/* Top CTA Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold tracking-tight leading-[1.1] max-w-2xl">
+          <h2 className="text-[48px] font-semibold tracking-tight leading-[1.1] max-w-2xl">
             Get paid faster, Send<br />money without borders
           </h2>
           <Link to="/#get-started" className="flex items-center gap-3 bg-white text-black px-6 py-3.5 rounded-full font-semibold text-sm hover:bg-gray-100 transition-colors shrink-0">
@@ -82,9 +82,9 @@ export const Footer = () => {
 
             {/* QR Code Box */}
             <div className="flex items-center justify-between border border-white/20 rounded-lg p-4 w-full max-w-[280px]">
-              <h2 className="text-white text-[48px] font-semibold mb-4 text-center md:text-left">
-              Ready to move money?
-            </h2>
+              <span className="text-white/60 text-sm font-medium leading-tight max-w-[100px]">
+                Scan to Get the app
+              </span>
               <div className="bg-white p-1 rounded-lg">
                 <img src={qrCodeImg} alt="QR Code" className="w-16 h-16" />
               </div>

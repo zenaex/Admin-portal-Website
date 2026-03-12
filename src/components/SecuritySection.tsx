@@ -20,7 +20,7 @@ export const SecuritySection = () => {
         
         {/* Left Text Block */}
         <div className="flex flex-col text-white max-w-md lg:max-w-lg xl:max-w-xl md:py-16">
-          <h2 className="text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.05] font-bold tracking-tight mb-4 text-balance">
+          <h2 className="text-[60px] leading-[1.05] font-semibold tracking-tight mb-4 text-balance">
             Security Built Into
             <br />
             Every Transaction
@@ -40,9 +40,9 @@ export const SecuritySection = () => {
             />
 
             <div className="flex flex-col gap-1.5 justify-center">
-              <h2 className="text-white text-[60px] font-semibold tracking-tight leading-[1.1] mb-6">
+              <span className="text-[13px] sm:text-[15px] font-bold text-primary-black tracking-tight leading-none mb-1">
                 Scan to Download Zenaex App
-              </h2>
+              </span>
 
               <div className="flex items-center gap-2">
                 {/* Google Play */}

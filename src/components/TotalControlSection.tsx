@@ -64,8 +64,7 @@ export const TotalControlSection = () => {
               </button>
             ))}
           </div>
-
-          <h2 className="text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.05] font-bold tracking-tight text-primary-black mb-6">
+          <h2 className="text-[48px] font-semibold leading-[1.1] tracking-tight text-primary-black mb-6">
             {currentContent.title}
           </h2>
           

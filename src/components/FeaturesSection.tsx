@@ -84,7 +84,7 @@ export function FeaturesSection() {
               <span className="mb-4 inline-block w-fit rounded-full bg-[#eaedf1] px-4 py-1.5 text-xs font-medium text-gray-600">
                 {f.label}
               </span>
-              <h3 className="text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] font-bold text-primary-black">
+              <h3 className="text-[48px] leading-[1.15] font-semibold text-primary-black">
                 {f.headline}
               </h3>
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-500">
