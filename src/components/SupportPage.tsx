@@ -66,7 +66,7 @@ export function SupportPage() {
         </section>
 
         {/* Contact Form Section */}
-        <section className="bg-white rounded-md p-8 md:p-12 lg:p-16 max-w-5xl mx-auto">
+        <section id="contact-form" className="bg-white rounded-md p-8 md:p-12 lg:p-16 max-w-5xl mx-auto">
           <div className="text-center mb-12 max-w-lg mx-auto">
             <h2 className="text-primary-black text-3xl font-bold mb-4">Contact Support</h2>
             <p className="text-[#666666] text-sm leading-relaxed">

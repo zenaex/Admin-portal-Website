@@ -96,7 +96,7 @@ export function FeaturesSection() {
         {/* ── Center column: sticky video card ── */}
         <div className="flex items-start justify-center">
           <div className="sticky top-[25%] flex flex-col items-center gap-5">
-            <div className="w-[280px] overflow-hidden rounded-md bg-white ring-1 ring-black/5">
+            <div className="w-[280px] overflow-hidden rounded-lg bg-white border-2 border-black">
               <video
                 src={appVideo}
                 autoPlay
@@ -108,13 +108,13 @@ export function FeaturesSection() {
                   v.currentTime = 0;
                   v.play();
                 }}
-                className="h-auto w-full"
+                className="h-auto w-full rounded-lg"
               />
             </div>
             {/* Store icons — pill that expands on hover */}
             <a
               href="#"
-              className="group flex items-center gap-2 rounded-full bg-[#F0F2F4] px-4 py-3 transition-all duration-500 ease-in-out hover:bg-primary-black hover:px-6"
+              className="group flex items-center gap-2 rounded-full bg-white px-4 py-3 transition-all duration-500 ease-in-out hover:bg-primary-black hover:px-6 shadow-sm"
             >
               <img src={playStore} alt="Google Play" className="h-5 w-5" />
               <img src={appleSvg} alt="App Store" className="h-5 w-5 transition-all duration-500 group-hover:brightness-0 group-hover:invert" />

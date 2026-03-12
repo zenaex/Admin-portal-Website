@@ -4,7 +4,7 @@ import designImage from '../assets/Frame 2147227920.png';
 
 export function ProductsHero() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-[#F2F4F7] flex items-center pt-24 pb-20">
+    <section id="products-hero" className="relative min-h-screen w-full overflow-hidden bg-[#F2F4F7] flex items-center pt-24 pb-20">
       <div className="mx-auto max-w-[1440px] px-8 md:px-12 lg:px-[110px] w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
           

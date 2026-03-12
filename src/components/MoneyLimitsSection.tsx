@@ -5,7 +5,7 @@ import appleIcon from '../assets/shared/apple.svg';
 
 export const MoneyLimitsSection = () => {
   return (
-    <section className="bg-[#0A0A0A] w-full pt-10 pb-20 md:pt-16 md:pb-32 overflow-hidden flex justify-center">
+    <section id="money-limits" className="bg-[#0A0A0A] w-full overflow-hidden flex justify-center">
       <div className="relative w-full max-w-[1440px] mx-auto flex justify-center items-center">
         
         {/* Background Compound SVG */}

@@ -110,7 +110,7 @@ export function Hero() {
           <img
             src={heroSvg}
             alt="Zenaex App — Sell Giftcard, Withdraw Funds, Trade Crypto"
-            className="relative z-10 mx-auto w-[88%] md:w-[84%] lg:w-[80%]"
+            className="relative z-10 mx-auto w-[96%] md:w-[94%] lg:w-[90%]"
           />
         </div>
       </div>

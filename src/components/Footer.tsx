@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import zenaexLogo from '../assets/shared/green_logo.svg';
 import qrCodeImg from '../assets/shared/qr-code.svg';
 import playStoreIcon from '../assets/shared/Play store.svg';
@@ -23,13 +24,13 @@ export const Footer = () => {
           <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold tracking-tight leading-[1.1] max-w-2xl">
             Get paid faster, Send<br />money without borders
           </h2>
-          <button className="flex items-center gap-3 bg-white text-black px-6 py-3.5 rounded-full font-semibold text-sm hover:bg-gray-100 transition-colors shrink-0">
+          <Link to="/#get-started" className="flex items-center gap-3 bg-white text-black px-6 py-3.5 rounded-full font-semibold text-sm hover:bg-gray-100 transition-colors shrink-0">
             Get started for free
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               <path d="M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </button>
+          </Link>
         </div>
 
         {/* Divider */}
@@ -40,7 +41,9 @@ export const Footer = () => {
           
           {/* Left Column (Brand & App Download) */}
           <div className="lg:col-span-5 flex flex-col items-start">
-            <img src={zenaexLogo} alt="Zenaex Logo" className="h-8 mb-10" />
+            <Link to="/">
+              <img src={zenaexLogo} alt="Zenaex Logo" className="h-8 mb-10" />
+            </Link>
             
             <p className="text-white font-medium mb-4 text-[15px]">Download the app</p>
             
@@ -95,11 +98,11 @@ export const Footer = () => {
             <div className="flex flex-col gap-5">
               <h4 className="text-white font-medium text-[15px]">Products</h4>
               <ul className="flex flex-col gap-4">
-                <li><a href="#" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Crypto</a></li>
-                <li><a href="#" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Cross border</a></li>
-                <li><a href="#" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Gift cards</a></li>
-                <li><a href="#" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Bill payment</a></li>
-                <li><a href="#" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">E-trade</a></li>
+                <li><Link to="/products#stacking" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Crypto</Link></li>
+                <li><Link to="/products#withdraw-africa" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Cross border</Link></li>
+                <li><Link to="/products#stacking" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Gift cards</Link></li>
+                <li><Link to="/products#stacking" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Bill payment</Link></li>
+                <li><Link to="/products#stacking" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">E-trade</Link></li>
               </ul>
             </div>
 
@@ -107,7 +110,7 @@ export const Footer = () => {
             <div className="flex flex-col gap-5">
               <h4 className="text-white font-medium text-[15px]">Company</h4>
               <ul className="flex flex-col gap-4">
-                <li><a href="#" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">FAQ</a></li>
+                <li><Link to="/FAQ" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">FAQ</Link></li>
                 <li><a href="#" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Terms of service</a></li>
                 <li><a href="#" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Privacy policy</a></li>
               </ul>
@@ -117,8 +120,8 @@ export const Footer = () => {
             <div className="flex flex-col gap-5">
               <h4 className="text-white font-medium text-[15px]">Support</h4>
               <ul className="flex flex-col gap-4">
-                <li><a href="#" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Help center</a></li>
-                <li><a href="#" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Contact us</a></li>
+                <li><Link to="/support" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Help center</Link></li>
+                <li><Link to="/support#contact-form" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Contact us</Link></li>
               </ul>
             </div>
 

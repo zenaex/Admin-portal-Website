@@ -3,7 +3,7 @@ import rewardsImage from '../assets/Frame 2147227997.svg';
 
 export function RewardsSection() {
   return (
-    <section className="relative w-full bg-[#0A0A0A] py-32 overflow-hidden">
+    <section id="rewards" className="relative w-full bg-[#0A0A0A] py-32 overflow-hidden">
       <div className="mx-auto max-w-[1440px] px-8 md:px-12 lg:px-[110px] flex flex-col items-center">
         
         {/* Text Content */}
