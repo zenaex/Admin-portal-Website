@@ -26,7 +26,7 @@ export function Header({ variant: explicitVariant }: HeaderProps) {
   const logoClass = isDark ? 'invert' : '';
 
   return (
-    <header className={`absolute top-0 left-0 w-full z-50 pt-10`}>
+    <header className={`absolute top-0 left-0 w-full z-50 pt-4 md:pt-10`}>
       <div className="mx-auto flex h-[45px] w-full max-w-[1440px] items-center justify-between px-8 md:px-12 lg:px-[110px]">
         {/* Logo */}
         <Link 
@@ -37,7 +37,19 @@ export function Header({ variant: explicitVariant }: HeaderProps) {
           <img src={logo} alt="Zenaex" className={`h-5 w-auto ${logoClass}`} />
         </Link>
 
-        {/* Desktop Nav + CTA (right-aligned together) */}
+        {/* Mobile Nav Actions (Get Started + Burger) */}
+        <div className="flex items-center gap-4 md:hidden">
+          <Button variant="primary" className="!px-4 !py-2 !text-xs">Get Started</Button>
+          <button
+            className={`${textColor}`}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+
+        {/* Desktop Nav + CTA */}
         <div className="hidden items-center gap-12 md:flex">
           <nav className="flex items-center gap-12">
             {navLinks.map((link) => (
@@ -52,15 +64,6 @@ export function Header({ variant: explicitVariant }: HeaderProps) {
           </nav>
           <Button variant="primary" className="!px-6 !py-2.5 !text-sm">Get Started</Button>
         </div>
-
-        {/* Mobile hamburger */}
-        <button
-          className={`${textColor} md:hidden`}
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
       </div>
 
       {/* Mobile menu */}
@@ -77,7 +80,6 @@ export function Header({ variant: explicitVariant }: HeaderProps) {
                 {link.name}
               </Link>
             ))}
-            <Button variant="primary" className="mt-2 w-full !text-sm">Get Started</Button>
           </nav>
         </div>
       )}

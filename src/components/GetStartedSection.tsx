@@ -38,10 +38,10 @@ export function GetStartedSection() {
   return (
     <section className="relative z-20 bg-primary-black py-20" id="get-started">
       <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
-        <div className="mx-auto max-w-[1100px] grid items-start gap-12 md:grid-cols-2">
+        <div className="mx-auto max-w-[1200px] grid items-start gap-8 md:grid-cols-2">
           {/* ── Left: Unified Big White Card ── */}
-          <div className="flex h-full w-full flex-col justify-center rounded-lg bg-white p-8 lg:p-12 md:aspect-square">
-            <h2 className="mb-6 text-[48px] font-semibold leading-[1.15] text-primary-black">
+          <div className="flex h-full w-full flex-col rounded-lg bg-white p-5">
+            <h2 className="mb-8 whitespace-nowrap text-[16px] md:text-[20px] lg:text-[24px] font-semibold leading-tight text-primary-black">
               Get started in under 3 minutes
             </h2>
 
@@ -57,10 +57,10 @@ export function GetStartedSection() {
                       : 'bg-transparent hover:bg-gray-50'
                   }`}
                 >
-                  <h3 className="text-sm font-bold text-primary-black">
+                  <h3 className="text-xs font-bold text-primary-black">
                     {step.title}
                   </h3>
-                  <p className="mt-1.5 text-xs leading-relaxed text-gray-500">
+                  <p className="mt-1 text-[11px] leading-relaxed text-gray-500">
                     {step.description}
                   </p>
                 </button>

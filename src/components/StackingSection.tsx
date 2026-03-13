@@ -53,7 +53,7 @@ const cards: CardData[] = [
     textColor: "text-white",
     buttonColor: "text-primary-green",
     hasButton: false, // Hidden to match design screenshot
-    titleClass: 'font-semibold w-[596px] max-w-none whitespace-nowrap', // Forces the title to precisely 596px width on a single line
+    titleClass: 'font-semibold max-w-[596px]', // Removed fixed width and nowrap
     descriptionClass: 'max-w-[100%] md:max-w-[480px] whitespace-pre-line', // Wider to allow the explicit \n break
     containerClass: 'flex flex-col justify-start relative min-h-[420px] md:min-h-[480px] lg:min-h-[540px]', // Reverted to standard height
     textWrapperClass: 'relative z-30 w-full p-10 md:p-14 lg:p-20 pointer-events-none',

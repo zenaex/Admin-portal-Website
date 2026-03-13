@@ -79,7 +79,7 @@ export function CalculatorSection() {
                     className="w-[120px] bg-transparent outline-none p-0 border-none focus:ring-0"
                     placeholder="0"
                   />
-                  <span className="text-gray-200 font-light translate-y-[2px]">|</span>
+
                 </div>
               </div>
               <div className="flex items-center gap-2 pb-1">
