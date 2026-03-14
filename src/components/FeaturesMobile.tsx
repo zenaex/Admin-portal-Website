@@ -101,15 +101,15 @@ export function FeaturesMobile() {
               <span className="mb-4 inline-block w-fit rounded-full bg-[#eaedf1] px-4 py-1.5 text-xs font-medium text-gray-600">
                 {f.label}
               </span>
-              <h3 className="text-2xl font-bold text-primary-black mb-3">
+              <h3 className="text-[32px] font-bold text-primary-black mb-3">
                 {f.headline}
               </h3>
-              <p className="text-sm font-medium leading-relaxed text-gray-500 mb-6">
+              <p className="text-base font-medium leading-relaxed text-gray-500 mb-6">
                 {f.description}
               </p>
               <div className="flex items-start gap-4 pt-6 border-t border-gray-100">
-                <img src={f.sideCard.icon} alt="" className="h-8 shrink-0" />
-                <p className="text-sm font-medium leading-snug text-primary-black">
+                <img src={f.sideCard.icon} alt="" className="h-10 shrink-0" />
+                <p className="text-base font-medium leading-snug text-primary-black">
                   {f.sideCard.text}
                 </p>
               </div>

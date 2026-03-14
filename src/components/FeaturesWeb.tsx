@@ -78,14 +78,14 @@ export function FeaturesWeb() {
       {/* Left Column: Feature Text Blocks */}
       <div className="flex flex-col items-start">
         {features.map((f, i) => (
-          <div key={i} className="flex min-h-[85vh] w-full max-w-sm flex-col justify-center">
+          <div key={i} className="flex min-h-[85vh] w-full max-w-md flex-col justify-center">
             <span className="mb-4 inline-block w-fit rounded-full bg-[#eaedf1] px-4 py-1.5 text-xs font-medium text-gray-600">
               {f.label}
             </span>
-            <h3 className="text-[48px] leading-[1.15] font-semibold text-primary-black">
+            <h3 className="text-[56px] leading-[1.15] font-semibold text-primary-black">
               {f.headline}
             </h3>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-500">
+            <p className="mt-4 max-w-md text-base leading-relaxed text-gray-500">
               {f.description}
             </p>
           </div>
@@ -124,12 +124,12 @@ export function FeaturesWeb() {
       <div className="flex flex-col items-end">
         {features.map((f, i) => (
           <div key={i} className="flex min-h-[85vh] items-center">
-            <div className="w-full max-w-[260px] rounded-lg bg-white p-6 ring-1 ring-black/5">
-              <p className="text-sm font-medium leading-snug text-primary-black">
+            <div className="w-full max-w-[320px] rounded-lg bg-white p-8 ring-1 ring-black/5">
+              <p className="text-base font-medium leading-snug text-primary-black">
                 {f.sideCard.text}
               </p>
-              <div className="mt-4">
-                <img src={f.sideCard.icon} alt="" className="h-8" />
+              <div className="mt-6">
+                <img src={f.sideCard.icon} alt="" className="h-10" />
               </div>
             </div>
           </div>
