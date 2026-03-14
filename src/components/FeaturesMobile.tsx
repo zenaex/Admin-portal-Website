@@ -21,10 +21,10 @@ interface FeatureBlock {
 
 const features: FeatureBlock[] = [
   {
-    label: 'Recieve and Send',
-    headline: 'Sell and buy crypto without delay',
+    label: 'Recieve and Store Crypto',
+    headline: 'Sell and swap crypto without delay',
     description:
-      'Get multi currency wallets for BTC, ETH, USDD, USDC, and more. Your funds are protected and always accessible.',
+      'Get multi currency wallets for BTC, ETH, USDT, USDC, and more. Your funds are protected and always accessible.',
     sideCard: {
       text: 'Store and access your crypto instantly with built in protection.',
       icon: cardIcons1,
@@ -75,9 +75,9 @@ const features: FeatureBlock[] = [
 export function FeaturesMobile() {
   return (
     <div className="flex flex-col md:hidden">
-      {/* Sticky Video Container */}
-      <div className="sticky top-0 z-0 flex h-[45vh] w-full flex-col items-center justify-center pt-8">
-        <div className="w-[180px] overflow-hidden rounded-lg bg-white border-2 border-black">
+      {/* 50% Top: Sticky Video + Download Area */}
+      <div className="sticky top-0 z-20 flex h-[55vh] w-full flex-col items-center justify-center bg-[#F0F2F4] pb-6 pt-4">
+        <div className="w-[250px] overflow-hidden rounded-lg bg-white border-2 border-black">
           <video
             src={appVideo}
             autoPlay
@@ -87,49 +87,50 @@ export function FeaturesMobile() {
             className="h-auto w-full"
           />
         </div>
+
+        {/* Download Button right below the video */}
+        <div className="mt-4">
+          <a
+            href="#"
+            className="flex items-center gap-3 rounded-full bg-white px-5 py-2.5 transition-all border border-gray-100"
+          >
+            <div className="flex items-center gap-2">
+              <img src={playStore} alt="Google Play" className="h-5 w-5" />
+              <img src={appleSvg} alt="App Store" className="h-5 w-5" />
+            </div>
+            <span className="text-sm font-semibold text-primary-black">
+              Download App
+            </span>
+          </a>
+        </div>
       </div>
 
-      {/* Scrolling Cards Container */}
-      <div className="relative z-10 flex flex-col pt-[45vh]">
+      {/* 55% Bottom: Scrolling Cards Container */}
+      <div className="relative z-10 flex flex-col pt-[55vh] bg-[#F0F2F4]">
         {features.map((f, i) => (
-          <div 
-            key={i} 
-            className="sticky top-12 flex min-h-[55vh] w-full items-start justify-center px-4 pt-12"
+          <div
+            key={i}
+            className="sticky top-[55vh] flex min-h-[45vh] w-full items-start justify-center px-4"
             style={{ zIndex: 10 + i }}
           >
-            <div className="w-full rounded-lg bg-white p-8 shadow-xl ring-1 ring-black/5">
-              <span className="mb-4 inline-block w-fit rounded-full bg-[#eaedf1] px-4 py-1.5 text-xs font-medium text-gray-600">
+            <div className="w-full h-fit rounded-lg bg-white p-7 ring-1 ring-black/5 mt-4">
+              <span className="mb-4 inline-block w-fit rounded-full bg-[#eaedf1] px-4 py-1.5 text-xs font-medium text-gray-500">
                 {f.label}
               </span>
-              <h3 className="text-[32px] font-bold text-primary-black mb-3">
+              <h3 className="text-[28px] font-bold text-primary-black mb-3 leading-tight">
                 {f.headline}
               </h3>
-              <p className="text-base font-medium leading-relaxed text-gray-500 mb-6">
+              <p className="text-sm font-medium leading-relaxed text-gray-500 mb-6">
                 {f.description}
               </p>
-              <div className="flex items-start gap-4 pt-6 border-t border-gray-100">
-                <img src={f.sideCard.icon} alt="" className="h-10 shrink-0" />
-                <p className="text-base font-medium leading-snug text-primary-black">
-                  {f.sideCard.text}
-                </p>
+
+              {/* Bottom Icon - No Text */}
+              <div className="flex items-center justify-start pt-2">
+                <img src={f.sideCard.icon} alt="" className="h-10 w-10 animate-pulse-subtle" />
               </div>
             </div>
           </div>
         ))}
-      </div>
-
-      {/* Download Button - Fixed at Bottom on Mobile */}
-      <div className="fixed bottom-8 left-1/2 z-50 -translate-x-1/2">
-        <a
-          href="#"
-          className="flex items-center gap-3 rounded-full bg-primary-black px-6 py-3 shadow-2xl transition-all"
-        >
-          <img src={playStore} alt="Google Play" className="h-5 w-5" />
-          <img src={appleSvg} alt="App Store" className="h-5 w-5 brightness-0 invert" />
-          <span className="text-sm font-semibold text-white">
-            Download App
-          </span>
-        </a>
       </div>
     </div>
   );

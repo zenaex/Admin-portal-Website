@@ -31,7 +31,7 @@ export function CalculatorSection() {
       <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
         {/* ── Heading ── */}
         <div className="mx-auto mb-14 max-w-2xl text-center">
-          <h2 className="text-[48px] font-semibold leading-[1.15] text-primary-black">
+          <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.15] text-primary-black">
             Calculate Your Rate in Seconds
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-gray-500">
@@ -203,7 +203,7 @@ export function CalculatorSection() {
           </div>
 
           {/* Right: Image with smooth crossfade */}
-          <div className="relative aspect-square md:aspect-auto h-full w-full overflow-hidden rounded-lg">
+          <div className="hidden md:block relative aspect-square md:aspect-auto h-full w-full overflow-hidden rounded-lg">
             <img
               src={cryptoPhoto}
               alt="Crypto trading"

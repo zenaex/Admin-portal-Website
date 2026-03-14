@@ -19,7 +19,7 @@ export const SecuritySection = () => {
         
         {/* Left Text Block */}
         <div className="flex flex-col text-white max-w-md lg:max-w-lg xl:max-w-xl md:py-16">
-          <h2 className="text-[60px] leading-[1.05] font-semibold tracking-tight mb-4 text-balance">
+          <h2 className="text-[36px] md:text-[60px] leading-[1.05] font-semibold tracking-tight mb-4 text-balance">
             Security Built Into
             <br />
             Every Transaction

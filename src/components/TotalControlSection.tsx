@@ -64,7 +64,7 @@ export const TotalControlSection = () => {
               </button>
             ))}
           </div>
-          <h2 className="text-[48px] font-semibold leading-[1.1] tracking-tight text-primary-black mb-6">
+          <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.1] tracking-tight text-primary-black mb-6">
             {currentContent.title}
           </h2>
           
@@ -79,7 +79,7 @@ export const TotalControlSection = () => {
         </div>
 
         {/* Right Column (Image) - Layout anchored to fixed container to prevent height jumping */}
-        <div className="relative w-full flex-1 flex items-center justify-center lg:justify-end min-h-[400px] md:min-h-[500px] lg:min-h-[650px]">
+        <div className="hidden lg:flex relative w-full flex-1 items-center justify-center lg:justify-end min-h-[400px] md:min-h-[500px] lg:min-h-[650px]">
           <AnimatePresence mode="wait">
             <motion.img
               key={activeTab}

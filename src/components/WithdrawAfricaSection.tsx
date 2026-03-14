@@ -17,7 +17,7 @@ export const WithdrawAfricaSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-6 md:gap-8">
           {/* Left Card: Portrait */}
-          <div className="relative rounded-lg overflow-hidden w-full aspect-[4/5] md:aspect-auto h-[400px] md:h-full">
+          <div className="hidden md:block relative rounded-lg overflow-hidden w-full aspect-[4/5] md:aspect-auto h-[400px] md:h-full">
             <img 
               src={portraitImage} 
               alt="Woman smiling at phone" 
@@ -26,7 +26,7 @@ export const WithdrawAfricaSection = () => {
           </div>
 
           {/* Right Card: Phone and Video */}
-          <div className="relative rounded-lg overflow-hidden w-full bg-black p-8 md:p-12">
+          <div className="hidden md:block relative rounded-lg overflow-hidden w-full bg-black p-8 md:p-12">
             {/* Base Background Image (Phone + Arrow + Glow) */}
             <div className="relative w-full h-full rounded-lg overflow-hidden">
               <img 

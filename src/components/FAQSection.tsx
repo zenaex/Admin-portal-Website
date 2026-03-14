@@ -67,8 +67,8 @@ export const FAQSection = ({
         
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center">
-          {preTitle && <p className="text-primary-green text-sm font-semibold uppercase tracking-wider mb-3">{preTitle}</p>}
-          <h2 className="text-[48px] font-semibold leading-tight mb-4 text-primary-black">
+          {preTitle && <p className="text-[#868686] text-sm font-semibold uppercase tracking-wider mb-3">{preTitle}</p>}
+          <h2 className="text-[32px] md:text-[48px] font-semibold leading-tight mb-4 text-primary-black">
             {title}
           </h2>
           <p className="text-[#666666] text-lg max-w-2xl">
