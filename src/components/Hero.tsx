@@ -36,7 +36,7 @@ export function Hero() {
       </div>
 
       {/* ── Content ── */}
-      <div className="relative z-20 mx-auto flex w-full max-w-[1440px] flex-1 flex-col items-center px-8 pt-32 md:px-12 md:pt-40 lg:px-[110px] lg:pt-48">
+      <div className="relative z-20 mx-auto flex w-full max-w-[1440px] flex-1 flex-col items-center px-8 pt-32 pb-20 md:px-12 md:pt-40 md:pb-32 lg:px-[110px] lg:pt-48 lg:pb-40">
         {/* Headline */}
         <h1 className="text-center text-[48px] md:text-[72px] lg:text-[94px] leading-[1] font-bold tracking-[-0.02em] text-white min-h-[2.1em]">
           Your Money,

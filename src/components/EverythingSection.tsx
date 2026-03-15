@@ -103,7 +103,7 @@ export function EverythingSection() {
             </div>
 
             {/* Group diagram */}
-            <div className="mt-8 hidden md:block flex items-center justify-center">
+            <div className="mt-8 hidden md:flex items-center justify-center">
               <img
                 src={groupDiagram}
                 alt="Zenaex connects Nigeria, USA, Bitcoin, and Amazon"

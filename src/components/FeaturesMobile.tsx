@@ -117,7 +117,7 @@ export function FeaturesMobile() {
               <span className="mb-4 inline-block w-fit rounded-full bg-[#eaedf1] px-4 py-1.5 text-xs font-medium text-gray-500">
                 {f.label}
               </span>
-              <h3 className="text-[28px] font-bold text-primary-black mb-3 leading-tight">
+              <h3 className="text-[24px] font-bold text-primary-black mb-3 leading-tight">
                 {f.headline}
               </h3>
               <p className="text-sm font-medium leading-relaxed text-gray-500 mb-6">
