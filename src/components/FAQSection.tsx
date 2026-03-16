@@ -128,9 +128,12 @@ export const FAQSection = ({
 
         {/* Chat with Support Button */}
         <div className="mt-16 flex justify-center">
-          <button className="flex items-center gap-3 bg-[#0A0A0A] text-white px-6 py-3 rounded-full font-medium text-sm hover:bg-gray-800 transition-colors">
+          <button 
+            className="flex items-center gap-3 bg-[#0A0A0A] text-white px-6 py-3 rounded-full font-medium text-sm hover:bg-gray-800 transition-colors"
+            aria-label="Chat with Zenaex Support"
+          >
             Chat with Support
-            <img src={arrowRight} alt="" className="w-4 h-4" />
+            <img src={arrowRight} alt="Arrow right" className="w-4 h-4" />
           </button>
         </div>
 

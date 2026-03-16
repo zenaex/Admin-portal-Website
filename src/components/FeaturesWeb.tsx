@@ -107,8 +107,11 @@ export function FeaturesWeb() {
             />
           </div>
           <a
-            href="#"
+            href="https://play.google.com/store"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group flex items-center rounded-full bg-white px-5 py-3 transition-all duration-500 ease-in-out hover:bg-primary-black shadow-sm"
+            aria-label="Download Zenaex App"
           >
             <div className="flex items-center gap-2">
               <img src={playStore} alt="Google Play" className="h-5 w-5" />
@@ -130,7 +133,7 @@ export function FeaturesWeb() {
                 {f.sideCard.text}
               </p>
               <div className="mt-6">
-                <img src={f.sideCard.icon} alt="" className="h-10" />
+                <img src={f.sideCard.icon} alt="Feature visual" className="h-10" />
               </div>
             </div>
           </div>

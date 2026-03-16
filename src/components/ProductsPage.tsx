@@ -11,11 +11,13 @@ export const ProductsPage = () => {
     <div className="min-h-screen bg-[#F2F4F7]">
       <Header variant="dark" />
       
-      <ProductsHero />
-      <RewardsSection />
-      <StackingSection />
-      <WithdrawAfricaSection />
-      <MoneyLimitsSection />
+      <main>
+        <ProductsHero />
+        <RewardsSection />
+        <StackingSection />
+        <WithdrawAfricaSection />
+        <MoneyLimitsSection />
+      </main>
       
       <Footer />
     </div>

@@ -35,10 +35,13 @@ export const SecuritySection = () => {
           <div className="flex flex-col sm:flex-row items-center gap-4">
             {/* Google Play */}
             <a
-              href="#"
+              href="https://play.google.com/store"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex min-w-[170px] items-center justify-center gap-3 rounded-full bg-white px-6 py-2.5 transition-transform hover:scale-105 active:scale-95"
+              aria-label="Get Zenaex on Google Play"
             >
-              <img src={playStoreIcon} alt="" className="h-6 w-6" />
+              <img src={playStoreIcon} alt="Google Play store" className="h-6 w-6" />
               <div className="flex flex-col items-start justify-center">
                 <span className="text-[10px] uppercase font-bold leading-none tracking-wide text-black/60 whitespace-nowrap">
                   GET IT ON
@@ -51,10 +54,13 @@ export const SecuritySection = () => {
 
             {/* App Store */}
             <a
-              href="#"
+              href="https://apple.com/app-store"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex min-w-[170px] items-center justify-center gap-3 rounded-full bg-white px-6 py-2.5 transition-transform hover:scale-105 active:scale-95"
+              aria-label="Download Zenaex on the App Store"
             >
-              <img src={appleIcon} alt="" className="h-6 w-6" />
+              <img src={appleIcon} alt="Apple App store" className="h-6 w-6" />
               <div className="flex flex-col items-start justify-center">
                 <span className="text-[10px] font-bold leading-none text-black/60 whitespace-nowrap">
                   Download on the

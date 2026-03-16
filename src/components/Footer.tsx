@@ -111,8 +111,8 @@ export const Footer = () => {
               <h4 className="text-white font-medium text-[15px]">Company</h4>
               <ul className="flex flex-col gap-4">
                 <li><Link to="/FAQ" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">FAQ</Link></li>
-                <li><a href="#" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Terms of service</a></li>
-                <li><a href="#" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Privacy policy</a></li>
+                <li><Link to="/terms" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Terms of service</Link></li>
+                <li><Link to="/privacy" className="text-[#A3A3A3] hover:text-white transition-colors text-sm">Privacy policy</Link></li>
               </ul>
             </div>
 
@@ -136,22 +136,22 @@ export const Footer = () => {
           </p>
           
           <div className="flex items-center gap-6">
-            <a href="#" className="transition-opacity hover:opacity-80">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80" aria-label="Follow us on Facebook">
               <img src={facebookIcon} alt="Facebook" className="w-6 h-6" />
             </a>
-            <a href="#" className="transition-opacity hover:opacity-80">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80" aria-label="Follow us on Instagram">
               <img src={instaIcon} alt="Instagram" className="w-6 h-6" />
             </a>
-            <a href="#" className="transition-opacity hover:opacity-80">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80" aria-label="Follow us on LinkedIn">
               <img src={linkedinIcon} alt="LinkedIn" className="w-6 h-6" />
             </a>
-            <a href="#" className="transition-opacity hover:opacity-80">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80" aria-label="Follow us on X (Twitter)">
               <img src={xIcon} alt="X (Twitter)" className="w-6 h-6" />
             </a>
-            <a href="#" className="transition-opacity hover:opacity-80">
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80" aria-label="Follow us on TikTok">
               <img src={tiktokIcon} alt="TikTok" className="w-6 h-6" />
             </a>
-            <a href="#" className="transition-opacity hover:opacity-80">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80" aria-label="Follow us on YouTube">
               <img src={youtubeIcon} alt="YouTube" className="w-auto h-6" />
             </a>
           </div>

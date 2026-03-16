@@ -30,8 +30,10 @@ export function Hero() {
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-primary-black via-primary-black/80 to-transparent" />
         <img
           src={heroImage}
-          alt=""
+          alt="Abstract background decor"
           className="absolute bottom-0 left-0 h-[75%] w-full object-cover object-center"
+          width="1440"
+          height="800"
           fetchPriority="high"
           decoding="async"
         />
@@ -61,10 +63,13 @@ export function Hero() {
         <div className="mt-10 flex flex-row items-center gap-2 md:gap-4 md:mt-12">
           {/* Google Play */}
           <a
-            href="#"
+            href="https://play.google.com/store"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 md:gap-3 rounded-full bg-white px-4 py-2 md:min-w-[170px] md:px-6 md:py-2.5 transition-transform hover:scale-105 active:scale-95"
+            aria-label="Get Zenaex on Google Play"
           >
-            <img src={playStore} alt="" className="h-4 w-4 md:h-6 md:w-6" />
+            <img src={playStore} alt="Google Play store" className="h-4 w-4 md:h-6 md:w-6" />
             <div className="flex flex-col items-start justify-center">
               <span className="text-[8px] md:text-[10px] uppercase font-bold leading-none tracking-wide text-black/60 whitespace-nowrap">
                 GET IT ON
@@ -77,10 +82,13 @@ export function Hero() {
 
           {/* App Store */}
           <a
-            href="#"
+            href="https://apple.com/app-store"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 md:gap-3 rounded-full bg-white px-4 py-2 md:min-w-[170px] md:px-6 md:py-2.5 transition-transform hover:scale-105 active:scale-95"
+            aria-label="Download Zenaex on the App Store"
           >
-            <img src={appleSvg} alt="" className="h-4 w-4 md:h-6 md:w-6" />
+            <img src={appleSvg} alt="Apple App store" className="h-4 w-4 md:h-6 md:w-6" />
             <div className="flex flex-col items-start justify-center">
               <span className="text-[8px] md:text-[10px] font-bold leading-none text-black/60 whitespace-nowrap">
                 Download on the
@@ -99,6 +107,8 @@ export function Hero() {
             src={heroSvg}
             alt="Zenaex App — Sell Giftcard, Withdraw Funds, Trade Crypto"
             className="relative z-10 mx-auto hidden w-[96%] md:block md:w-[94%] lg:w-[90%]"
+            width="1000"
+            height="600"
             fetchPriority="high"
             decoding="async"
           />

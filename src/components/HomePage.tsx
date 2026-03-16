@@ -16,18 +16,20 @@ export const HomePage = () => {
     <div className="min-h-screen bg-primary-black">
       <Header variant="light" />
       
-      <Hero />
-      <FeaturedServices />
-      <FeaturesSection />
-      {/* Spacer to separate sticky section from next section */}
-      <div className="relative z-20 h-[25vh] bg-[#F0F2F4]" />
-      <EverythingSection />
-      <CalculatorSection />
-      <GetStartedSection />
-      <SecuritySection />
-      <TotalControlSection />
-      <FAQSection />
-      <NewsletterSection />
+      <main>
+        <Hero />
+        <FeaturedServices />
+        <FeaturesSection />
+        {/* Spacer to separate sticky section from next section */}
+        <div className="relative z-20 h-[25vh] bg-[#F0F2F4]" />
+        <EverythingSection />
+        <CalculatorSection />
+        <GetStartedSection />
+        <SecuritySection />
+        <TotalControlSection />
+        <FAQSection />
+        <NewsletterSection />
+      </main>
       
       <Footer />
     </div>
