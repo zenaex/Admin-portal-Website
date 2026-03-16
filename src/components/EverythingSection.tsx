@@ -33,7 +33,7 @@ export function EverythingSection() {
             <br />
             move, and use digital money
           </h2>
-          <p className="mt-5 text-sm leading-relaxed text-gray-500">
+          <p className="mt-5 text-sm leading-relaxed text-gray-600">
             From secure multi currency wallets to seamless bill payments, gift card trading, and global
             connectivity, Zena gives you full control over your assets and how you spend them in the real world.
           </p>

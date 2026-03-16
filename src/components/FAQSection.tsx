@@ -115,7 +115,7 @@ export const FAQSection = ({
                       }}
                       transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
                     >
-                      <div className="px-6 pb-6 pt-0 text-[#868686] text-sm leading-relaxed whitespace-pre-wrap">
+                      <div className="px-6 pb-6 pt-0 text-gray-600 text-sm leading-relaxed whitespace-pre-wrap">
                         {faq.answer}
                       </div>
                     </motion.div>

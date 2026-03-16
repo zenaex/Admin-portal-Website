@@ -85,7 +85,7 @@ export function FeaturesWeb() {
             <h3 className="text-[30px] leading-[1.15] font-semibold text-primary-black">
               {f.headline}
             </h3>
-            <p className="mt-4 max-w-md text-base leading-relaxed text-gray-500">
+            <p className="mt-4 max-w-md text-base leading-relaxed text-gray-600">
               {f.description}
             </p>
           </div>

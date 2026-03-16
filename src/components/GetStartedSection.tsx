@@ -38,29 +38,29 @@ export function GetStartedSection() {
   return (
     <section className="relative z-20 bg-primary-black py-20" id="get-started">
       <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
-        <div className="mx-auto max-w-[1200px] grid items-start gap-8 md:grid-cols-2">
+        <div className="mx-auto max-w-[1200px] grid items-stretch gap-8 md:grid-cols-2">
           {/* ── Left: Unified Big White Card ── */}
-          <div className="flex h-full w-full flex-col rounded-lg bg-white p-5">
-            <h2 className="mb-8 whitespace-nowrap text-[16px] md:text-[20px] lg:text-[24px] font-semibold leading-tight text-primary-black">
+          <div className="flex h-full w-full flex-col rounded-lg bg-white p-8">
+            <h2 className="mb-10 whitespace-nowrap text-[18px] md:text-[22px] lg:text-[26px] font-semibold leading-tight text-primary-black">
               Get started in under 3 minutes
             </h2>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-3">
               {steps.map((step, i) => (
                 <button
                   key={i}
                   onMouseEnter={() => setActiveStep(i)}
                   onClick={() => setActiveStep(i)}
-                  className={`w-full cursor-pointer rounded-lg p-4 text-left transition-colors duration-300 ${
+                  className={`w-full cursor-pointer rounded-lg p-6 text-left transition-colors duration-300 ${
                     activeStep === i
                       ? 'bg-[#E8EBEE]'
                       : 'bg-transparent hover:bg-gray-50'
                   }`}
                 >
-                  <h3 className="text-xs font-bold text-primary-black">
+                  <h3 className="text-[17px] font-bold text-primary-black">
                     {step.title}
                   </h3>
-                  <p className="mt-1 text-[11px] leading-relaxed text-gray-500">
+                  <p className="mt-2 text-[14px] leading-relaxed text-gray-500">
                     {step.description}
                   </p>
                 </button>
@@ -70,8 +70,8 @@ export function GetStartedSection() {
 
           {/* ── Right: Video + Step Indicators ── */}
           <div className="flex flex-col gap-6">
-            {/* Video container matches the left card dimensions via aspect-square */}
-            <div className="relative w-full aspect-square overflow-hidden rounded-lg bg-primary-black">
+            {/* Video container now fills space to push indicators to the bottom */}
+            <div className="relative w-full flex-1 overflow-hidden rounded-lg bg-primary-black min-h-[400px]">
               <AnimatePresence>
                 <motion.video
                   key={activeStep}
@@ -89,7 +89,7 @@ export function GetStartedSection() {
               </AnimatePresence>
             </div>
 
-            {/* Step indicators below the video */}
+            {/* Step indicators below the video - aligned with left card bottom */}
             <div className="flex items-center justify-center gap-3">
               {steps.map((_, i) => (
                 <button

@@ -118,13 +118,13 @@ export function FeaturesMobile() {
             style={{ zIndex: 10 + i }}
           >
             <div className="w-full h-fit rounded-lg bg-white p-7 ring-1 ring-black/5 mt-4">
-              <span className="mb-4 inline-block w-fit rounded-full bg-[#eaedf1] px-4 py-1.5 text-xs font-medium text-gray-500">
+              <span className="mb-4 inline-block w-fit rounded-full bg-[#eaedf1] px-4 py-1.5 text-xs font-medium text-gray-600">
                 {f.label}
               </span>
               <h3 className="text-[28px] font-bold text-primary-black mb-3 leading-tight">
                 {f.headline}
               </h3>
-              <p className="text-sm font-medium leading-relaxed text-gray-500 mb-6">
+              <p className="text-sm font-medium leading-relaxed text-gray-600 mb-6">
                 {f.description}
               </p>
 

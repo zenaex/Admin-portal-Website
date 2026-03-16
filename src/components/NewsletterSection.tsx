@@ -10,7 +10,7 @@ export const NewsletterSection = () => {
         <h2 className="text-[48px] font-semibold tracking-tight text-primary-black mb-4">
           Newsletter
         </h2>
-        <p className="text-[#A3A3A3] text-sm md:text-base font-medium mb-12">
+        <p className="text-[#666666] text-sm md:text-base font-medium mb-12">
           Subscribe to our amazing newsletter to receive all the latest news & updates.
         </p>
 
