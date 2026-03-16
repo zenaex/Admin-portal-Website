@@ -74,6 +74,8 @@ export function EverythingSection() {
                 src={transactionList}
                 alt="Transaction history showing Amazon Giftcard, DOGE-USDT, and Transfer"
                 className="w-full"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -94,7 +96,7 @@ export function EverythingSection() {
             <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4">
               {convertFeatures.map((f, i) => (
                 <div key={i} className="flex items-center gap-2.5">
-                  <img src={f.icon} alt="" className="h-6 w-6 shrink-0" />
+                  <img src={f.icon} alt="" className="h-6 w-6 shrink-0" loading="lazy" decoding="async" />
                   <span className="text-xs font-medium text-primary-black">
                     {f.text}
                   </span>
@@ -108,6 +110,8 @@ export function EverythingSection() {
                 src={groupDiagram}
                 alt="Zenaex connects Nigeria, USA, Bitcoin, and Amazon"
                 className="max-w-[320px]"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

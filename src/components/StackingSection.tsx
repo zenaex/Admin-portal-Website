@@ -171,7 +171,7 @@ export function StackingSection() {
                         <p className={`${card.bgColor === 'bg-primary-black' ? 'text-[#98A2B3]' : 'text-gray-500'} text-[16px] font-normal ${card.descriptionClass || 'max-w-[280px] md:max-w-[320px]'} leading-[1.3] tracking-normal mb-8`}>
                           {card.description}
                         </p>
-                        <img src={card.logoGridImage} alt="Brands" className={card.logoGridClass || "w-[180px] md:w-[220px] lg:w-[240px] h-auto object-contain flex-shrink-0"} />
+                        <img src={card.logoGridImage} alt="Brands" className={card.logoGridClass || "w-[180px] md:w-[220px] lg:w-[240px] h-auto object-contain flex-shrink-0"} loading="lazy" decoding="async" />
                       </div>
                     ) : (
                       <p className={`${card.bgColor === 'bg-primary-black' ? 'text-[#98A2B3]' : 'text-gray-500'} text-[16px] font-normal mb-10 ${card.descriptionClass || 'max-w-[280px] md:max-w-[320px]'} leading-[1.3] tracking-normal`}>
@@ -189,7 +189,7 @@ export function StackingSection() {
                               }`}
                           >
                             <span className="text-[#101828] font-medium text-[16px] xl:text-[18px] leading-[1.2] whitespace-nowrap">{item.text}</span>
-                            <img src={item.icon} alt={item.text} className="w-[42px] h-[42px] flex-shrink-0 object-contain" />
+                            <img src={item.icon} alt={item.text} className="w-[42px] h-[42px] flex-shrink-0 object-contain" loading="lazy" decoding="async" />
                           </div>
                         ))}
                       </div>
@@ -211,6 +211,8 @@ export function StackingSection() {
                     src={card.image}
                     alt={card.title}
                     className={card.imageClass}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </motion.div>

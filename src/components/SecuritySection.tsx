@@ -11,6 +11,8 @@ export const SecuritySection = () => {
           src={frameSvg}
           alt="Security background"
           className="w-full h-full object-cover object-[center_right] xl:object-center"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 

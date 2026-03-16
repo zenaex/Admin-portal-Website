@@ -144,3 +144,17 @@ body {
 .marquee-track:hover {
   animation-play-state: paused;
 }
+
+/* ── High-Resolution Media Optimization ── */
+img, video {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  img {
+    image-rendering: auto; /* Let the browser handle standard sampling on high-dpi if needed */
+  }
+}

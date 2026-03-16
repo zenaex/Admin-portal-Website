@@ -82,7 +82,7 @@ export function FeaturesWeb() {
             <span className="mb-4 inline-block w-fit rounded-full bg-[#eaedf1] px-4 py-1.5 text-xs font-medium text-gray-600">
               {f.label}
             </span>
-            <h3 className="text-[56px] leading-[1.15] font-semibold text-primary-black">
+            <h3 className="text-[30px] leading-[1.15] font-semibold text-primary-black">
               {f.headline}
             </h3>
             <p className="mt-4 max-w-md text-base leading-relaxed text-gray-500">
@@ -102,6 +102,7 @@ export function FeaturesWeb() {
               loop
               muted
               playsInline
+              preload="metadata"
               className="h-auto w-full"
             />
           </div>

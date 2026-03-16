@@ -32,6 +32,8 @@ export function Hero() {
           src={heroImage}
           alt=""
           className="absolute bottom-0 left-0 h-[75%] w-full object-cover object-center"
+          fetchPriority="high"
+          decoding="async"
         />
       </div>
 
@@ -97,12 +99,16 @@ export function Hero() {
             src={heroSvg}
             alt="Zenaex App — Sell Giftcard, Withdraw Funds, Trade Crypto"
             className="relative z-10 mx-auto hidden w-[96%] md:block md:w-[94%] lg:w-[90%]"
+            fetchPriority="high"
+            decoding="async"
           />
           {/* Mobile Version */}
           <img
             src={heroMobileSvg}
             alt="Zenaex App"
             className="relative z-10 mx-auto w-full md:hidden"
+            fetchPriority="high"
+            decoding="async"
           />
         </div>
       </div>

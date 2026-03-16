@@ -60,6 +60,8 @@ export function ProductsHero() {
                 src={designImage} 
                 alt="Product Design Collage" 
                 className="w-full h-auto object-contain"
+                fetchPriority="high"
+                decoding="async"
               />
             </div>
           </motion.div>
