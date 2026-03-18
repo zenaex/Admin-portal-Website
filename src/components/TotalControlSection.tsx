@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 // Assets
 import receiveImg from '../assets/control/999.png';
@@ -72,10 +73,10 @@ export const TotalControlSection = () => {
             {currentContent.description}
           </p>
 
-          <button className="flex items-center gap-3 bg-[#0A0A0A] text-white px-6 py-3 rounded-full font-medium text-sm hover:bg-gray-800 transition-colors">
+          <Link to="/products" className="flex items-center gap-3 bg-[#0A0A0A] text-white px-6 py-3 rounded-full font-medium text-sm hover:bg-gray-800 transition-colors">
             {currentContent.buttonText}
             <img src={arrowRight} alt="" className="w-4 h-4" />
-          </button>
+          </Link>
         </div>
 
         {/* Right Column (Image) - Layout anchored to fixed container to prevent height jumping */}

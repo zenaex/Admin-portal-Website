@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import cryptoImage from '../assets/Group 14.svg';
 import billsImage from '../assets/Group 15.svg';
 import giftCardsImage from '../assets/Frame 2147227943.png';
@@ -195,12 +196,12 @@ export function StackingSection() {
                       </div>
                     )}
                     {card.hasButton !== false && (
-                      <button className={`${card.buttonColor} font-semibold text-lg flex items-center gap-3 hover:gap-5 transition-all w-fit group`}>
+                      <Link to="/waitlist" className={`${card.buttonColor} font-semibold text-lg flex items-center gap-3 hover:gap-5 transition-all w-fit group`}>
                         Get Started Now
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:translate-x-1 transition-transform">
                           <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                      </button>
+                      </Link>
                     )}
                   </div>
                 </div>

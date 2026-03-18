@@ -42,7 +42,7 @@ export function ProductsHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Button variant="dark" className="!px-8 !py-3.5 !text-sm">
+              <Button to="/waitlist" variant="dark" className="!px-8 !py-3.5 !text-sm">
                 Learn more about Zena
               </Button>
             </motion.div>

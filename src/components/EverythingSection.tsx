@@ -38,7 +38,7 @@ export function EverythingSection() {
             connectivity, Zena gives you full control over your assets and how you spend them in the real world.
           </p>
           <div className="mt-8 flex justify-center">
-            <Button className="!bg-primary-black !text-white px-6 py-3 text-sm hover:!bg-primary-black/90">
+            <Button to="/products" className="!bg-primary-black !text-white px-6 py-3 text-sm hover:!bg-primary-black/90">
               Learn more about Zena
             </Button>
           </div>

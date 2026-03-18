@@ -39,7 +39,7 @@ export function Header({ variant: explicitVariant }: HeaderProps) {
 
         {/* Mobile Nav Actions (Get Started + Burger) */}
         <div className="flex items-center gap-4 md:hidden">
-          <Button variant="primary" className="!px-4 !py-2 !text-xs">Get Started</Button>
+          <Button to="/waitlist" variant="primary" className="!px-4 !py-2 !text-xs">Get Started</Button>
           <button
             className={`${textColor}`}
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -62,7 +62,7 @@ export function Header({ variant: explicitVariant }: HeaderProps) {
               </Link>
             ))}
           </nav>
-          <Button variant="primary" className="!px-6 !py-2.5 !text-sm">Get Started</Button>
+          <Button to="/waitlist" variant="primary" className="!px-6 !py-2.5 !text-sm">Get Started</Button>
         </div>
       </div>
 
