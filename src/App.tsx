@@ -8,6 +8,7 @@ import { ScrollToHash } from './components/ScrollToHash';
 import { NotFound } from './components/NotFound';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { TermsOfUsePage } from './components/TermsOfUsePage';
+import { AmlPolicyPage } from './components/AmlPolicyPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/FAQ" element={<FAQPage />} />
         <Route path="/privacy" element={<PrivacyPolicyPage />} />
         <Route path="/terms" element={<TermsOfUsePage />} />
+        <Route path="/aml-policy" element={<AmlPolicyPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
