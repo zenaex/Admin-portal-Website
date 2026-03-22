@@ -115,6 +115,16 @@ const storeButtons = (
   </div>
 );
 
+const regulatoryDisclaimer = (
+  <p className="text-center text-xs leading-relaxed text-[#A3A3A3] md:text-[13px]">
+    Regulated services are facilitated by third-party institutions that are duly authorized and licensed by the appropriate regulatory body. If you have any questions about any of the Zenaex Services, please{' '}
+    <Link to="/support#contact-form" className="text-[#CFCFCF] underline-offset-2 transition-colors hover:text-white hover:underline">
+      contact us
+    </Link>
+    .
+  </p>
+);
+
 const socialRow = (
   <div className="flex flex-wrap items-center gap-6">
     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80" aria-label="Facebook">
@@ -178,17 +188,19 @@ export const Footer = () => {
 
           <div className="my-10 h-px w-full bg-white/10" />
 
+          <div className="mx-auto mb-8 max-w-3xl px-1">{regulatoryDisclaimer}</div>
+
           <p className="text-center text-sm text-[#A3A3A3]">Copyright ©Zenaex 2026 . All Rights Reserved.</p>
         </div>
 
         {/* Desktop */}
-        <div className="mb-24 hidden grid-cols-1 gap-16 md:grid lg:grid-cols-12 lg:gap-8">
-          <div className="flex flex-col items-start lg:col-span-5">
+        <div className="mb-16 hidden flex-col items-center gap-14 md:flex lg:mb-24 lg:flex-row lg:items-start lg:justify-center lg:gap-16 xl:gap-24">
+          <div className="flex w-full max-w-[300px] flex-shrink-0 flex-col items-center text-center lg:items-start lg:text-left">
             <Link to="/">
               <img src={zenaexLogo} alt="Zenaex Logo" className="mb-10 h-8" />
             </Link>
             <p className="mb-4 text-[15px] font-medium">Download the app</p>
-            <div className="mb-6">{storeButtons}</div>
+            <div className="mb-6 flex justify-center lg:justify-start">{storeButtons}</div>
             <div className="flex w-full max-w-[280px] items-center justify-between rounded-lg border border-white/20 p-4">
               <span className="max-w-[100px] text-sm font-medium leading-tight text-white/60">Scan to Get the app</span>
               <div className="rounded-lg bg-white p-1">
@@ -196,8 +208,12 @@ export const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="grid w-full grid-cols-2 gap-8 pt-2 md:grid-cols-3 md:gap-12 lg:col-span-7">{linkGroups}</div>
+          <div className="grid w-full grid-cols-3 gap-8 pt-2 md:gap-12 lg:max-w-2xl xl:max-w-3xl xl:gap-16">
+            {linkGroups}
+          </div>
         </div>
+
+        <div className="mx-auto mb-10 hidden max-w-3xl px-2 md:block">{regulatoryDisclaimer}</div>
 
         <div className="hidden items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex">
           <p className="text-sm text-[#A3A3A3]">Copyright ©Zenaex 2026 . All Rights Reserved.</p>
