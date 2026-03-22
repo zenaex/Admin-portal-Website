@@ -89,22 +89,17 @@ export function FeaturesMobile() {
           />
         </div>
 
-        {/* Download Button right below the video */}
-        <div className="mt-4">
+        {/* Download Button right below the video — icon-only pill */}
+        <div className="mt-4 flex justify-center">
           <a
             href="https://play.google.com/store"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 rounded-full bg-white px-5 py-2.5 transition-all border border-gray-100"
-            aria-label="Download Zenaex App"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-3 py-2 transition-opacity hover:opacity-90"
+            aria-label="Download Zenaex on Google Play or App Store"
           >
-            <div className="flex items-center gap-2">
-              <img src={playStore} alt="Google Play" className="h-5 w-5" />
-              <img src={appleSvg} alt="App Store" className="h-5 w-5" />
-            </div>
-            <span className="text-sm font-semibold text-primary-black">
-              Download App
-            </span>
+            <img src={playStore} alt="" className="h-5 w-5" />
+            <img src={appleSvg} alt="" className="h-5 w-5 brightness-0" />
           </a>
         </div>
       </div>

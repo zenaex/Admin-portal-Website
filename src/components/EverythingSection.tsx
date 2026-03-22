@@ -29,9 +29,11 @@ export function EverythingSection() {
         {/* ── Heading area ── */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <h2 className="text-[32px] md:text-[48px] leading-[1.15] font-semibold text-primary-black">
-            Everything you need to manage,
+            Everything you need to
             <br />
-            move, and use digital money
+            manage, move, and use
+            <br />
+            digital money
           </h2>
           <p className="mt-5 text-sm leading-relaxed text-gray-600">
             From secure multi currency wallets to seamless bill payments, gift card trading, and global
@@ -69,7 +71,7 @@ export function EverythingSection() {
             </div>
 
             {/* Transaction preview image */}
-            <div className="mt-8 hidden md:block overflow-hidden rounded-lg">
+            <div className="mt-8 overflow-hidden rounded-lg">
               <img
                 src={transactionList}
                 alt="Transaction history showing Amazon Giftcard, DOGE-USDT, and Transfer"
@@ -105,11 +107,11 @@ export function EverythingSection() {
             </div>
 
             {/* Group diagram */}
-            <div className="mt-8 hidden md:flex items-center justify-center">
+            <div className="mt-8 flex w-full items-center justify-center px-1">
               <img
                 src={groupDiagram}
                 alt="Zenaex connects Nigeria, USA, Bitcoin, and Amazon"
-                className="max-w-[320px]"
+                className="w-full max-w-[280px] md:max-w-[320px]"
                 loading="lazy"
                 decoding="async"
               />

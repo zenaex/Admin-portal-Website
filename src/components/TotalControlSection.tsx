@@ -12,6 +12,9 @@ type Tab = 'Receive' | 'Convert' | 'Withdraw';
 
 const TABS: Tab[] = ['Receive', 'Convert', 'Withdraw'];
 
+const MOBILE_DESCRIPTION =
+  'Get instant estimates for crypto conversions and gift card payouts in real time.';
+
 const TAB_CONTENT = {
   Receive: {
     title: 'Total control over your digital money',
@@ -38,19 +41,18 @@ export const TotalControlSection = () => {
   const currentContent = TAB_CONTENT[activeTab];
 
   return (
-    <section className="relative w-full bg-white py-20 overflow-hidden rounded-lg" id="control">
-      <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px] flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
-        
-        {/* Left Column (Text & Tabs) */}
-        <div className="flex flex-col items-start w-full lg:w-[480px] shrink-0">
-          
+    <section className="relative w-full overflow-hidden bg-white py-12 md:py-20" id="control">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col items-stretch gap-0 px-4 md:px-12 lg:flex-row lg:items-center lg:gap-20 lg:px-[110px]">
+        {/* Text + tabs + CTA */}
+        <div className="flex w-full shrink-0 flex-col items-start lg:w-[480px]">
           {/* Tab Switcher */}
-          <div className="inline-flex rounded-full bg-[#f4f4f4] p-[5px] mb-10 relative">
+          <div className="relative mb-8 inline-flex rounded-full bg-[#f4f4f4] p-[5px] md:mb-10">
             {TABS.map((tab) => (
               <button
                 key={tab}
+                type="button"
                 onClick={() => setActiveTab(tab)}
-                className={`relative z-10 px-8 py-2.5 text-xs sm:text-sm font-medium rounded-full transition-colors duration-300 ${
+                className={`relative z-10 rounded-full px-5 py-2.5 text-xs font-medium transition-colors duration-300 sm:px-8 sm:text-sm ${
                   activeTab === tab ? 'text-black' : 'text-gray-400 hover:text-gray-600'
                 }`}
               >
@@ -58,29 +60,69 @@ export const TotalControlSection = () => {
                 {activeTab === tab && (
                   <motion.div
                     layoutId="activeControlTab"
-                    className="absolute inset-0 bg-white rounded-full -z-10"
+                    className="absolute inset-0 -z-10 rounded-full bg-white shadow-sm"
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                   />
                 )}
               </button>
             ))}
           </div>
-          <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.1] tracking-tight text-primary-black mb-6">
+          <h2 className="mb-4 text-[28px] font-semibold leading-[1.1] tracking-tight text-primary-black md:mb-6 md:text-[32px] lg:text-[48px]">
             {currentContent.title}
           </h2>
-          
-          <p className="text-gray-500 text-[17px] leading-relaxed mb-10">
+
+          <p className="mb-8 hidden text-[17px] leading-relaxed text-gray-500 md:mb-10 md:block">
             {currentContent.description}
           </p>
+          <p className="mb-8 text-base leading-relaxed text-gray-500 md:hidden">
+            {MOBILE_DESCRIPTION}
+          </p>
 
-          <Link to="/products" className="flex items-center gap-3 bg-[#0A0A0A] text-white px-6 py-3 rounded-full font-medium text-sm hover:bg-gray-800 transition-colors">
+          <Link
+            to="/products"
+            className="flex items-center gap-3 rounded-full bg-[#0A0A0A] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+          >
             {currentContent.buttonText}
-            <img src={arrowRight} alt="" className="w-4 h-4" />
+            <img src={arrowRight} alt="" className="h-4 w-4" />
           </Link>
         </div>
 
-        {/* Right Column (Image) - Layout anchored to fixed container to prevent height jumping */}
-        <div className="hidden lg:flex relative w-full flex-1 items-center justify-center lg:justify-end min-h-[400px] md:min-h-[500px] lg:min-h-[650px]">
+        {/* Mobile: image card + pagination */}
+        <div className="mt-10 flex w-full flex-col lg:hidden">
+          <div className="relative w-full overflow-hidden rounded-3xl bg-[#f4f4f4]">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={activeTab}
+                src={currentContent.image}
+                alt={activeTab}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.4, ease: 'easeInOut' }}
+                className="w-full max-h-[min(72vh,520px)] object-contain object-center"
+              />
+            </AnimatePresence>
+          </div>
+          <div className="mt-8 flex items-center justify-center gap-2">
+            {TABS.map((tab) => (
+              <button
+                key={tab}
+                type="button"
+                onClick={() => setActiveTab(tab)}
+                aria-label={tab}
+                aria-current={activeTab === tab ? 'true' : undefined}
+                className={
+                  activeTab === tab
+                    ? 'h-2 w-8 rounded-full bg-[#CCFF00] transition-all'
+                    : 'h-2 w-2 rounded-full bg-gray-300 transition-all'
+                }
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: image column */}
+        <div className="relative hidden min-h-[400px] w-full flex-1 items-center justify-center md:min-h-[500px] lg:flex lg:min-h-[650px] lg:justify-end">
           <AnimatePresence mode="wait">
             <motion.img
               key={activeTab}
@@ -89,12 +131,11 @@ export const TotalControlSection = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="absolute inset-x-0 mx-auto lg:mx-0 lg:right-0 lg:inset-y-0 lg:my-auto w-auto h-auto max-w-full max-h-full object-contain"
+              transition={{ duration: 0.4, ease: 'easeInOut' }}
+              className="absolute inset-x-0 mx-auto h-auto w-auto max-h-full max-w-full object-contain lg:inset-y-0 lg:my-auto lg:mx-0 lg:right-0"
             />
           </AnimatePresence>
         </div>
-
       </div>
     </section>
   );

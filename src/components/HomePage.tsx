@@ -5,6 +5,7 @@ import { FeaturesSection } from './FeaturesSection';
 import { EverythingSection } from './EverythingSection';
 import { CalculatorSection } from './CalculatorSection';
 import { GetStartedSection } from './GetStartedSection';
+import { GetStartedMobile } from './GetStartedMobile';
 import { SecuritySection } from './SecuritySection';
 import { TotalControlSection } from './TotalControlSection';
 import { FAQSection } from './FAQSection';
@@ -24,7 +25,14 @@ export const HomePage = () => {
         <div className="relative z-20 h-[25vh] bg-[#F0F2F4]" />
         <EverythingSection />
         <CalculatorSection />
-        <GetStartedSection />
+        <section id="get-started">
+          <div className="md:hidden">
+            <GetStartedMobile />
+          </div>
+          <div className="hidden md:block">
+            <GetStartedSection />
+          </div>
+        </section>
         <SecuritySection />
         <TotalControlSection />
         <FAQSection />

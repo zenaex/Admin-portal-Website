@@ -5,7 +5,7 @@ import video2 from '../assets/Screen Recording 2026-02-27 at 02.05.53 copy.mp4';
 import video3 from '../assets/Screen Recording 2026-02-27 at 02.07.28 copy.mp4';
 import video4 from '../assets/Screen Recording 2026-02-27 at 02.09.08.mp4';
 
-const steps = [
+export const getStartedSteps = [
   {
     title: 'Download the Zena App',
     description:
@@ -30,13 +30,13 @@ const steps = [
       'Convert currencies, pay bills, trade gift cards, access eTrade features, or activate global eSIM all from one powerful platform.',
     video: video4,
   },
-];
+] as const;
 
 export function GetStartedSection() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="relative z-20 bg-primary-black py-20" id="get-started">
+    <div className="relative z-20 bg-primary-black py-20">
       <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
         <div className="mx-auto max-w-[1200px] grid items-stretch gap-8 md:grid-cols-2">
           {/* ── Left: Unified Big White Card ── */}
@@ -46,7 +46,7 @@ export function GetStartedSection() {
             </h2>
 
             <div className="flex flex-col gap-3">
-              {steps.map((step, i) => (
+              {getStartedSteps.map((step, i) => (
                 <button
                   key={i}
                   onMouseEnter={() => setActiveStep(i)}
@@ -75,7 +75,7 @@ export function GetStartedSection() {
               <AnimatePresence>
                 <motion.video
                   key={activeStep}
-                  src={steps[activeStep].video}
+                  src={getStartedSteps[activeStep].video}
                   autoPlay
                   loop
                   muted
@@ -91,7 +91,7 @@ export function GetStartedSection() {
 
             {/* Step indicators below the video - aligned with left card bottom */}
             <div className="flex items-center justify-center gap-3">
-              {steps.map((_, i) => (
+              {getStartedSteps.map((_, i) => (
                 <button
                   key={i}
                   onMouseEnter={() => setActiveStep(i)}
@@ -109,6 +109,6 @@ export function GetStartedSection() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
