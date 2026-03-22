@@ -3,11 +3,19 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { Button } from './Button';
 
-const WAITLIST_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx_cvpoMuuBUiIXRpz8d6Bvrm4oig3kqLD-2IAr-Eo1MxPmIOD9Rarq6CBJvxY4SvFbgg/exec';
+const DEFAULT_WAITLIST_ENDPOINT =
+  'https://script.google.com/macros/s/AKfycbx_cvpoMuuBUiIXRpz8d6Bvrm4oig3kqLD-2IAr-Eo1MxPmIOD9Rarq6CBJvxY4SvFbgg/exec';
+
+const WAITLIST_ENDPOINT =
+  typeof import.meta.env.VITE_WAITLIST_ENDPOINT === 'string' &&
+  import.meta.env.VITE_WAITLIST_ENDPOINT.trim().length > 0
+    ? import.meta.env.VITE_WAITLIST_ENDPOINT.trim()
+    : DEFAULT_WAITLIST_ENDPOINT;
 
 export function WaitlistPage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen bg-[#F2F4F7] flex flex-col font-sans">
@@ -30,6 +38,7 @@ export function WaitlistPage() {
               className="flex flex-col gap-6"
               onSubmit={async (e) => {
                 e.preventDefault();
+                setSubmitError(null);
 
                 if (!WAITLIST_ENDPOINT || WAITLIST_ENDPOINT.includes('PASTE_')) return;
 
@@ -54,6 +63,8 @@ export function WaitlistPage() {
                   });
                   setSubmitted(true);
                   form.reset();
+                } catch {
+                  setSubmitError('Something went wrong. Please try again.');
                 } finally {
                   setSubmitting(false);
                 }
@@ -92,6 +103,12 @@ export function WaitlistPage() {
                 />
               </div>
 
+              {submitError ? (
+                <p className="text-center text-sm text-red-600" role="alert">
+                  {submitError}
+                </p>
+              ) : null}
+
               <Button
                 variant="primary"
                 className="w-full mt-2"
@@ -122,4 +139,3 @@ export function WaitlistPage() {
     </div>
   );
 }
-
