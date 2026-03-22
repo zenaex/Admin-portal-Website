@@ -158,3 +158,23 @@ img, video {
     image-rendering: auto; /* Let the browser handle standard sampling on high-dpi if needed */
   }
 }
+
+/* ── Thin scrollbar (e.g. privacy policy sidebar) ── */
+.privacy-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(17, 24, 39, 0.18) transparent;
+}
+.privacy-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.privacy-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.privacy-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(17, 24, 39, 0.2);
+  border-radius: 9999px;
+}
+.privacy-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(17, 24, 39, 0.32);
+}

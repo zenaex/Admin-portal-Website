@@ -6,6 +6,8 @@ import { FAQPage } from './components/FAQPage';
 import { WaitlistPage } from './components/WaitlistPage';
 import { ScrollToHash } from './components/ScrollToHash';
 import { NotFound } from './components/NotFound';
+import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
+import { TermsOfUsePage } from './components/TermsOfUsePage';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/support" element={<SupportPage />} />
         <Route path="/FAQ" element={<FAQPage />} />
+        <Route path="/privacy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms" element={<TermsOfUsePage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
