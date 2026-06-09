@@ -16,6 +16,16 @@ export function WaitlistPage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyLink = () => {
+    const waitlistLink = `${window.location.origin}/waitlist`;
+    const textToCopy = `The future of crypto is here and it is called Zenaex. Trade, save, and send crypto and gift cards with zero stress. Get in early. ${waitlistLink}`;
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   return (
     <div className="min-h-screen bg-[#F2F4F7] flex flex-col font-sans">
@@ -25,10 +35,10 @@ export function WaitlistPage() {
         <section className="mx-auto w-full max-w-2xl text-center mb-12">
           <p className="text-[#A3A3A3] text-sm font-medium mb-3">Waitlist</p>
           <h1 className="text-primary-black text-[44px] md:text-[60px] font-semibold tracking-tight leading-[1.05] mb-5">
-            Join the Zenaex waitlist
+            Zenaex is Coming. Are You Ready?
           </h1>
           <p className="text-[#666666] text-base md:text-lg leading-relaxed">
-            Be the first to know when we launch. Drop your details and we’ll notify you.
+            Trade, save, and send crypto and gift cards with zero stress! Join the waitlist and be the first through the door.
           </p>
         </section>
 
@@ -98,8 +108,9 @@ export function WaitlistPage() {
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="Phone Number (optional)"
+                  placeholder="Phone Number"
                   className="w-full bg-[#F2F4F7] rounded-md px-5 py-4 text-primary-black placeholder:text-[#A3A3A3] focus:outline-none focus:ring-2 focus:ring-primary-green"
+                  required
                 />
               </div>
 
@@ -122,13 +133,18 @@ export function WaitlistPage() {
           ) : (
             <div className="text-center">
               <h2 className="text-primary-black text-2xl font-bold mb-3">
-                You’re on the list
+                You're In. Welcome to the 1%!
               </h2>
               <p className="text-[#666666] text-sm md:text-base leading-relaxed mb-8">
-                Thanks for joining. We’ll reach out as soon as early access is available.
+                Share this with someone who deserves to be here.
               </p>
-              <Button variant="dark" to="/" showArrow={false}>
-                Back to home
+              <Button
+                variant="dark"
+                showArrow={false}
+                onClick={handleCopyLink}
+                className="w-full sm:w-auto mx-auto min-w-[200px]"
+              >
+                {copied ? 'Link Copied!' : 'Copy Link'}
               </Button>
             </div>
           )}
