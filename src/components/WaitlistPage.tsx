@@ -3,14 +3,14 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { Button } from './Button';
 
-const DEFAULT_WAITLIST_ENDPOINT =
-  'https://script.google.com/macros/s/AKfycbx_cvpoMuuBUiIXRpz8d6Bvrm4oig3kqLD-2IAr-Eo1MxPmIOD9Rarq6CBJvxY4SvFbgg/exec';
-
 const WAITLIST_ENDPOINT =
-  typeof import.meta.env.VITE_WAITLIST_ENDPOINT === 'string' &&
-  import.meta.env.VITE_WAITLIST_ENDPOINT.trim().length > 0
+  typeof import.meta.env.VITE_WAITLIST_ENDPOINT === 'string'
     ? import.meta.env.VITE_WAITLIST_ENDPOINT.trim()
-    : DEFAULT_WAITLIST_ENDPOINT;
+    : '';
+
+function isWaitlistEndpointConfigured(endpoint: string): boolean {
+  return endpoint.length > 0 && !endpoint.includes('YOUR_API_ID');
+}
 
 export function WaitlistPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -50,27 +50,46 @@ export function WaitlistPage() {
                 e.preventDefault();
                 setSubmitError(null);
 
-                if (!WAITLIST_ENDPOINT || WAITLIST_ENDPOINT.includes('PASTE_')) return;
+                if (!isWaitlistEndpointConfigured(WAITLIST_ENDPOINT)) {
+                  setSubmitError('Waitlist is not configured. Please try again later.');
+                  return;
+                }
 
                 const form = e.currentTarget;
                 const fd = new FormData(form);
 
-                const params = new URLSearchParams();
-                params.set('firstName', String(fd.get('firstName') || ''));
-                params.set('lastName', String(fd.get('lastName') || ''));
-                params.set('email', String(fd.get('email') || ''));
-                params.set('phone', String(fd.get('phone') || ''));
-                params.set('referrer', document.referrer || '');
-                params.set('userAgent', navigator.userAgent || '');
-
                 try {
                   setSubmitting(true);
-                  await fetch(WAITLIST_ENDPOINT, {
+                  const response = await fetch(WAITLIST_ENDPOINT, {
                     method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-                    body: params.toString(),
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                      data: [
+                        {
+                          firstName: String(fd.get('firstName') || ''),
+                          lastName: String(fd.get('lastName') || ''),
+                          email: String(fd.get('email') || ''),
+                          phone: String(fd.get('phone') || ''),
+                          referrer: document.referrer || '',
+                          userAgent: navigator.userAgent || '',
+                          timestamp: 'DATETIME',
+                        },
+                      ],
+                    }),
                   });
+
+                  if (!response.ok) {
+                    let message = 'Something went wrong. Please try again.';
+                    try {
+                      const body = (await response.json()) as { error?: string; message?: string };
+                      message = body.error || body.message || message;
+                    } catch {
+                      // ignore JSON parse errors
+                    }
+                    setSubmitError(message);
+                    return;
+                  }
+
                   setSubmitted(true);
                   form.reset();
                 } catch {

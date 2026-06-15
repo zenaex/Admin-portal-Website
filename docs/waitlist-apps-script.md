@@ -1,11 +1,18 @@
-# Waitlist → Google Sheets (Apps Script)
+# Waitlist → Google Sheets (Apps Script) — deprecated
+
+**This approach is no longer used.** The waitlist now uses SheetDB. See [waitlist-sheetdb.md](./waitlist-sheetdb.md).
+
+---
+
+<details>
+<summary>Legacy Apps Script setup (archived)</summary>
 
 1. Create a Google Sheet. Add a header row, e.g.  
    `Timestamp | First name | Last name | Email | Phone | Referrer | User agent`
 2. **Extensions → Apps Script**. Paste the code below.
 3. Replace `YOUR_SPREADSHEET_ID` with the ID from the Sheet URL (`https://docs.google.com/spreadsheets/d/THIS_PART/edit`).
 4. **Deploy → New deployment** → type **Web app** → Execute as **Me** → Who has access: **Anyone** → Deploy. Copy the **Web app URL** (ends with `/exec`).
-5. Set `VITE_WAITLIST_ENDPOINT` in `.env` to that URL, or rely on the default in `WaitlistPage.tsx` after updating the fallback.
+5. Set `VITE_WAITLIST_ENDPOINT` in `.env` to that URL.
 
 ```js
 function doPost(e) {
@@ -29,4 +36,6 @@ function doPost(e) {
 }
 ```
 
-The site sends `POST` with `Content-Type: application/x-www-form-urlencoded` and fields: `firstName`, `lastName`, `email`, `phone`, `referrer`, `userAgent`.
+The site previously sent `POST` with `Content-Type: application/x-www-form-urlencoded` and fields: `firstName`, `lastName`, `email`, `phone`, `referrer`, `userAgent`.
+
+</details>
