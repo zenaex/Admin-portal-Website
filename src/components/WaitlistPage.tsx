@@ -12,6 +12,33 @@ function isWaitlistEndpointConfigured(endpoint: string): boolean {
   return endpoint.length > 0 && !endpoint.includes('YOUR_API_ID');
 }
 
+function getInputValue(form: HTMLFormElement, name: string): string {
+  const field = form.elements.namedItem(name);
+  if (field instanceof HTMLInputElement) {
+    return field.value.trim();
+  }
+  return '';
+}
+
+function buildSheetDbBody(form: HTMLFormElement): string {
+  const params = new URLSearchParams();
+  const row = {
+    firstName: getInputValue(form, 'firstName'),
+    lastName: getInputValue(form, 'lastName'),
+    email: getInputValue(form, 'email'),
+    phone: getInputValue(form, 'phone'),
+    referrer: document.referrer || '',
+    userAgent: navigator.userAgent || '',
+    timestamp: 'DATETIME',
+  };
+
+  for (const [key, value] of Object.entries(row)) {
+    params.set(`data[${key}]`, value);
+  }
+
+  return params.toString();
+}
+
 export function WaitlistPage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -56,26 +83,15 @@ export function WaitlistPage() {
                 }
 
                 const form = e.currentTarget;
-                const fd = new FormData(form);
 
                 try {
                   setSubmitting(true);
                   const response = await fetch(WAITLIST_ENDPOINT, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                      data: [
-                        {
-                          firstName: String(fd.get('firstName') || ''),
-                          lastName: String(fd.get('lastName') || ''),
-                          email: String(fd.get('email') || ''),
-                          phone: String(fd.get('phone') || ''),
-                          referrer: document.referrer || '',
-                          userAgent: navigator.userAgent || '',
-                          timestamp: 'DATETIME',
-                        },
-                      ],
-                    }),
+                    headers: {
+                      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+                    },
+                    body: buildSheetDbBody(form),
                   });
 
                   if (!response.ok) {

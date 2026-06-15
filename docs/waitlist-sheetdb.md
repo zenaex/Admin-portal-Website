@@ -26,8 +26,14 @@ Create a new sheet with **row 1 headers** (exact spelling — SheetDB maps JSON 
 
 ```bash
 curl -X POST "https://sheetdb.io/api/v1/YOUR_API_ID" \
-  -H "Content-Type: application/json" \
-  -d '{"data":[{"firstName":"Test","lastName":"User","email":"test@example.com","phone":"+1234567890","referrer":"","userAgent":"curl","timestamp":"DATETIME"}]}'
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  --data-urlencode "data[firstName]=Test" \
+  --data-urlencode "data[lastName]=User" \
+  --data-urlencode "data[email]=test@example.com" \
+  --data-urlencode "data[phone]=+1234567890" \
+  --data-urlencode "data[referrer]=" \
+  --data-urlencode "data[userAgent]=curl" \
+  --data-urlencode "data[timestamp]=DATETIME"
 ```
 
 Expect `{"created":1}` and a new row in the sheet. SheetDB's `DATETIME` value fills the timestamp column automatically.
@@ -50,21 +56,36 @@ Set for Production (and Preview if you want waitlist on preview deploys). Redepl
 
 ## Payload
 
-The site sends `POST` with `Content-Type: application/json`:
+The site sends `POST` with `Content-Type: application/x-www-form-urlencoded` and SheetDB field names:
 
-```json
-{
-  "data": [{
-    "firstName": "...",
-    "lastName": "...",
-    "email": "...",
-    "phone": "...",
-    "referrer": "...",
-    "userAgent": "...",
-    "timestamp": "DATETIME"
-  }]
-}
 ```
+data[firstName]=...&data[lastName]=...&data[email]=...&data[phone]=...
+data[referrer]=...&data[userAgent]=...&data[timestamp]=DATETIME
+```
+
+## Troubleshooting: some columns stay empty
+
+SheetDB matches JSON/form keys to **row 1 headers exactly** (case-sensitive, no extra spaces).
+
+1. Open `https://sheetdb.io/api/v1/YOUR_API_ID/keys` in the browser — this lists the column names SheetDB sees. They must match: `firstName`, `lastName`, `email`, `phone`, `referrer`, `userAgent`, `timestamp`.
+2. In Google Sheets, retype any header that looks wrong (select cell → delete → type again). Avoid `Email` vs `email` or trailing spaces.
+3. In SheetDB → your API → **Cache** tab → click **Refresh cache**.
+4. Select columns C–D in the sheet → **Format → Number → Plain text** (stops Sheets from reformatting phone/email).
+5. Test with curl:
+
+```bash
+curl -X POST "https://sheetdb.io/api/v1/YOUR_API_ID" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  --data-urlencode "data[firstName]=Test" \
+  --data-urlencode "data[lastName]=User" \
+  --data-urlencode "data[email]=test@example.com" \
+  --data-urlencode "data[phone]=+1234567890" \
+  --data-urlencode "data[referrer]=" \
+  --data-urlencode "data[userAgent]=curl" \
+  --data-urlencode "data[timestamp]=DATETIME"
+```
+
+If curl fills all columns but the website does not, check the browser Network tab for the outgoing request body.
 
 ## Security note
 
