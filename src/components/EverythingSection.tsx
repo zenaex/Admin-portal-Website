@@ -29,19 +29,14 @@ export function EverythingSection() {
         {/* ── Heading area ── */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <h2 className="text-[32px] md:text-[48px] leading-[1.15] font-semibold text-primary-black">
-            Everything you need to
-            <br />
-            manage, move, and use
-            <br />
-            digital money
+            Built for the Boundless Nigerian
           </h2>
           <p className="mt-5 text-sm leading-relaxed text-gray-600">
-            From secure multi currency wallets to seamless bill payments, gift card trading, and global
-            connectivity, Zena gives you full control over your assets and how you spend them in the real world.
+            Zenaex makes it simple to convert your digital assets into real, usable money. Buy and sell crypto in Nigeria, trade gift cards for instant cash, and activate global eSIM data plans — without the hassle. One app. Everything you need.
           </p>
           <div className="mt-8 flex justify-center">
             <Button to="/products" className="!bg-primary-black !text-white px-6 py-3 text-sm hover:!bg-primary-black/90">
-              Learn more about Zena
+              Learn more about Zenaex
             </Button>
           </div>
         </div>

@@ -6,7 +6,7 @@ import playStore from '../assets/shared/Play store.svg';
 import appleSvg from '../assets/shared/apple.svg';
 
 export function Hero() {
-  const phrases = ['No borders', 'Moving free', 'Spend locally'];
+  const phrases = ['No Limits.', 'No Borders.', 'No Waiting.'];
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
@@ -55,8 +55,7 @@ export function Hero() {
 
         {/* Subheading */}
         <p className="mt-8 max-w-xl text-center text-base leading-relaxed text-text-white/70 md:mt-10 md:text-lg">
-          Tired of digital assets sitting in your wallet? Pay bills, trade
-          instantly, and spend anywhere. The way digital money should be.
+          Buy and sell crypto, trade gift cards, pay bills, and withdraw in Naira — all from one app built for Nigerians.
         </p>
 
         {/* App Download Buttons */}

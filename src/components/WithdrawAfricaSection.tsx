@@ -8,10 +8,10 @@ export const WithdrawAfricaSection = () => {
       <div className="mx-auto w-full max-w-[1440px] px-8 md:px-12 lg:px-[110px]">
         <div className="text-center mb-16 md:mb-24">
           <h2 className="text-[48px] font-semibold text-primary-black mb-6 leading-[1.1] tracking-[-0.02em]">
-            Withdraw anywhere in Africa without borders
+            Withdraw to Any Bank in Africa — No Hidden Fees
           </h2>
           <p className="text-[#667085] text-[18px] md:text-[20px] max-w-[800px] mx-auto leading-[1.5]">
-            Withdraw your funds to supported bank accounts across Africa quickly, securely, and without hassle.
+            Move funds to supported bank accounts across Africa quickly and securely. Real-time exchange rates, zero hidden charges, and fast settlement straight to your bank or mobile wallet. Your money, exactly where you need it.
           </p>
         </div>
 

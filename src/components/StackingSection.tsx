@@ -34,8 +34,8 @@ interface CardData {
 const cards: CardData[] = [
   {
     id: 1,
-    title: "Crypto Wallet",
-    description: "Store your crypto safely and access it anytime. Buy, sell, convert, and withdraw in seconds, all from one simple wallet. Switch/move options as you like.",
+    title: "Buy and Sell Crypto in Nigeria \u2014 Instantly",
+    description: "Trade Bitcoin, Ethereum, USDT, USDC, and more with zero delays. Multi-currency wallets with secure storage, real-time pricing, and 24/7 access to your funds. Your crypto, always within reach.",
     image: cryptoImage,
     bgColor: "bg-white",
     textColor: "text-primary-black",
@@ -47,8 +47,8 @@ const cards: CardData[] = [
   },
   {
     id: 2,
-    title: "Pay bills and essential services seamlessly",
-    description: "Use your wallet balance to handle electricity, cable, airtime, data, and other everyday payments in seconds.",
+    title: "Pay Bills and Earn Up to 2% Cashback Every Time",
+    description: "Top up airtime, data, electricity, cable TV, and betting accounts directly from your Zenaex wallet. Earn automatic cashback on every payment \u2014 no codes to enter, no waiting. Your rewards are applied instantly, every single time.",
     image: billsImage,
     bgColor: "bg-primary-black",
     textColor: "text-white",
@@ -63,8 +63,8 @@ const cards: CardData[] = [
   },
   {
     id: 3,
-    title: "Gift Cards",
-    description: "Sell supported gift cards and receive payouts directly into your wallet at best safety and security.",
+    title: "Trade Gift Cards for Cash and Access Global eSIM Plans",
+    description: "Sell supported gift cards and get instant cash value \u2014 no waiting, no stress. Buy international eSIM data plans from anywhere in the world with no physical SIM required. Fast OTC and assisted trades with secure, real-time confirmation.",
     logoGridImage: tradeImage,
     image: giftCardsImage,
     bgColor: "bg-white",
@@ -100,8 +100,8 @@ const cards: CardData[] = [
   },
   {
     id: 5,
-    title: "Global ESIM",
-    description: "Store, send, receive, and manage supported digital assets with full visibility and control.",
+    title: "Withdraw in Naira \u2014 Fast, Secure, Zero Hidden Fees",
+    description: "Convert your crypto or USD balance into Naira at real-time exchange rates. Send and receive money across Africa with fast settlement straight to your bank account or mobile wallet \u2014 no surprises, no delays.",
     image: esimImage,
     bgColor: "bg-white",
     textColor: "text-primary-black",
@@ -129,7 +129,7 @@ export function StackingSection() {
             transition={{ duration: 0.6 }}
             className="text-[clamp(2.5rem,5vw,3.75rem)] font-bold leading-[1.1] tracking-tight text-primary-black mb-6"
           >
-            A complete ecosystem<br />for modern finance
+            Products &amp; Features
           </motion.h2>
 
           <motion.p
@@ -139,7 +139,7 @@ export function StackingSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-gray-500 text-lg md:text-xl max-w-3xl mx-auto"
           >
-            From crypto wallets to bill payments, trading, and global connectivity, Zena brings every part of your financial life together.
+            From crypto wallets to bill payments, gift cards, and global eSIM — Zenaex brings every part of your financial life together in one powerful app.
           </motion.p>
         </div>
 

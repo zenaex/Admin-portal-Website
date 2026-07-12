@@ -18,8 +18,9 @@ export const MoneyLimitsSection = () => {
         {/* Text and Button Overlay */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 md:px-12 lg:px-[110px] z-10 w-full h-full">
           
+          <p className="text-[#CCFF00] text-sm font-semibold uppercase tracking-wider mb-4">Get Paid Faster. Send Money Without Borders.</p>
           <h2 className="text-white text-[48px] font-semibold tracking-tight leading-[1.1] mb-10">
-            Move your money<br />without limits
+            Your Money, Without Limits.
           </h2>
           
           <div className="flex flex-col sm:flex-row items-center gap-4">

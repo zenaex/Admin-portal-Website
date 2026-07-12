@@ -25,7 +25,7 @@ export function ProductsHero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-[60px] font-semibold leading-[1.05] tracking-tight text-primary-black mb-8"
             >
-              Earn global.<br />Spend anywhere
+              Earn Global.<br />Spend Anywhere.
             </motion.h1>
             
             <motion.p 
@@ -34,7 +34,7 @@ export function ProductsHero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-gray-500 text-sm md:text-[15px] leading-relaxed mb-10 max-w-[480px]"
             >
-              Zena combines crypto wallets, trading, bill payments, gift card exchange, eTrade access, global eSIM connectivity, and seamless withdrawals to any bank account so you can manage and use your money in one place.
+              Zenaex brings your entire financial life into one place. Crypto wallets, trading, bill payments, gift card exchange, eTrade access, global eSIM connectivity, and fast withdrawals to any bank account — all built for Africans with global ambitions.
             </motion.p>
             
             <motion.div
@@ -43,7 +43,7 @@ export function ProductsHero() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <Button to="/waitlist" variant="dark" className="!px-8 !py-3.5 !text-sm">
-                Learn more about Zena
+                Pre-Register
               </Button>
             </motion.div>
           </div>

@@ -7,27 +7,27 @@ import video4 from '../assets/Screen Recording 2026-02-27 at 02.09.08.mp4';
 
 export const getStartedSteps = [
   {
-    title: 'Download the Zena App',
+    title: 'Download the Zenaex App',
     description:
-      'Get Zena from the App Store or Google Play and open your digital finance hub instantly.',
+      'Get Zenaex free on the App Store or Google Play and open your digital finance hub right away.',
     video: video1,
   },
   {
-    title: 'Create your account and verify',
+    title: 'Create Your Account and Verify',
     description:
-      'Sign up with your email or phone number and complete quick identity verification. It takes just a few minutes.',
+      'Sign up with your email or phone number and complete a quick identity check. It takes just a few minutes.',
     video: video2,
   },
   {
-    title: 'Fund your wallet',
+    title: 'Fund Your Wallet',
     description:
-      'Deposit crypto or receive funds directly into your Zena wallet from anywhere in the world.',
+      'Deposit crypto or receive funds directly into your Zenaex wallet from anywhere in the world.',
     video: video3,
   },
   {
-    title: 'Start using your money',
+    title: 'Start Using Your Money',
     description:
-      'Convert currencies, pay bills, trade gift cards, access eTrade features, or activate global eSIM all from one powerful platform.',
+      'Trade crypto in Nigeria, convert currencies, pay bills, sell gift cards, access eTrade, or activate a global eSIM. All in one powerful app.',
     video: video4,
   },
 ] as const;
@@ -42,7 +42,7 @@ export function GetStartedSection() {
           {/* ── Left: Unified Big White Card ── */}
           <div className="flex h-full w-full flex-col rounded-lg bg-white p-8">
             <h2 className="mb-10 whitespace-nowrap text-[18px] md:text-[22px] lg:text-[26px] font-semibold leading-tight text-primary-black">
-              Get started in under 3 minutes
+              Get Started in Under 3 Minutes
             </h2>
 
             <div className="flex flex-col gap-3">

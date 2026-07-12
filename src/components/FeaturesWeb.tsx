@@ -21,52 +21,52 @@ interface FeatureBlock {
 
 const features: FeatureBlock[] = [
   {
-    label: 'Recieve and Send',
-    headline: 'Sell and buy crypto without delay',
+    label: 'Crypto Wallet',
+    headline: 'Your Crypto Wallet — Secure, Instant, Always Accessible',
     description:
-      'Get multi currency wallets for BTC, ETH, USDD, USDC, and more. Your funds are protected and always accessible.',
+      'Store, buy, sell, convert, and withdraw Bitcoin, Ethereum, USDT, USDC, and more — all from one simple interface. No unnecessary complexity. Full control over your digital assets, any time, anywhere.',
     sideCard: {
-      text: 'Store and access your crypto instantly with built in protection.',
+      text: 'Multi-currency wallets with secure storage, real-time pricing, and 24/7 access to your funds.',
       icon: cardIcons1,
     },
   },
   {
-    label: 'Flexible Digital Services',
-    headline: 'Trade gift cards and access eSIM',
+    label: 'Gift Cards & Global eSIM',
+    headline: 'Trade Gift Cards for Cash and Access Global eSIM Plans',
     description:
-      'Sell supported gift cards for instant value. Purchase international eSIM plans without a physical SIM.',
+      'Turn unused gift cards into real value. Sell supported gift cards on Zenaex and receive instant payouts directly to your wallet. Activate international eSIM data plans from anywhere — no physical SIM required.',
     sideCard: {
-      text: 'Convert gift cards and activate global data instantly.',
+      text: 'Sell gift cards for instant cash. Buy global eSIM plans and get online anywhere in the world.',
       icon: cardIcons2,
     },
   },
   {
-    label: 'Fast Assisted Trading',
-    headline: 'Execute E-Trade with confidence',
+    label: 'eTrade',
+    headline: 'eTrade — Fast, Transparent Market Access',
     description:
-      'Complete assisted OTC trades, and access listed assets with rapid execution and secure confirmation.',
+      'Access market opportunities and execute trades in a secure environment built for speed and transparency. Zenaex eTrade gives you the tools to act fast, trade smart, and stay in control of every position.',
     sideCard: {
-      text: 'Execute OTC and assisted trades quickly with secure confirmation.',
+      text: 'Execute OTC and assisted trades quickly with secure, real-time confirmation.',
       icon: cardIcons3,
     },
   },
   {
-    label: 'Pan African Payouts',
-    headline: 'Withdraw funds to local currencies.',
+    label: 'Currency Withdrawal',
+    headline: 'Withdraw in Naira — Fast, Secure, Zero Hidden Fees',
     description:
-      'Swap between USD and local currency seamlessly with transparent pricing and fast processing.',
+      'Convert your crypto or USD balance into Naira at real-time exchange rates. Send and receive money across Africa with fast settlement straight to your bank account or mobile wallet — no surprises, no delays.',
     sideCard: {
-      text: 'Send and receive funds across Africa with fast, reliable settlement.',
+      text: 'Send and receive funds across Africa with fast, reliable settlement and zero hidden fees.',
       icon: cardIcons4,
     },
   },
   {
-    label: 'Earn While You Pay',
-    headline: 'Instant Cashback on all bills paid',
+    label: 'Bill Payments',
+    headline: 'Pay Every Nigerian Bill and Earn 2% Cashback Instantly',
     description:
-      'Get up to 2% cashback on Betting, Electricity, Cable, Airtime and Data payments with rewards applied automatically.',
+      'Use your Zenaex wallet to pay electricity, cable TV, airtime, data, and other everyday essentials in seconds. Earn automatic cashback on every payment — rewards applied instantly, every time. No codes, no delays.',
     sideCard: {
-      text: 'Enjoy up to 2% cashback automatically when you pay your bills.',
+      text: 'Enjoy up to 2% cashback automatically on every bill payment, applied instantly.',
       icon: cardIcons5,
     },
   },

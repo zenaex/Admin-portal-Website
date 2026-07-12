@@ -14,7 +14,7 @@ export function RewardsSection() {
             transition={{ duration: 0.6 }}
             className="mb-4 text-[clamp(1.75rem,5vw,3.5rem)] font-bold leading-tight tracking-tight text-white md:mb-6 md:text-[clamp(2rem,5vw,3.5rem)]"
           >
-            Unlock rewards through your network
+            Unlock Rewards Through Your Network
           </motion.h2>
 
           <motion.p
@@ -24,8 +24,23 @@ export function RewardsSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-base leading-relaxed text-gray-400 md:px-4 md:text-lg"
           >
-            Bring others into the Zena experience and earn rewards as your network expands.
+            Share Zenaex with friends and earn rewards every time your network grows. Every referral adds to your earning potential, turning your connections into real financial value. The more you share, the more you earn.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-8"
+          >
+            <a
+              href="/waitlist"
+              className="inline-flex items-center gap-2 rounded-full bg-[#CCFF00] px-8 py-3.5 text-sm font-bold text-primary-black transition-transform hover:scale-105 active:scale-95"
+            >
+              Pre-Register
+            </a>
+          </motion.div>
         </div>
 
         <motion.div
