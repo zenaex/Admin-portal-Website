@@ -9,6 +9,7 @@ import { NotFound } from './components/NotFound';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { TermsOfUsePage } from './components/TermsOfUsePage';
 import { AmlPolicyPage } from './components/AmlPolicyPage';
+import { UnsubscribePage } from './components/UnsubscribePage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/privacy" element={<PrivacyPolicyPage />} />
         <Route path="/terms" element={<TermsOfUsePage />} />
         <Route path="/aml-policy" element={<AmlPolicyPage />} />
+        <Route path="/unsubscribe" element={<UnsubscribePage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
