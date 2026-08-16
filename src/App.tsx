@@ -10,6 +10,7 @@ import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { TermsOfUsePage } from './components/TermsOfUsePage';
 import { AmlPolicyPage } from './components/AmlPolicyPage';
 import { UnsubscribePage } from './components/UnsubscribePage';
+import { DeleteAccountPage } from './components/DeleteAccountPage';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
         <Route path="/terms" element={<TermsOfUsePage />} />
         <Route path="/aml-policy" element={<AmlPolicyPage />} />
         <Route path="/unsubscribe" element={<UnsubscribePage />} />
+        <Route path="/delete-account" element={<DeleteAccountPage />} />
+        <Route path="/data-deletion" element={<DeleteAccountPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

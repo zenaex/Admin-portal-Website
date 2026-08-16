@@ -66,6 +66,11 @@ const linkGroups = (
             AML policy
           </Link>
         </li>
+        <li>
+          <Link to="/delete-account" className="text-sm text-[#A3A3A3] transition-colors hover:text-white">
+            Delete account
+          </Link>
+        </li>
       </ul>
     </div>
     <div className="flex flex-col gap-4">

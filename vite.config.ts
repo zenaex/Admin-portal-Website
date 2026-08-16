@@ -5,4 +5,18 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  server: {
+    proxy: {
+      '/auth': {
+        target: 'https://api.zenaex.com',
+        changeOrigin: true,
+        secure: true,
+      },
+      '/settings': {
+        target: 'https://api.zenaex.com',
+        changeOrigin: true,
+        secure: true,
+      },
+    },
+  },
 })
