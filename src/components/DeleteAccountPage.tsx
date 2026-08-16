@@ -114,7 +114,7 @@ export function DeleteAccountPage() {
   const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!identifier || !password) {
-      setErrorMessage('Please enter both your email/phone and password');
+      setErrorMessage('Please enter both your email address and password');
       return;
     }
 
@@ -181,7 +181,7 @@ export function DeleteAccountPage() {
   const handleConfirmSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!confirmationCode.trim()) {
-      setErrorMessage('Please enter the confirmation code sent to your email/phone.');
+      setErrorMessage('Please enter the confirmation code sent to your email address.');
       return;
     }
 
@@ -296,16 +296,16 @@ export function DeleteAccountPage() {
                   <form onSubmit={handleLoginSubmit} className="space-y-5">
                     <div>
                       <label htmlFor={identifierId} className="block text-xs font-semibold text-gray-700 mb-1.5">
-                        Email Address or Phone Number
+                        Email Address
                       </label>
                       <div className="relative">
                         <Mail className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
                         <input
                           id={identifierId}
-                          type="text"
+                          type="email"
                           value={identifier}
                           onChange={(e) => setIdentifier(e.target.value)}
-                          placeholder="user@example.com"
+                          placeholder="name@example.com"
                           required
                           className="w-full rounded-xl border border-gray-200 bg-[#F8F9FA] pl-10 pr-4 py-3 text-sm text-primary-black placeholder:text-gray-400 transition-all focus:border-primary-green focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-green/30"
                         />
