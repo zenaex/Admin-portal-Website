@@ -42,6 +42,11 @@ export function DeleteAccountPage() {
   const [authToken, setAuthToken] = useState('');
   const [userEmail, setUserEmail] = useState('');
 
+  // Step 1b: 2FA / New Device Verification State
+  const [is2FAChallenge, setIs2FAChallenge] = useState(false);
+  const [otpCode, setOtpCode] = useState('');
+  const [challengeMessage, setChallengeMessage] = useState('');
+
   // Step 2: Initiate State
   const [reason, setReason] = useState(DELETION_REASONS[0]);
   const [customReason, setCustomReason] = useState('');
@@ -60,6 +65,7 @@ export function DeleteAccountPage() {
 
   const identifierId = useId();
   const passwordId = useId();
+  const otpCodeId = useId();
   const customReasonId = useId();
   const codeId = useId();
 
@@ -85,6 +91,32 @@ export function DeleteAccountPage() {
       a: 'If you can no longer log in to your account, you can send a manual data deletion request to support@zenaex.com from your registered email address with identity verification.',
     },
   ];
+
+  // Helper to extract or generate device information
+  const getDeviceInfo = () => {
+    let deviceId = localStorage.getItem('zenaex_device_id');
+    if (!deviceId) {
+      deviceId = 'web_' + Math.random().toString(36).substring(2, 11) + Math.random().toString(36).substring(2, 11);
+      localStorage.setItem('zenaex_device_id', deviceId);
+    }
+
+    const ua = navigator.userAgent || '';
+    let deviceOs = 'Web';
+    if (ua.includes('Win')) deviceOs = 'Windows';
+    else if (ua.includes('Mac')) deviceOs = 'macOS';
+    else if (ua.includes('Linux')) deviceOs = 'Linux';
+    else if (ua.includes('Android')) deviceOs = 'Android';
+    else if (ua.includes('iPhone') || ua.includes('iPad')) deviceOs = 'iOS';
+
+    return {
+      deviceId,
+      deviceName: `Web Browser (${navigator.appName || 'Browser'})`,
+      deviceOs,
+      deviceModel: navigator.platform || 'Web Browser',
+      deviceManufacturer: '',
+      pushToken: '',
+    };
+  };
 
   // Helper for fetch requests
   const makeApiCall = async (
@@ -122,17 +154,67 @@ export function DeleteAccountPage() {
     setIsLoading(true);
 
     try {
+      const deviceInfo = getDeviceInfo();
       const data = await makeApiCall('/auth/login', {
         email: identifier,
         password: password,
+        ...deviceInfo,
       });
+
+      // Check if 2FA or new-device verification is required
+      if (
+        data.isTwoFactorEnabled ||
+        data.deviceRecognized === false ||
+        (!data.token && !data.accessToken && !data.access_token)
+      ) {
+        setIs2FAChallenge(true);
+        setChallengeMessage(
+          data.message ||
+            'Security verification required. A one-time passcode (OTP) has been emailed to your registered email address.'
+        );
+        return;
+      }
 
       const token = data.token || data.accessToken || data.access_token || 'authenticated';
       setAuthToken(token);
       setUserEmail(data.user?.email || identifier);
       setStep(2);
-    } catch {
-      setErrorMessage('Wrong email or password');
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Wrong email or password';
+      setErrorMessage(message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // STEP 1b: Handle 2FA / New Device OTP Verification (POST /auth/2fa/verify-login)
+  const handleVerify2FASubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!otpCode.trim()) {
+      setErrorMessage('Please enter the verification code sent to your email.');
+      return;
+    }
+
+    setErrorMessage('');
+    setIsLoading(true);
+
+    try {
+      const deviceInfo = getDeviceInfo();
+      const data = await makeApiCall('/auth/2fa/verify-login', {
+        email: identifier,
+        otp: otpCode.trim(),
+        code: otpCode.trim(),
+        deviceId: deviceInfo.deviceId,
+      });
+
+      const token = data.token || data.accessToken || data.access_token || 'authenticated';
+      setAuthToken(token);
+      setUserEmail(data.user?.email || identifier);
+      setIs2FAChallenge(false);
+      setStep(2);
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Invalid or expired verification code.';
+      setErrorMessage(message);
     } finally {
       setIsLoading(false);
     }
@@ -280,8 +362,8 @@ export function DeleteAccountPage() {
                 </div>
               )}
 
-              {/* STEP 1: LOGIN (/auth/login) */}
-              {step === 1 && (
+              {/* STEP 1: LOGIN (/auth/login) & 2FA VERIFICATION (/auth/2fa/verify-login) */}
+              {step === 1 && !is2FAChallenge && (
                 <div>
                   <div className="mb-6 border-b border-gray-100 pb-4">
                     <h2 className="text-xl font-bold text-primary-black sm:text-2xl">
@@ -346,6 +428,68 @@ export function DeleteAccountPage() {
                         ) : (
                           <>
                             Authenticate & Continue
+                            <ArrowRight className="h-4 w-4" />
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              )}
+
+              {/* STEP 1b: 2FA / NEW DEVICE OTP VERIFICATION */}
+              {step === 1 && is2FAChallenge && (
+                <div>
+                  <div className="mb-6 border-b border-gray-100 pb-4">
+                    <h2 className="text-xl font-bold text-primary-black sm:text-2xl">
+                      Step 1b: Security Verification
+                    </h2>
+                    <p className="mt-1 text-xs text-gray-500 sm:text-sm leading-relaxed">
+                      {challengeMessage}
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleVerify2FASubmit} className="space-y-5">
+                    <div>
+                      <label htmlFor={otpCodeId} className="block text-xs font-semibold text-gray-700 mb-1.5">
+                        One-Time Passcode (OTP)
+                      </label>
+                      <div className="relative">
+                        <KeyRound className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+                        <input
+                          id={otpCodeId}
+                          type="text"
+                          value={otpCode}
+                          onChange={(e) => setOtpCode(e.target.value)}
+                          placeholder="Enter 6-digit OTP code"
+                          required
+                          className="w-full rounded-xl border border-gray-200 bg-[#F8F9FA] pl-10 pr-4 py-3 text-sm text-primary-black placeholder:text-gray-400 transition-all focus:border-primary-green focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-green/30"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3 pt-2">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setIs2FAChallenge(false);
+                          setErrorMessage('');
+                        }}
+                        className="rounded-full border border-gray-300 bg-white px-5 py-3 text-xs font-semibold text-gray-700 hover:bg-gray-50"
+                      >
+                        Back
+                      </button>
+
+                      <button
+                        type="submit"
+                        disabled={isLoading}
+                        className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary-black px-6 py-3.5 text-xs font-semibold text-white transition-all hover:bg-black/90 disabled:opacity-50 cursor-pointer shadow-md"
+                      >
+                        {isLoading ? (
+                          <span>Verifying OTP...</span>
+                        ) : (
+                          <>
+                            Verify OTP & Continue
                             <ArrowRight className="h-4 w-4" />
                           </>
                         )}
