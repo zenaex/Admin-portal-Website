@@ -131,9 +131,8 @@ export function DeleteAccountPage() {
       setAuthToken(token);
       setUserEmail(data.user?.email || identifier);
       setStep(2);
-    } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : 'Login failed. Please check your credentials.';
-      setErrorMessage(message);
+    } catch {
+      setErrorMessage('Wrong email or password');
     } finally {
       setIsLoading(false);
     }
