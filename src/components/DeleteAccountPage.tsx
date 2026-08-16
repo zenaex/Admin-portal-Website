@@ -1,4 +1,4 @@
-import { useState, useId } from 'react';
+import { useState, useId, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from './Header';
 import { Footer } from './Footer';
@@ -15,6 +15,7 @@ import {
   HelpCircle,
   ChevronDown,
   ChevronUp,
+  RefreshCw,
 } from 'lucide-react';
 
 const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/+$/, '');
@@ -46,6 +47,9 @@ export function DeleteAccountPage() {
   const [is2FAChallenge, setIs2FAChallenge] = useState(false);
   const [otpCode, setOtpCode] = useState('');
   const [challengeMessage, setChallengeMessage] = useState('');
+  const [resendMessage, setResendMessage] = useState('');
+  const [isResending, setIsResending] = useState(false);
+  const [resendCooldown, setResendCooldown] = useState(0);
 
   // Step 2: Initiate State
   const [reason, setReason] = useState(DELETION_REASONS[0]);
@@ -68,6 +72,15 @@ export function DeleteAccountPage() {
   const otpCodeId = useId();
   const customReasonId = useId();
   const codeId = useId();
+
+  useEffect(() => {
+    if (resendCooldown > 0) {
+      const timer = setInterval(() => {
+        setResendCooldown((prev) => prev - 1);
+      }, 1000);
+      return () => clearInterval(timer);
+    }
+  }, [resendCooldown]);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -187,7 +200,7 @@ export function DeleteAccountPage() {
     }
   };
 
-  // STEP 1b: Handle 2FA / New Device OTP Verification (POST /auth/2fa/verify-login)
+  // STEP 1b: Handle 2FA / New Device OTP Verification (POST /auth/verify-otp)
   const handleVerify2FASubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!otpCode.trim()) {
@@ -200,10 +213,9 @@ export function DeleteAccountPage() {
 
     try {
       const deviceInfo = getDeviceInfo();
-      const data = await makeApiCall('/auth/2fa/verify-login', {
+      const data = await makeApiCall('/auth/verify-otp', {
         email: identifier,
         otp: otpCode.trim(),
-        code: otpCode.trim(),
         deviceId: deviceInfo.deviceId,
       });
 
@@ -217,6 +229,37 @@ export function DeleteAccountPage() {
       setErrorMessage(message);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  // STEP 1c: Handle Resend OTP Code
+  const handleResendOTP = async () => {
+    if (resendCooldown > 0 || isResending) return;
+    setIsResending(true);
+    setResendMessage('');
+    setErrorMessage('');
+
+    try {
+      const deviceInfo = getDeviceInfo();
+      try {
+        await makeApiCall('/auth/resend-otp', {
+          email: identifier,
+          deviceId: deviceInfo.deviceId,
+        });
+      } catch {
+        await makeApiCall('/auth/send-otp', {
+          email: identifier,
+          deviceId: deviceInfo.deviceId,
+        });
+      }
+      setResendMessage('A new verification code has been sent to your email address.');
+      setResendCooldown(60);
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Failed to resend code. Please try again.';
+      setResendMessage(message);
+      setResendCooldown(60);
+    } finally {
+      setIsResending(false);
     }
   };
 
@@ -449,11 +492,33 @@ export function DeleteAccountPage() {
                     </p>
                   </div>
 
+                  {resendMessage && (
+                    <div className="mb-5 flex items-center gap-2 rounded-2xl bg-emerald-50 border border-emerald-200 p-3.5 text-xs text-emerald-800">
+                      <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                      <span>{resendMessage}</span>
+                    </div>
+                  )}
+
                   <form onSubmit={handleVerify2FASubmit} className="space-y-5">
                     <div>
-                      <label htmlFor={otpCodeId} className="block text-xs font-semibold text-gray-700 mb-1.5">
-                        One-Time Passcode (OTP)
-                      </label>
+                      <div className="flex items-center justify-between mb-1.5">
+                        <label htmlFor={otpCodeId} className="block text-xs font-semibold text-gray-700">
+                          One-Time Passcode (OTP)
+                        </label>
+                        <button
+                          type="button"
+                          onClick={handleResendOTP}
+                          disabled={resendCooldown > 0 || isResending}
+                          className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 hover:text-emerald-700 hover:underline disabled:text-gray-400 disabled:no-underline cursor-pointer"
+                        >
+                          <RefreshCw className={`h-3 w-3 ${isResending ? 'animate-spin' : ''}`} />
+                          {isResending
+                            ? 'Resending...'
+                            : resendCooldown > 0
+                            ? `Resend in ${resendCooldown}s`
+                            : 'Resend OTP'}
+                        </button>
+                      </div>
                       <div className="relative">
                         <KeyRound className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
                         <input
@@ -474,6 +539,7 @@ export function DeleteAccountPage() {
                         onClick={() => {
                           setIs2FAChallenge(false);
                           setErrorMessage('');
+                          setResendMessage('');
                         }}
                         className="rounded-full border border-gray-300 bg-white px-5 py-3 text-xs font-semibold text-gray-700 hover:bg-gray-50"
                       >
